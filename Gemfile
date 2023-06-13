@@ -61,6 +61,9 @@ group :development, :test do
   gem "dotenv-rails"
 
 # custom
+gem "pundit"
+gem "cloudinary"
+
 end
 
 group :development do
