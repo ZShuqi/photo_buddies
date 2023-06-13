@@ -4,4 +4,8 @@ Rails.application.routes.draw do
   resources :pages do
     get '/search', to: 'pages#index', as: 'search'
   end
+
+  resources :events, only: [:index, :show] do
+    resources :bookings, only: [:index, :create, :update ]
+  end
 end
