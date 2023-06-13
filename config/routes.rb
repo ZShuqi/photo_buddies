@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # resources :pages, only: [:show]
 
   resources :pages do
-    get '/search', to: 'pages#index', as: 'search'
+    get '/search', to: 'pages#search', as: 'search'
     get '/pages/:id', to: 'pages#show'
   end
 end

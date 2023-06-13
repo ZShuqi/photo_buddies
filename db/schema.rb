@@ -80,6 +80,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_135015) do
     t.index ["user_id"], name: "index_galleries_on_user_id"
   end
 
+  create_table "pg_search_documents", force: :cascade do |t|
+    t.text "content"
+    t.string "searchable_type"
+    t.bigint "searchable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable"
+  end
+
   create_table "photos", force: :cascade do |t|
     t.string "address"
     t.string "keyword"
