@@ -1,9 +1,9 @@
 require "open-uri"
 
 puts "Cleaning database..."
-Gallery.delete_all
-Event.delete_all
-Photo.delete_all
+# Gallery.delete_all
+# Event.delete_all
+# Photo.delete_all
 
 puts "Creating users..."
 # users
