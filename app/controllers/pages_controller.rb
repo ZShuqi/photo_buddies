@@ -3,5 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @events = Event.all
+
+    @photos = Photos.all
   end
 end
