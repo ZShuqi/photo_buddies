@@ -8,4 +8,10 @@ class User < ApplicationRecord
   has_many :comments
   has_many :events
   has_many :bookings
+
+  include PgSearch::Model
+  multisearchable against: [:email],
+  using: {
+    prefix: true
+  }
 end
