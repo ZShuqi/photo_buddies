@@ -59,6 +59,7 @@ group :development, :test do
 
 # custom
 gem "pundit"
+gem "cloudinary"
 
 end
 
