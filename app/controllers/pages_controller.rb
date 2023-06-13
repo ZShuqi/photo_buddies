@@ -3,10 +3,4 @@ class PagesController < ApplicationController
 
   def home
   end
-
-  def search
-    @users = User.all
-    @photos = Photos.all
-    # implement multi-search
-  end
 end
