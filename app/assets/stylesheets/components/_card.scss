@@ -1,0 +1,59 @@
+.card {
+  overflow: hidden;
+  background: $whitegrey;
+  box-shadow: 0 0 15px grey;
+  transition: all 0.3s;
+}
+
+.card:hover h5, .card:hover p {
+  color: $mediumgrey;
+  font-weight: bolder;
+}
+
+.card:active {
+  background-color: $darkgrey;
+  border: 3px solid $lightgrey;
+  box-shadow: none;
+}
+
+.card > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card h5 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: $darkgrey;
+  transition: all 0.3s;
+}
+
+.card p {
+  font-size: 13px;
+  opacity: .7;
+  margin: 0;
+  color: $darkgrey;
+  transition: all 0.3s;
+}
+
+.card .card-title {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  text-align: center;
+}
+
+.card-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-body {
+  height: 130.6px;
+  padding: 30px;
+  padding-top: 15px;
+}
