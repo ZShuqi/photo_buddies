@@ -42,6 +42,6 @@ class PagesController < ApplicationController
     else
       @message = "Run a search!"
     end
-    # raise
+    raise
   end
 end
