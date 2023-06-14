@@ -62,12 +62,12 @@
 .card-trip {
   overflow: hidden;
   margin: 30px;
-  background: white;
+  background: $grey-background;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .card-trip > img {
-  height: 200px;
+  height: 125px;
   width: 100%;
   object-fit: cover;
 }
@@ -79,14 +79,17 @@
 }
 
 .card-trip p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
+  font-size: 23px;
+  font-weight: bold;
+  opacity: 5;
+  margin: 0px;
+  margin-top: 12px;
 }
 
 
 .card-trip .card-trip-infos {
-  padding: 16px;
+  background-color: whitesmoke;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -96,6 +99,6 @@
 .card-trip-infos .card-trip-user {
   position: absolute;
   right: 16px;
-  top: -20px;
-  width: 40px;
+  top: -50px;
+  width: 70px;
 }
