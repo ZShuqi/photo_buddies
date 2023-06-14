@@ -20,19 +20,19 @@ avatar3 = URI.open("https://images.unsplash.com/photo-1548142813-c348350df52b?ix
 avatar4 = URI.open("https://images.unsplash.com/photo-1580465446361-8aae5321522b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
 # users
 user1 = User.new(email: "ayub@gmail.com", password: "123456", username: 'ayub', description: "🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
-user1.images.attach(io: avatar1, filename: "user1.jpg", content_type: "image/jpg")
+user1.photo.attach(io: avatar1, filename: "user1.jpg", content_type: "image/jpg")
 user1.save
 puts "."
 user2 = User.new(email: "elisa@gmail.com", password: "123456", username: 'elisa', description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
-user2.images.attach(io: avatar2, filename: "user2.jpg", content_type: "image/jpg")
+user2.photo.attach(io: avatar2, filename: "user2.jpg", content_type: "image/jpg")
 user2.save
 puts "."
 user3 = User.new(email: "shuqi@gmail.com", password: "123456", username: 'shuqi', description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
-user3.images.attach(io: avatar3, filename: "user3.jpg", content_type: "image/jpg")
+user3.photo.attach(io: avatar3, filename: "user3.jpg", content_type: "image/jpg")
 user3.save
 puts "."
 user4 = User.new(email: "lucile@gmail.com", password: "123456", username: 'lucile', description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
-user4.images.attach(io: avatar4, filename: "user4.jpg", content_type: "image/jpg")
+user4.photo.attach(io: avatar4, filename: "user4.jpg", content_type: "image/jpg")
 user4.save
 puts "."
 

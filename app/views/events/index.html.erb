@@ -12,12 +12,15 @@
               <p><i class="fa-solid fa-location-dot"></i> <%= event.address %></p>
               <p><i class="fa-regular fa-file-lines"></i> <%= event.description %></p>
               <p>By: <% @user = User.find(event.user_id) %>
-              <%= @user.username.capitalize %></p>
+              <%= @user.username.capitalize %>
+              <%= cl_image_tag @user.photo.key, height: 40, width: 40, radius: 20, crop: :fill %>
+              </p>
               <p>With:
               <% event.bookings.each do |book| %>
                 <% participant = User.find(book.user_id) %>
                 <%= participant.username.capitalize %>
-                <%= cl_image_tag participant.photo.key, height: 30, width: 30, crop: :fill %>
+                <%= cl_image_tag participant.photo.key, height: 40, width: 40, radius: 20, crop: :fill %>
+                <%# cloudinary note: need to convert to png to have a transparent background %>
               <% end %>
               </p>
               <%# <% if event.user_id == current_user.id %>
