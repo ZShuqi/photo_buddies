@@ -15,3 +15,11 @@
     </div>
 <% end %>
 </div>
+
+
+<% @my_galleries.each do |g| %>
+  <% my_pics = g.photo_ids %>
+    <% my_pics.each do |pic| %>
+    <%= cl_image_tag pic.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+<% end %>
