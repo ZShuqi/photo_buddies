@@ -15,6 +15,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:pool).permit(:title, :address, :description, :date, images: [])
+    params.require(:event).permit(:title, :address, :description, :date, images: [])
   end
 end

@@ -114,12 +114,11 @@ puts "Creating events..."
 @event_night_img2 = URI.open("https://images.unsplash.com/photo-1519681393784-d120267933ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bmlnaHR8fHx8fHwxNjg2NzQwMTYz&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080")
 @event_night_img3 = URI.open("https://images.unsplash.com/photo-1504493408076-2017927bbb1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bmlnaHR8fHx8fHwxNjg2NzQwMjE0&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080")
 
-
 # events
-event1 = Event.create!(title: "Photo shoot!", address: "Paris", date: '01/01/2024', description: "A great description of the event", user_id: user1.id)
-event2 = Event.create!(title: "Lake sunset", address: "London", date: '12/12/2023', description: "A great description of the event", user_id: user2.id)
-event3 = Event.create!(title: "Mountain shoot", address: "Roma", date: '07/07/2023', description: "A great description of the event", user_id: user3.id)
-event4 = Event.create!(title: "Urban vibe", address: "New York", date: '10/10/2023', description: "A great description of the event", user_id: user4.id)
+event1 = Event.create!(title: "Photo shoot!", address: "Paris", date: '01/01/2024', description: "Photos of independent designers clothes", user_id: user1.id)
+event2 = Event.create!(title: "Lake sunset", address: "London", date: '12/12/2023', description: "Let's take photos of the sunset together", user_id: user2.id)
+event3 = Event.create!(title: "Mountain shoot", address: "Roma", date: '07/07/2023', description: "Explore the mountaind and take great shots", user_id: user3.id)
+event4 = Event.create!(title: "Urban vibe", address: "New York", date: '10/10/2023', description: "City tour and graffity photography", user_id: user4.id)
 
 # attach images to events
 event1.images.attach(io: @event_forest_img1, filename: "event_forest_img1.jpg", content_type: "image/jpg")
