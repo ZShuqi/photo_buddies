@@ -11,7 +11,7 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
   has_one_attached :photo
   include PgSearch::Model
-  multisearchable against: [:email],
+  multisearchable against: [:username],
   using: {
     prefix: true
   }

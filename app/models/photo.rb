@@ -6,8 +6,5 @@ class Photo < ApplicationRecord
   include PgSearch::Model
   multisearchable against: [:keyword]
 
-
-
-
   # validates :likes
 end

@@ -3,13 +3,12 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   # resources :pages, only: [:show]
-
+  get '/search', to: 'pages#search', as: 'search'
   resources :pages do
-    get '/search', to: 'pages#search', as: 'search'
     get '/pages/:id', to: 'pages#show'
   end
 
   resources :events, only: [:index, :show] do
-    resources :bookings, only: [:index, :create, :update ]
+    resources :bookings, only: [:index, :create, :update]
   end
 end
