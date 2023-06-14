@@ -46,22 +46,12 @@
   <% end %>
 
   <% if @user_results.try(:any?) %>
-    <% @user_results.each do |res| %>
-      <% @user = User.find(res.searchable_id)  %>
-
-      <div class="card-user">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-        <%# img to replace with user avatar pic %>
-        <div class="card-user-infos">
-          <h2><%= @user.username %></h2>
-          <p>Description of the user to put on the card that is very interesting but shouldn't be longer than twenty words.</p>
-          <%# to replace with user description - to add in seeds %>
-        </div>
-      </div>
-
-       <%= render 'shared/user_card', user: @user %>
-
-    <% end %>
+    <div class="user-cards">
+      <% @user_results.each do |res| %>
+        <% @user = User.find(res.searchable_id)  %>
+        <%= render 'shared/user_card', user: @user %>
+      <% end %>
+    </div>
   <% end %>
 
   <% else %>
