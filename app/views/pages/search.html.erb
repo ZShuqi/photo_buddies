@@ -1,63 +1,70 @@
 <div class="container">
   <div class="search-banner">
     <div class="row justify-content-center">
-      <div class="col-sm-8 my-3">
-        <%= form_with url: search_path, method: :get, class: "d-flex flex-column" do %>
-          <%= text_field_tag :query,
-                params[:query],
-                class: "search-form",
-                placeholder: "Hi #{current_user.username.capitalize}, what are we looking for?"
-            %>
+      <%# <div class="search-banner-content"> %>
+        <div class="col-sm-8 my-3">
+          <%= form_with url: search_path, method: :get, class: "d-flex flex-column" do %>
+            <%= text_field_tag :query,
+                  params[:query],
+                  class: "search-form",
+                  placeholder: "Hi #{current_user.username.capitalize}, what are we looking for?"
+              %>
 
-          <div class="search-categories">
-            <h6>Browse through </h4>
-            <div class="tag-item">
-              <input type="checkbox" name="users" value="display" id="users" class="tag-selector">
-              <label for="users">People</label>
+            <div class="search-categories">
+              <h6>Browse through </h4>
+              <div class="tag-item">
+                <input type="checkbox" name="users" value="display" id="users" class="tag-selector">
+                <label for="users">People</label>
+              </div>
+
+              <div class="tag-item">
+                <input type="checkbox" name="photos" value="display" id="photos" class="tag-selector">
+                <label for="photos">Art</label>
+              </div>
             </div>
 
-            <div class="tag-item">
-              <input type="checkbox" name="photos" value="display" id="photos" class="tag-selector">
-              <label for="photos">Art</label>
-            </div>
-          </div>
-
-          <%= submit_tag "Discover", name: "Discover", class: "main-button" %>
-        <% end %>
-      </div>
+            <%= submit_tag "Discover", name: "Discover", class: "main-button" %>
+          <% end %>
+        </div>
+      <%# </div> %>
     </div>
   </div>
 
-  <% @users.each do |u| %>
-  <%= u.username %> <%= u.id %>
+</div>
+
+<div class="container">
+  <% if @results.try(:any?) %>
+  <% if @photo_results.try(:any?) %>
+    <% @photo_results.each do |res| %>
+      <ul>
+        <li>
+          <% @photo = Photo.find(res.searchable_id) %>
+          <%= cl_image_tag @photo.photo.key, height: 300, width: 400, crop: :fill %>
+        </li>
+      </ul>
+    <% end %>
   <% end %>
 
-  <div>
-    <% if @results.try(:any?) %>
-    <% if @photo_results.try(:any?) %>
-      <% @photo_results.each do |res| %>
-        <ul>
-          <li>
-            <% @photo = Photo.find(res.searchable_id) %>
-            <%= cl_image_tag @photo.photo.key, height: 300, width: 400, crop: :fill %>
-          </li>
-        </ul>
-      <% end %>
-    <% end %>
+  <% if @user_results.try(:any?) %>
+    <% @user_results.each do |res| %>
+      <% @user = User.find(res.searchable_id)  %>
 
-    <% if @user_results.try(:any?) %>
-      <% @user_results.each do |res| %>
-        <ul>
-          <li>
-            <%# <% @user = User.find(res.searchable_id)  %> %>
-            <%# <%= @user.username %> %>
-          </li>
-        </ul>
-      <% end %>
-    <% end %>
+      <div class="card-user">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <%# img to replace with user avatar pic %>
+        <div class="card-user-infos">
+          <h2><%= @user.username %></h2>
+          <p>Description of the user to put on the card that is very interesting but shouldn't be longer than twenty words.</p>
+          <%# to replace with user description - to add in seeds %>
+        </div>
+      </div>
 
-    <% else %>
-      <%= @message %>
+       <%= render 'shared/user_card', user: @user %>
+
     <% end %>
-  </div>
+  <% end %>
+
+  <% else %>
+    <%= @message %>
+  <% end %>
 </div>

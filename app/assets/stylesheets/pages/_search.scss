@@ -1,6 +1,7 @@
 .search-categories {
   display: flex;
   margin: 10px;
+  color: $grey-background;
 }
 
 .search-form {
@@ -11,6 +12,14 @@
 }
 
 .search-banner {
-  background-color: black;
+  background-image: url("https://images.unsplash.com/photo-1501290741922-b56c0d0884af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmVzZWFyY2h8ZW58MHwwfDB8fHwy&auto=format&fit=crop&w=500&q=60");
+  background-position: cover;
+  object-fit: cover;
+  // background-repeat: no-repeat;
   height: 50vh;
+}
+
+.search-banner-content {
+  margin-top: auto;
+  margin-bottom: auto;
 }
