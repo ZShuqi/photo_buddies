@@ -1,28 +1,57 @@
 <div class="container">
   <div class="row justify-content-center">
   <div class="col-sm-8 my-3">
-    <%= form_with url: search_path, method: :get, class: "d-flex" do %>
+    <%= form_with url: search_path, method: :get, class: "d-flex flex-column" do %>
       <%= text_field_tag :query,
             params[:query],
             class: "form-control",
-            placeholder: "Type a keyword"
+            placeholder: "Hi #{current_user.username.capitalize}, what are we looking for?"
         %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <div class="tag-item">
+        <input type="checkbox" name="users" value="display" id="users" class="tag-selector">
+        <label for="users">People</label>
+      </div>
+
+      <div class="tag-item">
+        <input type="checkbox" name="photos" value="display" id="photos" class="tag-selector">
+        <label for="photos">Art</label>
+      </div>
+
+      <%= submit_tag "Discover", name: "", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
 
+
+<% @users.each do |u| %>
+<%= u.username %> <%= u.id %>
+<% end %>
+
 <div>
-   <% if @results.try(:any?) %>
-    <% @results.each do |result| %>
-      <% if result.searchable_type == "Photo" %>
-        <%= result.searchable_type %>
-        <%= result.content %>
-      <% elsif result.searchable_type == "User" %>
-        <%= result.searchable_type %>
-        <%= result.content %>
-      <% end %>
+  <% if @results.try(:any?) %>
+   <% if @photo_results.try(:any?) %>
+    <% @photo_results.each do |res| %>
+      <ul>
+        <li>
+          <% @photo = Photo.find(res.searchable_id) %>
+          <%= cl_image_tag @photo.photo.key, height: 300, width: 400, crop: :fill %>
+        </li>
+      </ul>
     <% end %>
   <% end %>
 
+  <% if @user_results.try(:any?) %>
+    <% @user_results.each do |res| %>
+      <ul>
+        <li>
+          <%# <% @user = User.find(res.searchable_id)  %> %>
+          <%# <%= @user.username %> %>
+        </li>
+      </ul>
+    <% end %>
+  <% end %>
+
+  <% else %>
+     <%= @message %>
+  <% end %>
 </div>
