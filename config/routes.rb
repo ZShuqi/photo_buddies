@@ -3,9 +3,8 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   # resources :pages, only: [:show]
-
+  get '/search', to: 'pages#search', as: 'search'
   resources :pages do
-    get '/search', to: 'pages#search', as: 'search'
     get '/pages/:id', to: 'pages#show'
   end
 
