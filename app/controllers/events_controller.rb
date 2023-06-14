@@ -5,13 +5,16 @@ class EventsController < ApplicationController
 
   def show
     set_event
-    @event = Event.new
-    # authorize @event
+    authorize @event
   end
 
   private
 
   def set_event
     @event = Event.find(params[:id])
+  end
+
+  def event_params
+    params.require(:event).permit(:title, :address, :description, :date, images: [])
   end
 end

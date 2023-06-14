@@ -1,31 +1,74 @@
 .card-product {
+<<<<<<< HEAD
   overflow: hidden;
   height: 120px;
   background: $light-gray;
+=======
+  height: 120px;
+>>>>>>> master
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
 }
 
+<<<<<<< HEAD
+=======
+#galleryDropdown {
+  width: 750px;
+  margin-top: 50px;
+}
+.dropdown-item-styling {
+  height: 200px;
+  width: 600px;
+}
+.user-details {
+  margin-top: 80px;
+}
+
+.user-details p {
+    font-size: 22px;
+    line-height: 1.4;
+    opacity: .9;
+    margin-top: 8px;
+}
+
+>>>>>>> master
 .card-product img {
   height: 100%;
   width: 120px;
   border-radius: 50%;
   object-fit: cover;
   margin-left: 10px;
+<<<<<<< HEAD
 }
 
 .card-product h2 {
   font-size: 18px;
+=======
+  position: absolute;
+  height: 120px;
+  margin-top: 120px;
+}
+
+.card-product h2 {
+  font-size: 22px;
+>>>>>>> master
   font-weight: bold;
   margin: 0;
 }
 
 .card-product p {
+<<<<<<< HEAD
   font-size: 14px;
   line-height: 1.4;
   opacity: .9;
   margin-bottom: 0;
+=======
+  font-size: 17px;
+  line-height: 1.4;
+  opacity: .9;
+
+>>>>>>> master
   margin-top: 8px;
 }
 
@@ -53,6 +96,17 @@
   grid-gap: 16px;
 }
 
+<<<<<<< HEAD
+=======
+#btn {
+  border-radius: 100px;
+}
+
+.dropdown-menu {
+  width: 300px !important;
+  height: 400px !important;
+}
+>>>>>>> master
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
