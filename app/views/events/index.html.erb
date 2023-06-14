@@ -1,0 +1,25 @@
+<div class="container p-3 mb-3">
+  <p><strong>Events</strong></p>
+  <div class= "grid">
+    <% @events.reverse.each do |event| %>
+      <%= link_to event_path(event), class: "nav-link" do %>
+        <div class="card">
+          <img src="https://source.unsplash.com/random/?event" alt="random pic">
+          <div class="card-body">
+            <h5 class="card-title"><%= event.title %></h5>
+            <div class="d-flex flex-column">
+              <p><i class="fa-regular fa-clock"></i> <%= event.date.to_time.strftime('%e %b %Y %H:%M') %></p>
+              <p><i class="fa-solid fa-location-dot"></i> <%= event.address %></p>
+              <p><i class="fa-regular fa-file-lines"></i> <%= event.description %></p>
+              <%# <% if event.user_id == current_user.id %>
+                <%# <p><i class="fa-solid fa-face-smile-wink"></i> My event</p> %>
+              <%# <% else %>
+                <%# <p>Book now <i class="fa-solid fa-chevron-right"></i></p> %>
+              <%# <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
