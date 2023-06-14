@@ -1,17 +1,22 @@
-<div class ='container-fluid'>
-  <div class="card-product">
-    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" />
-    <div class="card-product-infos">
-      <h2><%= @user.username %></h2>
-      <p><%= @user.description %>.</p>
+<div class='container'>
+  <div class = 'row'>
+    <div class="card-product" style="background-image: url('https://images.unsplash.com/photo-1686595092928-0252b92e007e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80')">
+     <%= cl_image_tag @user.photo.key%>
     </div>
   </div>
-</div>
-<% @galleries.each do |gallery| %>
-  <% photo = gallery.photos.first %>
-  <% bg_img = photo&.photo&.attached? ? cl_image_path(photo.photo.key) : 'https://images.unsplash.com/photo-1528203455795-d2211546bd8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80' %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= bg_img %>')">
-      <%= gallery.name %>
+  <div class ='row'>
+    <div class = 'user-details'>
+       <h4><strong> <%= @user.username %><strong> </h4>
+       <p> <%= @user.description %> </p>
     </div>
-<% end %>
+  </div>
+  <div class = 'row'>
+    <% @galleries.each do |gallery| %>
+      <% photo = gallery.photos.first %>
+      <% bg_img = photo&.photo&.attached? ? cl_image_path(photo.photo.key) : 'https://images.unsplash.com/photo-1528203455795-d2211546bd8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80' %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= bg_img %>')">
+        <%= gallery.name %>
+      </div>
+    <% end %>
+  </div>
 </div>

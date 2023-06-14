@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :events
   has_many :bookings
   validates :username, presence: true, uniqueness: true
-
+  has_one_attached :photo
   include PgSearch::Model
   multisearchable against: [:email],
   using: {

@@ -1,10 +1,27 @@
 .card-product {
-  overflow: hidden;
   height: 120px;
-  background: $light-gray;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+}
+
+#galleryDropdown {
+  width: 750px;
+  margin-top: 50px;
+}
+.dropdown-item-styling {
+  height: 200px;
+  width: 600px;
+}
+.user-details {
+  margin-top: 80px;
+}
+
+.user-details p {
+    font-size: 22px;
+    line-height: 1.4;
+    opacity: .9;
+    margin-top: 8px;
 }
 
 .card-product img {
@@ -13,19 +30,22 @@
   border-radius: 50%;
   object-fit: cover;
   margin-left: 10px;
+  position: absolute;
+  height: 120px;
+  margin-top: 120px;
 }
 
 .card-product h2 {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
   margin: 0;
 }
 
 .card-product p {
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.4;
   opacity: .9;
-  margin-bottom: 0;
+
   margin-top: 8px;
 }
 
@@ -53,6 +73,14 @@
   grid-gap: 16px;
 }
 
+#btn {
+  border-radius: 100px;
+}
+
+.dropdown-menu {
+  width: 300px !important;
+  height: 400px !important;
+}
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
