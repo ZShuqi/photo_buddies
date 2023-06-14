@@ -1,3 +1,25 @@
 .btn btn-outline-dark {
+}
 
+.main-button {
+  color: $grey-background;
+  background-color: $red-title;
+  font-weight: 900;
+  border: none;
+  border-radius: 5px;
+  width: 150px;
+  box-shadow: 1px 2px 3px $darkgrey;
+  padding: 5px 15px;
+}
+
+.main-button:hover {
+  color: $red-title;
+  background-color: $grey-background;
+  transition: all 0.3s;
+}
+
+.main-button:active {
+  box-shadow: none;
+  color: $red-title;
+  background-color: $red-title;
 }
