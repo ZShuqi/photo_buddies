@@ -1,28 +1,31 @@
 <div class="container">
-  <div class="row justify-content-center">
-  <div class="col-sm-8 my-3">
-    <%= form_with url: search_path, method: :get, class: "d-flex flex-column" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "search-form",
-            placeholder: "Hi #{current_user.username.capitalize}, what are we looking for?"
-        %>
+  <div class="search-banner">
+    <div class="row justify-content-center">
+      <div class="col-sm-8 my-3">
+        <%= form_with url: search_path, method: :get, class: "d-flex flex-column" do %>
+          <%= text_field_tag :query,
+                params[:query],
+                class: "search-form",
+                placeholder: "Hi #{current_user.username.capitalize}, what are we looking for?"
+            %>
 
-      <div class="search-categories">
-        <h6>Browse through </h4>
-        <div class="tag-item">
-          <input type="checkbox" name="users" value="display" id="users" class="tag-selector">
-          <label for="users">People</label>
-        </div>
+          <div class="search-categories">
+            <h6>Browse through </h4>
+            <div class="tag-item">
+              <input type="checkbox" name="users" value="display" id="users" class="tag-selector">
+              <label for="users">People</label>
+            </div>
 
-        <div class="tag-item">
-          <input type="checkbox" name="photos" value="display" id="photos" class="tag-selector">
-          <label for="photos">Art</label>
-        </div>
+            <div class="tag-item">
+              <input type="checkbox" name="photos" value="display" id="photos" class="tag-selector">
+              <label for="photos">Art</label>
+            </div>
+          </div>
+
+          <%= submit_tag "Discover", name: "Discover", class: "main-button" %>
+        <% end %>
       </div>
-
-      <%= submit_tag "Discover", name: "Discover", class: "main-button" %>
-    <% end %>
+    </div>
   </div>
 
   <% @users.each do |u| %>
