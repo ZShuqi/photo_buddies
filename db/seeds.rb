@@ -99,11 +99,53 @@ photo16.photo.attach(io: file16, filename: "nes.png", content_type: "image/png")
 photo16.save
 
 puts "Creating events..."
+
+# event images
+@event_forest_img1 = URI.open("https://www.newforestnpa.gov.uk/app/uploads/2018/02/Heathland-by-Nick-Lucas-1920x720.jpg")
+@event_forest_img2 = URI.open("https://www.newforestnpa.gov.uk/app/uploads/2017/10/geology-2-1920x720.jpg")
+@event_forest_img3 = URI.open("https://www.newforestnpa.gov.uk/app/uploads/2018/02/homepage-1920x720.jpg")
+@event_architecture_img1 = URI.open("https://static.trip101.com/paragraph_media/pictures/002/644/817/large/1200px-DZ_Bank_building_in_Berlin___interior.jpg?1661247580")
+@event_architecture_img2 = URI.open("https://thelandscapephotoguy.com/wp-content/uploads/2020/02/berlin-biker-1024x576.jpg")
+@event_architecture_img3 = URI.open("https://thelandscapephotoguy.com/wp-content/uploads/2020/02/berlin-biker-1024x576.jpg")
+@event_portrait_img1 = URI.open("https://images.unsplash.com/photo-1506863530036-1efeddceb993?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8cG9ydHJhaXR8fHx8fHwxNjg2NzM5OTQ0&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080")
+@event_portrait_img2 = URI.open("https://source.unsplash.com/random/?portrait")
+@event_portrait_img3 = URI.open("https://source.unsplash.com/random/?portrait")
+@event_night_img1 = URI.open("https://images.unsplash.com/photo-1498036882173-b41c28a8ba34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bmlnaHR8fHx8fHwxNjg2NzQwMTAx&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080")
+@event_night_img2 = URI.open("https://images.unsplash.com/photo-1519681393784-d120267933ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bmlnaHR8fHx8fHwxNjg2NzQwMTYz&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080")
+@event_night_img3 = URI.open("https://images.unsplash.com/photo-1504493408076-2017927bbb1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bmlnaHR8fHx8fHwxNjg2NzQwMjE0&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080")
+
+
 # events
 event1 = Event.create!(title: "Photo shoot!", address: "Paris", date: '01/01/2024', description: "A great description of the event", user_id: user1.id)
 event2 = Event.create!(title: "Lake sunset", address: "London", date: '12/12/2023', description: "A great description of the event", user_id: user2.id)
 event3 = Event.create!(title: "Mountain shoot", address: "Roma", date: '07/07/2023', description: "A great description of the event", user_id: user3.id)
 event4 = Event.create!(title: "Urban vibe", address: "New York", date: '10/10/2023', description: "A great description of the event", user_id: user4.id)
+
+# attach images to events
+event1.images.attach(io: @event_forest_img1, filename: "event_forest_img1.jpg", content_type: "image/jpg")
+event1.save
+event1.images.attach(io: @event_forest_img2, filename: "event_forest_img2.jpg", content_type: "image/jpg")
+event1.save
+event1.images.attach(io: @event_forest_img3, filename: "event_forest_img3.jpg", content_type: "image/jpg")
+event1.save
+event2.images.attach(io: @event_architecture_img1, filename: "event_architecture_img1.jpg", content_type: "image/jpg")
+event2.save
+event2.images.attach(io: @event_architecture_img2, filename: "event_architecture_img2.jpg", content_type: "image/jpg")
+event2.save
+event2.images.attach(io: @event_architecture_img3, filename: "event_architecture_img3.jpg", content_type: "image/jpg")
+event2.save
+event3.images.attach(io: @event_portrait_img1, filename: "event_portrait_img1.jpg", content_type: "image/jpg")
+event3.save
+event3.images.attach(io: @event_portrait_img2, filename: "event_portrait_img2.jpg", content_type: "image/jpg")
+event3.save
+event3.images.attach(io: @event_portrait_img3, filename: "event_portrait_img3.jpg", content_type: "image/jpg")
+event3.save
+event4.images.attach(io: @event_night_img1, filename: "event_night_img1.jpg", content_type: "image/jpg")
+event4.save
+event4.images.attach(io: @event_night_img2, filename: "event_night_img2.jpg", content_type: "image/jpg")
+event4.save
+event4.images.attach(io: @event_night_img3, filename: "event_night_img3.jpg", content_type: "image/jpg")
+event4.save
 
 puts "Creating bookings..."
 # bookings
