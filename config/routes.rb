@@ -12,4 +12,8 @@ Rails.application.routes.draw do
     resources :bookings, only: [:index, :create, :update]
     resources :community
   end
+
+  resources :galleries do
+    resources :photos, only: [:show]
+  end
 end
