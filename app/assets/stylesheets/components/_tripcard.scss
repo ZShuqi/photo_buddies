@@ -3,6 +3,7 @@
   background: $whitegrey;
   box-shadow: 0 0 15px grey;
   transition: all 0.3s;
+
 }
 
 .card:hover h5, .card:hover p {
@@ -61,11 +62,11 @@
 .card-trip {
   overflow: hidden;
   margin: 30px;
-  background: $grey-background;
+  background: #E08E6D;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card-trip > img {
+.card-trip > a > img {
   height: 125px;
   width: 100%;
   object-fit: cover;
@@ -100,4 +101,22 @@
   right: 16px;
   top: -50px;
   width: 70px;
+}
+
+.photo-result-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
+@media (min-width: 100px) and (max-width: 768px) {
+  .photo-result-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .photo-result-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

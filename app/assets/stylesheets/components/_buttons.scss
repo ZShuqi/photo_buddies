@@ -1,6 +1,3 @@
-.btn btn-outline-dark {
-}
-
 .main-button {
   color: $grey-background;
   background-color: $red-title;
@@ -42,4 +39,16 @@
   opacity: .8;
   color: white;
   text-decoration: none;
+}
+
+.back-button a {
+  text-decoration: none;
+  color: $chocolate;
+  font-weight: bolder;
+  text-align: center;
+  margin: 15px;
+}
+
+.back-button a:hover {
+  color: $red-title;
 }
