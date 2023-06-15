@@ -30,36 +30,6 @@ gallery6 = Gallery.create!(user_id: user3.id, name: "Urban")
 gallery7 = Gallery.create!(user_id: user4.id, name: "Landscapes")
 gallery8 = Gallery.create!(user_id: user4.id, name: "Urban")
 
-puts "Creating Carousel..."
-# carousel
-@carousel1 = URI.open("https://images.unsplash.com/photo-1616706713305-bfb55c48fe9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80")
-@carousel2 = URI.open("https://www.photography-in.berlin/wp-content/uploads/2016/03/BSP-Street-Art-Tour-01.jpg")
-@carousel3 = URI.open("https://streetberlin.net/wp-content/uploads/2018/06/martin-waltz-street-photography-berlin-2012487.jpg")
-@carousel4 = URI.open("https://static.trip101.com/paragraph_media/pictures/002/644/817/large/1200px-DZ_Bank_building_in_Berlin___interior.jpg?1661247580")
-@carousel5 = URI.open("https://thelandscapephotoguy.com/wp-content/uploads/2020/02/berlin-biker-1024x576.jpg")
-@carousel6 = URI.open("https://streetberlin.net/wp-content/uploads/2018/09/flash-street-photography-Martin-U-Waltz5.jpg")
-
-
-# attach images to events
-# event1.images.attach(io: @event_forest_img1, filename: "event_forest_img1.jpg", content_type: "image/jpg")
-# event1.save
-# event1.images.attach(io: @event_forest_img2, filename: "event_forest_img2.jpg", content_type: "image/jpg")
-# event1.save
-# event1.images.attach(io: @event_forest_img3, filename: "event_forest_img3.jpg", content_type: "image/jpg")
-# event1.save
-# event2.images.attach(io: @event_architecture_img1, filename: "event_architecture_img1.jpg", content_type: "image/jpg")
-# event2.save
-# event2.images.attach(io: @event_architecture_img2, filename: "event_architecture_img2.jpg", content_type: "image/jpg")
-# event2.save
-# event2.images.attach(io: @event_architecture_img3, filename: "event_architecture_img3.jpg", content_type: "image/jpg")
-# event2.save
-# event3.images.attach(io: @event_portrait_img1, filename: "event_portrait_img1.jpg", content_type: "image/jpg")
-# event3.save
-# event3.images.attach(io: @event_portrait_img2, filename: "event_portrait_img2.jpg", content_type: "image/jpg")
-# event3.save
-# event3.images.attach(io: @event_portrait_img3, filename: "event_portrait_img3.jpg", content_type: "image/jpg")
-# event3.save
-#######
 puts "Creating photos..."
 # photos
 file1 = URI.open("https://source.unsplash.com/random/?city")

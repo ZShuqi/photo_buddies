@@ -3,6 +3,7 @@
   background: $whitegrey;
   box-shadow: 0 0 15px grey;
   transition: all 0.3s;
+
 }
 
 .card:hover h5, .card:hover p {
@@ -62,7 +63,7 @@
 .card-trip {
   overflow: hidden;
   margin: 30px;
-  background: $grey-background;
+  background: #E08E6D;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
