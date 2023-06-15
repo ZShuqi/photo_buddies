@@ -11,14 +11,28 @@
     </div>
   </div>
   <div class = 'row'>
-    <% @galleries.each do |gallery| %>
+    <div class="dropdown d-flex justify-content-center">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="galleryDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Galleries
+    </button>
+    <div class="dropdown-menu">
+    <% @galleries.each_with_index do |gallery, index| %>
       <% photo = gallery.photos.first %>
       <% bg_img = photo&.photo&.attached? ? cl_image_path(photo.photo.key) : 'https://images.unsplash.com/photo-1528203455795-d2211546bd8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80' %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= bg_img %>')">
+      <a class="dropdown-item dropdown-item-styling" href="#" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= bg_img %>')">
         <%= gallery.name %>
-      </div>
+      </a>
+      <% break if index == 1 %>
     <% end %>
+    </div>
   </div>
+  <div class = 'row mt-4'>
+    <div class="dropdown d-flex justify-content-center">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="galleryDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Events
+    </button>
+    <div class="dropdown-menu">
+
 </div>
 
 <%# following to display only pictures from the user %>
