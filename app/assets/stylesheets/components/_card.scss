@@ -11,9 +11,9 @@
 }
 
 .card:active {
-  background-color: $darkgrey;
-  border: 3px solid $lightgrey;
-  box-shadow: none;
+  //background-color: $darkgrey;
+  //border: 3px solid $lightgrey;
+  box-shadow: 0 0 5px grey;
 }
 
 .card > img {

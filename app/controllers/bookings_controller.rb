@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
     set_event
+    @bookings = policy_scope(Booking)
     @bookings = Booking.where(event_id: @event)
   end
 
@@ -9,8 +10,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.event = @event
     @booking.user = current_user
-    @booking.status = 'pending'
-    # @duration = @booking.end_date - @booking.start_date
     if @booking.save
       redirect_to event_bookings_path(@event)
     else
@@ -25,6 +24,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :details)
+    params.require(:booking).permit(:user_id, :event_id)
   end
 end
