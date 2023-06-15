@@ -14,7 +14,7 @@ puts "."
 
 puts "Creating users..."
 # users
-user1 = User.create!(email: "ayub@gmail.com", password: "123456", username: 'ayub', description: "🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
+user1 = User.create!(email: "ayub@gmail.com", password: "123456", username: 'ayub',  description: "🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
 user2 = User.create!(email: "elisa@gmail.com", password: "123456", username: 'elisa', description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
 user3 = User.create!(email: "shuqi@gmail.com", password: "123456", username: 'shuqi', description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
 user4 = User.create!(email: "lucile@gmail.com", password: "123456", username: 'lucile', description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")

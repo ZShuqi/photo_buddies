@@ -20,6 +20,7 @@ class PagesController < ApplicationController
     @user = User.find(params[:id])
     @galleries = Gallery.all
     @my_galleries = Gallery.where(user_id: params[:id])
+    @events = Event.all
   end
 
   def search
