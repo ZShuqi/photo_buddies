@@ -1,0 +1,78 @@
+<%# ** don't remove! %>
+<% gal_user = User.find(@gallery.user_id) %>
+<% ph_id_arr = [] %>
+<% @gallery.photos.each do |ph| %>
+  <% ph_id_arr << ph.id %>
+<% end %>
+
+<% curr_ph_index = ph_id_arr.index(@photo.id) %>
+<% next_index = curr_ph_index + 1 %>
+<% next_id = ph_id_arr.at(next_index) %>
+<% previous_index = curr_ph_index - 1 %>
+<% previous_id = ph_id_arr.at(previous_index) %>
+
+<%# don't remove! ** %>
+
+This gallery has <%= ph_id_arr.length %> photos
+  <br>
+
+<%= link_to "/pages/#{@gallery.user_id}" do %>
+<i class="fa-solid fa-chevron-left"></i>
+Back to profile
+<% end %>
+
+<div>
+<% if @photo == @gallery.photos.last %>
+  <%= link_to gallery_photo_path(@gallery.id, previous_id) do %>
+  <i class="fa-solid fa-chevron-left"></i>
+  Previous pic in <%= @gallery.name %>
+  <% end %>
+
+<br>
+<% elsif @photo == @gallery.photos.first %>
+  <%= link_to gallery_photo_path(@gallery.id, next_id) do %>
+    Next pic in <%= @gallery.name %>
+  <i class="fa-solid fa-chevron-right"></i>
+
+  <% end %>
+<% elsif ph_id_arr.length == 1 %>
+  Only this photo
+<% else %>
+    <%= link_to gallery_photo_path(@gallery.id, previous_id) do %>
+  <i class="fa-solid fa-chevron-left"></i>
+  Previous pic in <%= @gallery.name %>
+  <% end %>
+  <%= link_to gallery_photo_path(@gallery.id, next_id) do %>
+    Next pic in <%= @gallery.name %>
+  <i class="fa-solid fa-chevron-right"></i>
+
+  <% end %>
+<% end %>
+
+</div>
+
+<%= cl_image_tag @photo.photo.key, height: 100, width: 100 %>
+<%=  %>
+
+<ul>
+  <li>
+  Address: <%= @photo.address %>
+  <br>
+  Likes: <%= @photo.likes %>
+  <br>
+  Gallery:
+  "<%= @gallery.name %>" by <%= gal_user.username.capitalize %>
+  </li>
+  <li>
+  Comments: <% coms = @photo.comments %>
+  <% coms.each do |com| %>
+    <% commentor = User.find(com.user_id) %>
+    <%= cl_image_tag commentor.photo.key, height: 50, width: 50 %>
+    <%= commentor.username.capitalize %>
+    <%= com.content %>
+    <%= com.created_at.strftime("Posted on %A, %d %b %Y %l:%M %p") %>
+  <% end %>
+  </li>
+</ul>
+
+<%# cover extreme cases for comment existence %>
