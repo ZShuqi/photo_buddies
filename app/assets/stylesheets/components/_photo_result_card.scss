@@ -1,0 +1,37 @@
+.photo-result {
+  position: relative;
+}
+
+.photo-result .likes, .photo-result .comments {
+  position: absolute;
+  color: white;
+  text-shadow: 3px 3px 3px $darkgrey;
+  right: 50px;
+  margin-bottom: 0;
+}
+
+.photo-result .likes {
+  top: 20px;
+}
+
+.photo-result .comments {
+  bottom: 20px;
+}
+
+.photo-result-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
+@media (min-width: 100px) and (max-width: 768px) {
+  .photo-result-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .photo-result-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

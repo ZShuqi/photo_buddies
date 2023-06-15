@@ -86,7 +86,6 @@
   margin-top: 12px;
 }
 
-
 .card-trip .card-trip-infos {
   background-color: whitesmoke;
   padding: 10px;
@@ -101,22 +100,4 @@
   right: 16px;
   top: -50px;
   width: 70px;
-}
-
-.photo-result-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 16px;
-}
-
-@media (min-width: 100px) and (max-width: 768px) {
-  .photo-result-cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (min-width: 768px) {
-  .photo-result-cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 }

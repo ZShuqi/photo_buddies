@@ -57,3 +57,24 @@
     <%= @message %>
   <% end %>
 </div>
+
+
+<div class="col pt-1" data-controller="fake-dropdown">
+
+
+<button class="main-button"
+        data-action="click->fake-dropdown#disable"
+        data-fake-dropdown-target="closed"><i class="fa-solid fa-chevron-right"></i>
+</button>
+
+<button class="main-button d-none ms-2"
+        data-fake-dropdown-target="open"
+        data-action="click->fake-dropdown#reset"><i class="fa-solid fa-chevron-down"></i>
+</button>
+<div class="d-none"
+     data-fake-dropdown-target="card">
+  <%= render 'shared/user_card', user: current_user %>
+</div>
+
+
+</div>

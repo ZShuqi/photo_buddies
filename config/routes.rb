@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'communities/show'
+  # get 'communities/show'
   devise_for :users
   root to: "pages#home"
 
