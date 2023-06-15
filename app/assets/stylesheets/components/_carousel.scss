@@ -2,17 +2,17 @@
 }
 
 .carousel-inner {
-
+height: 600px;
 
 }
 
 .carousel-item > img {
   width: 100%;
-  height:360px;
+  //height:10%;
   object-fit: cover;
 }
 
 #carouselExampleIndicators {
-  width: 80%;
-  height: 360px;
+//width: 80%;
+ //height: 360px;
 }

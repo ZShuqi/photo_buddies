@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :events, only: [:index, :show] do
     resources :bookings, only: [:index, :create, :update]
+    resources :community
   end
 
   resources :galleries do
