@@ -1,0 +1,31 @@
+.photo-box {
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // justify-content: center;
+}
+
+.photo-box img {
+  padding: 50px;
+}
+
+.photo-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.photo-box .photo-data {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.photo-navigation i {
+  text-decoration: none;
+  color: white;
+  font-size: 3em;
+  padding: 0 30px;
+}

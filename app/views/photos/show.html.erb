@@ -1,0 +1,75 @@
+<%# ** don't remove! %>
+<% gal_user = User.find(@gallery.user_id) %>
+<% ph_id_arr = [] %>
+<% @gallery.photos.each do |ph| %>
+  <% ph_id_arr << ph.id %>
+<% end %>
+
+<% curr_ph_index = ph_id_arr.index(@photo.id) %>
+<% next_index = curr_ph_index + 1 %>
+<% next_id = ph_id_arr.at(next_index) %>
+<% previous_index = curr_ph_index - 1 %>
+<% previous_id = ph_id_arr.at(previous_index) %>
+
+<%# don't remove! ** %>
+
+
+<h2>Browse through the <%= ph_id_arr.length %> photos in <%= @gallery.name %></h2>
+
+<div class="back-button">
+  <%= link_to "/pages/#{@gallery.user_id}" do %>
+  <i class="fa-solid fa-chevron-left"></i>
+   By <%= gal_user.username.capitalize %>
+  <% end %>
+</div>
+
+
+<div class="container">
+  <div class="photo-box">
+    <%= cl_image_tag @photo.photo.key, height: 600, crop: :fill %>
+    <div class="photo-details">
+      <div class="photo-data">
+        <p><i class="fa-solid fa-location-dot px-4"></i><%= @photo.address %></p>
+        <p><%= @photo.likes %> <i class="fa-regular fa-heart"></i></p>
+      </div>
+      <div class="photo-navigation">
+        <% if @photo == @gallery.photos.last %>
+          <%= link_to gallery_photo_path(@gallery.id, previous_id) do %>
+            <i class="fa-solid fa-chevron-left"></i>
+          <% end %>
+        <% elsif @photo == @gallery.photos.first %>
+          <%= link_to gallery_photo_path(@gallery.id, next_id) do %>
+            <i class="fa-solid fa-chevron-right"></i>
+          <% end %>
+        <% elsif ph_id_arr.length == 1 %>
+          This is the only photo.
+        <% else %>
+          <%= link_to gallery_photo_path(@gallery.id, previous_id) do %>
+            <i class="fa-solid fa-chevron-left"></i>
+          <% end %>
+          <%= link_to gallery_photo_path(@gallery.id, next_id) do %>
+            <i class="fa-solid fa-chevron-right"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# for record for "like" action implementation %>
+<%# <div class="container"> %>
+  <%# <p><i class="fa-regular fa-heart"></i><i class="fa-solid fa-heart"></i> </p> %>
+<%# </div> %>
+
+
+<% coms = @photo.comments %>
+<% if coms.try(:any?) %>
+  <% coms.each do |com| %>
+    <div class="comment-cards">
+      <% commentor = User.find(com.user_id) %>
+      <%= render "shared/comment_card", commentor: commentor, com: com %>
+    </div>
+  <% end %>
+<% else %>
+  <p>Be the first to leave a comment on this piece of art!/p>
+<% end %>
