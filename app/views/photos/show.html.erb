@@ -13,66 +13,70 @@
 
 <%# don't remove! ** %>
 
-This gallery has <%= ph_id_arr.length %> photos
-  <br>
 
-<%= link_to "/pages/#{@gallery.user_id}" do %>
-<i class="fa-solid fa-chevron-left"></i>
-Back to profile
-<% end %>
+<h2>Browse through the <%= ph_id_arr.length %> photos in <%= @gallery.name %></h2>
 
-<div>
-<% if @photo == @gallery.photos.last %>
-  <%= link_to gallery_photo_path(@gallery.id, previous_id) do %>
+<div class="back-button">
+  <%= link_to "/pages/#{@gallery.user_id}" do %>
   <i class="fa-solid fa-chevron-left"></i>
-  Previous pic in <%= @gallery.name %>
+  <%= gal_user.username.capitalize %>
   <% end %>
-
-<br>
-<% elsif @photo == @gallery.photos.first %>
-  <%= link_to gallery_photo_path(@gallery.id, next_id) do %>
-    Next pic in <%= @gallery.name %>
-  <i class="fa-solid fa-chevron-right"></i>
-
-  <% end %>
-<% elsif ph_id_arr.length == 1 %>
-  Only this photo
-<% else %>
-    <%= link_to gallery_photo_path(@gallery.id, previous_id) do %>
-  <i class="fa-solid fa-chevron-left"></i>
-  Previous pic in <%= @gallery.name %>
-  <% end %>
-  <%= link_to gallery_photo_path(@gallery.id, next_id) do %>
-    Next pic in <%= @gallery.name %>
-  <i class="fa-solid fa-chevron-right"></i>
-
-  <% end %>
-<% end %>
-
 </div>
 
-<%= cl_image_tag @photo.photo.key, height: 100, width: 100 %>
-<%=  %>
 
-<ul>
-  <li>
-  Address: <%= @photo.address %>
-  <br>
-  Likes: <%= @photo.likes %>
-  <br>
-  Gallery:
-  "<%= @gallery.name %>" by <%= gal_user.username.capitalize %>
-  </li>
-  <li>
-  Comments: <% coms = @photo.comments %>
+<div class="container">
+  <div class="photo-box">
+    <%= cl_image_tag @photo.photo.key, height: 600, crop: :fill %>
+    <div class="photo-details">
+      <div class="photo-data">
+        <p><i class="fa-solid fa-location-dot px-4"></i><%= @photo.address %></p>
+        <p><%= @photo.likes %> <i class="fa-regular fa-heart"></i></p>
+      </div>
+      <div class="photo-navigation">
+        <% if @photo == @gallery.photos.last %>
+          <%= link_to gallery_photo_path(@gallery.id, previous_id) do %>
+            <i class="fa-solid fa-chevron-left"></i>
+          <% end %>
+        <% elsif @photo == @gallery.photos.first %>
+          <%= link_to gallery_photo_path(@gallery.id, next_id) do %>
+            <i class="fa-solid fa-chevron-right"></i>
+          <% end %>
+        <% elsif ph_id_arr.length == 1 %>
+          This is the only photo.
+        <% else %>
+          <%= link_to gallery_photo_path(@gallery.id, previous_id) do %>
+            <i class="fa-solid fa-chevron-left"></i>
+          <% end %>
+          <%= link_to gallery_photo_path(@gallery.id, next_id) do %>
+            <i class="fa-solid fa-chevron-right"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%# <div class="container"> %>
+
+
+
+
+
+  <%# <p><i class="fa-regular fa-heart"></i><i class="fa-solid fa-heart"></i> </p> %>
+
+
+<%# </div> %>
+
+
+<% coms = @photo.comments %>
+<% if coms.try(:any?) %>
   <% coms.each do |com| %>
-    <% commentor = User.find(com.user_id) %>
-    <%= cl_image_tag commentor.photo.key, height: 50, width: 50 %>
-    <%= commentor.username.capitalize %>
-    <%= com.content %>
-    <%= com.created_at.strftime("Posted on %A, %d %b %Y %l:%M %p") %>
+    <div class="comment-cards">
+      <% commentor = User.find(com.user_id) %>
+      <%= render "shared/comment_card", commentor: commentor, com: com %>
+    </div>
   <% end %>
-  </li>
-</ul>
-
-<%# cover extreme cases for comment existence %>
+<% else %>
+  <p>Be the first to leave a comment on this piece of art!/p>
+<% end %>

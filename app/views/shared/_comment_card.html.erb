@@ -1,0 +1,11 @@
+<div class="card-comment">
+  <div class="user-avatar"><%= cl_image_tag commentor.photo.key, height: 50, width: 50, radius: 25, crop: :fill %></div>
+    <div class="card-comment-infos">
+      <div class=card-comment-infos-top>
+        <h2><%= commentor.username.capitalize %></h2>
+        <h3><%= com.created_at.strftime("Posted on %A, %d %b %Y %l:%M %p") %></h3>
+      </div>
+      <p><%= com.content %></p>
+    </div>
+  </div>
+</div>
