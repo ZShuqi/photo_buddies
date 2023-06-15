@@ -1,0 +1,19 @@
+.photo-result {
+  position: relative;
+}
+
+.photo-result .likes, .photo-result .comments {
+  position: absolute;
+  color: white;
+  text-shadow: 3px 3px 3px $darkgrey;
+  right: 50px;
+  margin-bottom: 0;
+}
+
+.photo-result .likes {
+  top: 20px;
+}
+
+.photo-result .comments {
+  bottom: 20px;
+}

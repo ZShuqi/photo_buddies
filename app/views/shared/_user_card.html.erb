@@ -4,7 +4,7 @@
     <h2><%= user.username.capitalize %></h2>
     <p><%= user.description %></p>
   </div>
-  <%= link_to '#' do %>
+  <%= link_to "/pages/#{user.id}" do %>
     <i class="fa-solid fa-chevron-right"></i>
   <% end %>
 </div>

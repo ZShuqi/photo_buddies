@@ -11,7 +11,7 @@
               %>
 
             <div class="search-categories">
-              <h6>Browse through </h4>
+              <h6>Browse through </h6>
               <div class="tag-item">
                 <input type="checkbox" name="users" value="display" id="users" class="tag-selector">
                 <label for="users">People</label>
@@ -32,17 +32,16 @@
 
 </div>
 
-<div class="container">
+<div class="container mb-5">
+
   <% if @results.try(:any?) %>
   <% if @photo_results.try(:any?) %>
-    <% @photo_results.each do |res| %>
-      <ul>
-        <li>
-          <% @photo = Photo.find(res.searchable_id) %>
-          <%= cl_image_tag @photo.photo.key, height: 300, width: 400, crop: :fill %>
-        </li>
-      </ul>
-    <% end %>
+    <div class="photo-result-cards">
+      <% @photo_results.each do |res| %>
+        <% @photo = Photo.find(res.searchable_id) %>
+        <%= render 'shared/photo_result_card', photo: @photo %>
+      <% end %>
+    </div>
   <% end %>
 
   <% if @user_results.try(:any?) %>
