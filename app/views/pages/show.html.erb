@@ -1,7 +1,7 @@
 <div class='container'>
   <div class = 'row'>
     <div class="card-product" style="background-image: url('https://images.unsplash.com/photo-1686595092928-0252b92e007e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80')">
-     <%= cl_image_tag @user.photo.key%>
+     <%= cl_image_tag @user.photo.key %>
     </div>
   </div>
   <div class ='row'>
@@ -11,20 +11,45 @@
     </div>
   </div>
   <div class = 'row'>
-    <% @galleries.each do |gallery| %>
+    <div class="dropdown d-flex justify-content-center">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="galleryDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Galleries
+    </button>
+    <div class="dropdown-menu">
+    <% @galleries.each_with_index do |gallery, index| %>
       <% photo = gallery.photos.first %>
       <% bg_img = photo&.photo&.attached? ? cl_image_path(photo.photo.key) : 'https://images.unsplash.com/photo-1528203455795-d2211546bd8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80' %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= bg_img %>')">
+      <a class="dropdown-item dropdown-item-styling" href="#" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= bg_img %>')">
         <%= gallery.name %>
-      </div>
+      </a>
+      <% break if index == 1 %>
     <% end %>
+    </div>
   </div>
+  <div class = 'row mt-4'>
+    <div class="dropdown d-flex justify-content-center">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="galleryDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Events
+    </button>
+    <div class="dropdown-menu">
+
 </div>
 
+<%# following to display only pictures from the user %>
+<%# <% @my_galleries.each do |g| %>
+  <%# <% my_pics = g.photo_ids %>
+    <%# <% my_pics.each do |pic| %>
+    <%# <% p = Photo.find(pic) %>
+    <%# <%= cl_image_tag p.photo.key, height: 300, width: 400, crop: :fill %>
+    <%# <% end %>
+<%# <% end %>
 
+<%# following to display only pictures from the user as galleries %>
+<%# for now only one is moving because the carousel pages id are the same. to change, follow: %>
+<%# https://stackoverflow.com/questions/10521257/is-it-possible-to-have-multiple-twitter-bootstrap-carousels-on-one-page %>
 <% @my_galleries.each do |g| %>
   <% my_pics = g.photo_ids %>
-    <% my_pics.each do |pic| %>
-    <%= cl_image_tag pic.photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
+  <%# <div class= "carousel slide m-3 d-flex justify-content-center"> %>
+    <%= render 'shared/gallery_carousel', my_pics: my_pics %>
+  <%# </div> %>
 <% end %>

@@ -3,13 +3,18 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
   has_many :galleries
   has_many :photos, through: :galleries
   has_many :comments
   has_many :events
   has_many :bookings
+  belongs_to :community
+
   validates :username, presence: true, uniqueness: true
+
   has_one_attached :photo
+
   include PgSearch::Model
   multisearchable against: [:username],
   using: {
