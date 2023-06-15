@@ -1,0 +1,23 @@
+<div class="mb-5">
+  <% if @bookings.any?%>
+    <% @bookings.each do |booking| %>
+      <div class="card m-4 p-4">
+        <h5 class="card-title"><%= @event.title %></h5>
+        <div class="d-flex justify-content-left">
+          <p><i class="fa-regular fa-file-lines"></i> <%= @event.description %></p>
+          &emsp;<p><i class="fa-solid fa-location-dot"></i> <%= @event.address %></p>
+          &emsp;<p><i class="fa-regular fa-clock"></i> <%= @event.date.to_time.strftime('%e %b %Y %H:%M') %></p>
+
+          &emsp;<p>Organizer: <%= User.find(@event.user_id).username %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <li class="list-unstyled m-3 p-4 fs-3 text-center"><h2> You have no bookings  <i class="fa-solid fa-face-sad-cry"></i></h2>
+  <% end %>
+
+  <div class="m-4">
+    <%= link_to "Back", event_path(@event), class: "back-btn" %>
+  </div>
+</div>
