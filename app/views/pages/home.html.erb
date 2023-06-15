@@ -1,10 +1,5 @@
 
-<%# **test %>
-<% if user_signed_in? %>
-  <% current_community = Community.find(current_user.community_id) %>
-  <p>Welcome to <strong><%= current_community.name %></strong>!</p>
-<% end %>
-<%# test** %>
+
 
 <div class= "banner"> <%= render "shared/banner" %> </div>
 <div class= "carousel slide"> <%= render "shared/carousel" %> </div>

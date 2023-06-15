@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   # resources :pages, only: [:show]
   get '/search', to: 'pages#search', as: 'search'
+  get '/profile', to: 'pages#profile', as: 'profile'
+
   resources :pages do
     get '/pages/:id', to: 'pages#show'
   end

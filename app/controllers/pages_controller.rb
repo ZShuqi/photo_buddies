@@ -12,6 +12,12 @@ class PagesController < ApplicationController
     @events = Event.all
   end
 
+  def profile
+    @user = current_user
+    @my_galleries = Gallery.where(user_id: current_user.id)
+    @events = Event.all
+  end
+
   def search
     @users = User.all
     if params[:query].present?
