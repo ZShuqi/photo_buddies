@@ -28,3 +28,29 @@
   color: #D23333;
 
 }
+
+
+//
+
+.footer-pb {
+  justify-content: flex-end;
+  background-color: $grey-background;
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.697);
+}
+
+.list-social {
+  position: relative;
+}
+
+.list-social i {
+  color: $chocolate;
+  transition: all 0.3s;
+}
+
+.list-social i:hover {
+  color: white;
+}

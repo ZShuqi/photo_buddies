@@ -1,7 +1,7 @@
 <div class='container'>
   <div class = 'row'>
     <div class="card-product" style="background-image: url('https://images.unsplash.com/photo-1686595092928-0252b92e007e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80')">
-     <%= cl_image_tag @user.photo.key%>
+     <%= cl_image_tag @user.photo.key %>
     </div>
   </div>
   <div class ='row'>
@@ -34,3 +34,22 @@
     <div class="dropdown-menu">
 
 </div>
+
+<%# following to display only pictures from the user %>
+<%# <% @my_galleries.each do |g| %>
+  <%# <% my_pics = g.photo_ids %>
+    <%# <% my_pics.each do |pic| %>
+    <%# <% p = Photo.find(pic) %>
+    <%# <%= cl_image_tag p.photo.key, height: 300, width: 400, crop: :fill %>
+    <%# <% end %>
+<%# <% end %>
+
+<%# following to display only pictures from the user as galleries %>
+<%# for now only one is moving because the carousel pages id are the same. to change, follow: %>
+<%# https://stackoverflow.com/questions/10521257/is-it-possible-to-have-multiple-twitter-bootstrap-carousels-on-one-page %>
+<% @my_galleries.each do |g| %>
+  <% my_pics = g.photo_ids %>
+  <%# <div class= "carousel slide m-3 d-flex justify-content-center"> %>
+    <%= render 'shared/gallery_carousel', my_pics: my_pics %>
+  <%# </div> %>
+<% end %>

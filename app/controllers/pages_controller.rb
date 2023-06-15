@@ -8,17 +8,6 @@ class PagesController < ApplicationController
   def show
     @user = User.find(params[:id])
     @galleries = Gallery.all
-  end
-  def search
-    if params[:query].present?
-      @results = PgSearch.multisearch(params[:query])
-      # raise
-    end
-  end
-
-  def show
-    @user = User.find(params[:id])
-    @galleries = Gallery.all
     @my_galleries = Gallery.where(user_id: params[:id])
     @events = Event.all
   end
