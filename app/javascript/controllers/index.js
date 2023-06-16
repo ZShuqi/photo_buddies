@@ -12,3 +12,6 @@ application.register("fake-dropdown", FakeDropdownController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import NavbarActiveTabController from "./navbar_active_tab_controller"
+application.register("navbar-active-tab", NavbarActiveTabController)

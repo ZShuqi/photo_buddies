@@ -15,16 +15,16 @@
 //   width: 5px;
 // }
 
-.navbar-lewagon p {
-  font-size: medium;
+.navbar-lewagon h2 {
+  font-size: large;
   font-weight: 600;
   color: $chocolate;
-  padding: 0;
+  padding: 10px;
 }
 
 .navbar i {
   color: $chocolate;
-  font-size: xx-large;
+  font-size: large;
   padding: 0;
 }
 
@@ -33,7 +33,16 @@
   margin: 0;
 }
 
-.navbar-brand:active {
+.navbar-tab.active {
   color: white;
   border-bottom: 5px solid white;
+
+  h2, i {
+    color: white;
+  }
+}
+
+#navbar-tabs {
+  display: flex;
+  // justify-content: space-around;
 }
