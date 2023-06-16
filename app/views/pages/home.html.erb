@@ -3,10 +3,10 @@
 
 <div class= "banner"> <%= render "shared/banner" %> </div>
 <div class= "carousel slide"> <%= render "shared/carousel" %> </div>
-<%# <div class= "card-trip"> <%= render "shared/tripcard", events: @events %> </div> %>
+<%# <div class= "card-trip"> <%= render "shared/tripcard", events: @events %> </div>
 
 <div class="container p-3 mb-3">
-    <h4><strong>My Events</strong></h4>
+    <h4><strong>Photo events in </strong> <span class="berlin2"> Berlin </span> </h4>
     <div class="grid">
       <% @events.reverse.each do |event| %>
         <%= link_to event_path(event), class: "nav-link" do %>
