@@ -3,7 +3,7 @@
   background-color: $red-title;
   font-weight: 900;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   width: 150px;
   box-shadow: 1px 2px 3px $darkgrey;
   padding: 5px 15px;
@@ -54,6 +54,12 @@
 
 .back-button a:hover {
   color: $red-title;
+}
+
+.main-button2 {
+margin-right: 11%;
+border-radius: 10%;
+background-color: seagreen;
 }
 
 #add-event-btn {
