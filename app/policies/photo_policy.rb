@@ -4,9 +4,13 @@ class PhotoPolicy < ApplicationPolicy
     # def resolve
     #   scope.all
     # end
+  end
 
-    def show?
-      true
-    end
+  def show?
+    true
+  end
+
+  def destroy?
+    record.gallery.user == user
   end
 end
