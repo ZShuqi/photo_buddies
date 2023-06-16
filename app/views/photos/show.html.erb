@@ -24,39 +24,44 @@
 
 <div class="container">
   <div class="photo-box">
+    <div class="photo-navigation">
+        <% if @photo == @gallery.photos.last %>
+          <%= link_to gallery_photo_path(@gallery.id, previous_id) do %>
+            <i class="fa-solid fa-chevron-left"></i>
+          <% end %>
+          <p><%= ph_id_arr.length - 1 %> more photos in this gallery</p>
+        <% elsif @photo == @gallery.photos.first %>
+          <%= link_to gallery_photo_path(@gallery.id, next_id) do %>
+            <i class="fa-solid fa-chevron-right"></i>
+          <% end %>
+          <p><%= ph_id_arr.length - 1 %> more photos in this gallery</p>
+        <% elsif ph_id_arr.length == 1 %>
+          <p>This is the only photo.</p>
+        <% else %>
+        <div class="d-flex">
+          <%= link_to gallery_photo_path(@gallery.id, previous_id) do %>
+            <i class="fa-solid fa-chevron-left"></i>
+          <% end %>
+          <%= link_to gallery_photo_path(@gallery.id, next_id) do %>
+            <i class="fa-solid fa-chevron-right"></i>
+          <% end %>
+            <p><%= ph_id_arr.length - 1 %> more photos in this gallery</p>
+        </div>
+        <% end %>
+      </div>
     <%= cl_image_tag @photo.photo.key, height: 600, crop: :fill %>
     <div class="photo-details">
       <div class="photo-data">
         <p><i class="fa-solid fa-location-dot px-4"></i><%= @photo.address %></p>
         <p><%= @photo.likes %> <i class="fa-regular fa-heart"></i></p>
       </div>
-      <div class="photo-navigation">
-        <% if @photo == @gallery.photos.last %>
-          <%= link_to gallery_photo_path(@gallery.id, previous_id) do %>
-            <i class="fa-solid fa-chevron-left"></i>
-          <% end %>
-            <p><%= ph_id_arr.length - 1 %> more photos in this gallery</p>
-        <% elsif @photo == @gallery.photos.first %>
-          <%= link_to gallery_photo_path(@gallery.id, next_id) do %>
-            <i class="fa-solid fa-chevron-right"></i>
-          <% end %>
-            <p><%= ph_id_arr.length - 1 %> more photos in this gallery</p>
-        <% elsif ph_id_arr.length == 1 %>
-          This is the only photo.
-        <% else %>
-          <%= link_to gallery_photo_path(@gallery.id, previous_id) do %>
-            <i class="fa-solid fa-chevron-left"></i>
-          <% end %>
-            <p><%= ph_id_arr.length - 1 %> more photos in this gallery</p>
-          <%= link_to gallery_photo_path(@gallery.id, next_id) do %>
-            <i class="fa-solid fa-chevron-right"></i>
-          <% end %>
-            <p><%= ph_id_arr.length - 1 %> more photos in this gallery</p>
-        <% end %>
-      </div>
+      <%= button_to("Delete", gallery_photo_path(@gallery, @photo), method: :delete, class: "main-button", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}) if policy(@photo).destroy? %>
+    <%# <i class="fa-solid fa-trash"></i> %>
     </div>
   </div>
 </div>
+
+
 
 <%# for record for "like" action implementation %>
 <%# <div class="container"> %>

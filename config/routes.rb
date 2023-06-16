@@ -12,12 +12,12 @@ Rails.application.routes.draw do
     get '/pages/:id', to: 'pages#show'
   end
 
-  resources :events, only: [:index, :show] do
+  resources :events, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:index, :create, :update]
   end
 
   resources :galleries do
-    resources :photos, only: [:show]
+    resources :photos, only: [:show, :destroy]
   end
   # resources :communities, only: [:show]
 end
