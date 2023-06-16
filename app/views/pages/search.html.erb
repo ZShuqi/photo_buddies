@@ -32,10 +32,33 @@
 
 </div>
 
+<div class="container mb-5">
+  <% if @results.try(:any?) %>
+  <% if @photo_results.try(:any?) %>
+    <div class="photo-result-cards">
+      <% @photo_results.each do |res| %>
+        <% @photo = Photo.find(res.searchable_id) %>
+        <%= render 'shared/photo_result_card', photo: @photo %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if @user_results.try(:any?) %>
+    <div class="user-cards">
+      <% @user_results.each do |res| %>
+        <% @user = User.find(res.searchable_id)  %>
+        <%= render 'shared/user_card', user: @user %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% else %>
+    <%= @message %>
+  <% end %>
+</div>
 
 
-
-<div class="col pt-1" data-controller="fake-dropdown">
+<%# <div class="col pt-1" data-controller="fake-dropdown">
 
 
   <button class="main-button"
@@ -49,30 +72,7 @@
 
   <div class="d-none"
       data-fake-dropdown-target="card">
-    <div class="container mb-5">
-      <% if @results.try(:any?) %>
-      <% if @photo_results.try(:any?) %>
-        <div class="photo-result-cards">
-          <% @photo_results.each do |res| %>
-            <% @photo = Photo.find(res.searchable_id) %>
-            <%= render 'shared/photo_result_card', photo: @photo %>
-          <% end %>
-        </div>
-      <% end %>
-
-      <% if @user_results.try(:any?) %>
-        <div class="user-cards">
-          <% @user_results.each do |res| %>
-            <% @user = User.find(res.searchable_id)  %>
-            <%= render 'shared/user_card', user: @user %>
-          <% end %>
-        </div>
-      <% end %>
-
-      <% else %>
-        <%= @message %>
-      <% end %>
-    </div>
-</div>
 
 </div>
+
+</div> %>
