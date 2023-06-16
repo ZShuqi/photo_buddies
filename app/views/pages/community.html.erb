@@ -10,7 +10,7 @@
           <div class="card-trip-infos">
             <div class="d-flex flex-column align-items-center">
                 <%= cl_image_tag member.photo.key, height: 100, width: 100, radius: "max", crop: :fill, style: "border-radius: 50%; border: solid 4px;" %>
-                    <%= member.username %>
+                    <%= member.username.capitalize %>
             </div>
           </div>
         </div>
@@ -21,7 +21,11 @@
   <% @com_events.each do |event| %>
       <div class="card-trip">
       <%= link_to event_path(event) do %>
-        <%= cl_image_tag event.images.first.key %>
+        <% if event.images.try(:any?) %>
+          <%= cl_image_tag event.images.first.key %>
+        <% else %>
+          <%= cl_image_tag Photo.first.photo.key %>
+        <% end %>
       <% end %>
         <div class="card-trip-infos">
         <%= button_to "Join", event_path(event), class:"btn btn-outline-dark" %>
