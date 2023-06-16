@@ -19,4 +19,9 @@ Rails.application.routes.draw do
     resources :photos, only: [:show]
   end
   resources :communities, only: [:show]
+
+  resources :users, only: [] do
+      resources :galleries, only: [:new, :create]
+
+  end
 end
