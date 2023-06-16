@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # resources :pages, only: [:show]
   get '/search', to: 'pages#search', as: 'search'
   get '/profile', to: 'pages#profile', as: 'profile'
+  get '/community', to: 'pages#community', as: 'community'
 
   resources :pages do
     get '/pages/:id', to: 'pages#show'
@@ -18,5 +19,5 @@ Rails.application.routes.draw do
   resources :galleries do
     resources :photos, only: [:show]
   end
-  resources :communities, only: [:show]
+  # resources :communities, only: [:show]
 end

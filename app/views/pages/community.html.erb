@@ -1,0 +1,15 @@
+<h2>Welcome to <%= @community.name %>'s photo community!</h2>
+
+<h3>Users:</h3>
+<% @com_members.each do |member| %>
+  <%= member.username %>
+  <%= cl_image_tag member.photo.key, height: 40, width: 40, radius: 20, crop: :fill %>
+<% end %>
+
+<h3>Events:</h3>
+<%# change to event (tripcard) card display  :))) %>
+<ul>
+  <% @com_events.each do |event| %>
+    <li><%= event.title %></li>
+  <% end %>
+</ul>
