@@ -1,0 +1,38 @@
+<div class="main-container mx-5">
+<div class="banner_community">
+    <h2>Welcome to <span class="berlin"> <%= @community.name %></span>'s photo community!</h2>
+    <%# <img src= "/assets/logo1" class="logo"> %>
+</div>
+
+<div class="cards mb-3">
+      <% @com_members.each do |member| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?textures)">
+          <div class="card-trip-infos">
+            <div class="d-flex flex-column align-items-center">
+                <%= cl_image_tag member.photo.key, height: 100, width: 100, radius: "max", crop: :fill, style: "border-radius: 50%; border: solid 4px;" %>
+                    <%= member.username %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+</div>
+
+<div class="cards border-top pt-3">
+  <% @com_events.each do |event| %>
+      <div class="card-trip">
+      <%= link_to event_path(event) do %>
+        <%= cl_image_tag event.images.first.key %>
+      <% end %>
+        <div class="card-trip-infos">
+        <%= button_to "Join", event_path(event), class:"btn btn-outline-dark" %>
+          <div>
+            <h2><%= event.title %></h2>
+            <p> <%= event.description %></p>
+          </div>
+          <h2 class="card-trip-pricing">Photo buddies Berlin</h2>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        </div>
+      </div>
+<% end %>
+</div>
+</div>

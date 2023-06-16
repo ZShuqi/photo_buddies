@@ -1,24 +1,37 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon display">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon display"
+     data-controller="navbar-active-tab">
   <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <i class="fa-solid fa-house-chimney"></i>
-      <p>Home</p>
-    <% end %>
-
-    <%= link_to search_path, class: "navbar-brand" do %>
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <p>Discover</p>
-    <% end %>
-
-    <%= link_to "community_path", class: "navbar-brand" do %>
-      <i class="fa-solid fa-users"></i>
-      <p>Community</p>
-    <% end %>
-
-    <%= link_to profile_path, class: "navbar-brand" do %>
-      <i class="fa-solid fa-user"></i>
-      <p>Profile</p>
-    <% end %>
+    <div id="navbar-tabs" data-turbo-permanent>
+      <div class="navbar-tab"
+         data-action="click->navbar-active-tab#activateHome"
+         data-navbar-active-tab-target="home">
+        <%= link_to root_path, class: "navbar-brand" do %>
+          <%# <i class="fa-solid fa-house-chimney"></i> %>
+          <h2>Home</h2>
+        <% end %>
+      </div>
+      <div class="navbar-tab"
+          data-action="click->navbar-active-tab#activateSearch"
+          data-navbar-active-tab-target="search">
+        <%= link_to search_path, class: "navbar-brand" do %>
+          <h2><i class="fa-solid fa-magnifying-glass"></i>   Discover</h2>
+        <% end %>
+      </div>
+      <div class="navbar-tab"
+          data-action="click->navbar-active-tab#activateCommunity"
+          data-navbar-active-tab-target="community">
+        <%= link_to community_path, class: "navbar-brand" do %>
+          <h2><i class="fa-solid fa-users"></i>   Community</h2>
+        <% end %>
+      </div>
+      <div class="navbar-tab"
+          data-action="click->navbar-active-tab#activateProfile"
+          data-navbar-active-tab-target="profile">
+        <%= link_to profile_path, class: "navbar-brand" do %>
+          <h2><i class="fa-solid fa-user"></i>   My Profile</h2>
+        <% end %>
+      </div>
+    </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -29,11 +42,11 @@
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= cl_image_tag current_user.photo.key, height: 60, width: 60, class: "avatar", alt: "dropdown menu" %>
+            <%= cl_image_tag current_user.photo.key, class: "avatar", alt: "dropdown menu" %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My Profile", profile_path, class: "dropdown-item" %>
-              <%= link_to "My community", "#", class: "dropdown-item" %>
+              <%= link_to "My community", community_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
