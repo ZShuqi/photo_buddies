@@ -3,7 +3,7 @@
   <% events.each do |event| %>
       <div class="card-trip">
       <%= link_to event_path(event) do %>
-        <% if event.images.any? %>
+        <% if event.images.try(:any?) %>
           <%= cl_image_tag event.images.first.key %>
         <% else %>
           <%= cl_image_tag Photo.first.photo.key %>
