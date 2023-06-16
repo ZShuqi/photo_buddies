@@ -5,4 +5,8 @@ class EventPolicy < ApplicationPolicy
       scope.all # policy_scope(Event)
     end
   end
+
+  def create?
+    true
+  end
 end
