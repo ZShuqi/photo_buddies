@@ -1,5 +1,4 @@
 class PagesController < ApplicationController
-
   def home
     @events = Event.all
     @photos = Photo.all
@@ -51,5 +50,11 @@ class PagesController < ApplicationController
     else
       @message = "Run a search!"
     end
+  end
+
+  def community
+    @community = Community.find(current_user.community_id)
+    @com_members = User.where(community_id: @community)
+    @com_events = Event.where(user_id: @com_members)
   end
 end
