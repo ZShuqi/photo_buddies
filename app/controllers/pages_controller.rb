@@ -10,13 +10,14 @@ class PagesController < ApplicationController
     @galleries = Gallery.all
     @my_galleries = Gallery.where(user_id: params[:id])
     @events = Event.all
-    # need to add specific selector for events ~~~~~~
+    @my_events = Event.where(user_id: params[:id])
   end
 
   def profile
     @user = current_user
     @my_galleries = Gallery.where(user_id: current_user.id)
     @events = Event.all
+    @my_events = Event.where(user_id: current_user.id)
   end
 
   def search
