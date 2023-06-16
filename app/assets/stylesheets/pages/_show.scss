@@ -47,11 +47,16 @@
   margin-top: 80px;
 }
 
+.cen h5 {
+  color: $forest-title;
+}
+
 .user-details p {
     font-size: 22px;
     line-height: 1.4;
     opacity: .9;
     margin-top: 8px;
+    font-weight: bolder;
 }
 
 .card-product img {

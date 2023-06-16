@@ -6,3 +6,19 @@
   display: flex;
   justify-content: center;
 }
+.carousel-item img {
+width: 700px;
+height: 500px;
+object-fit: cover;
+}
+
+.below {
+  display: flex;
+  justify-content: center;
+  font-weight: bolder;
+  margin-top: 5px;
+}
+
+.cen {
+  justify-content: center;
+}
