@@ -44,7 +44,6 @@ class PagesController < ApplicationController
           result.searchable_type == "User"
         end
       end
-      # for now if no tag, all results. can also display nothing when no tag
 
       if params[:query].present? && @results.blank?
         @message = "Sorry, no results found."
@@ -52,6 +51,5 @@ class PagesController < ApplicationController
     else
       @message = "Run a search!"
     end
-    # raise
   end
 end

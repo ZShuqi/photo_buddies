@@ -14,8 +14,6 @@
 <%# don't remove! ** %>
 
 
-<h2>Browse through the <%= ph_id_arr.length %> photos in <%= @gallery.name %></h2>
-
 <div class="back-button">
   <%= link_to "/pages/#{@gallery.user_id}" do %>
   <i class="fa-solid fa-chevron-left"></i>
@@ -37,19 +35,23 @@
           <%= link_to gallery_photo_path(@gallery.id, previous_id) do %>
             <i class="fa-solid fa-chevron-left"></i>
           <% end %>
+            <p><%= ph_id_arr.length - 1 %> more photos in this gallery</p>
         <% elsif @photo == @gallery.photos.first %>
           <%= link_to gallery_photo_path(@gallery.id, next_id) do %>
             <i class="fa-solid fa-chevron-right"></i>
           <% end %>
+            <p><%= ph_id_arr.length - 1 %> more photos in this gallery</p>
         <% elsif ph_id_arr.length == 1 %>
           This is the only photo.
         <% else %>
           <%= link_to gallery_photo_path(@gallery.id, previous_id) do %>
             <i class="fa-solid fa-chevron-left"></i>
           <% end %>
+            <p><%= ph_id_arr.length - 1 %> more photos in this gallery</p>
           <%= link_to gallery_photo_path(@gallery.id, next_id) do %>
             <i class="fa-solid fa-chevron-right"></i>
           <% end %>
+            <p><%= ph_id_arr.length - 1 %> more photos in this gallery</p>
         <% end %>
       </div>
     </div>
@@ -71,5 +73,5 @@
     </div>
   <% end %>
 <% else %>
-  <p>Be the first to leave a comment on this piece of art!/p>
+  <p>Be the first to leave a comment on this piece of art!</p>
 <% end %>
