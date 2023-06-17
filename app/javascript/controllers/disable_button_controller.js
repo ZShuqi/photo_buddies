@@ -13,5 +13,11 @@ export default class extends Controller {
     this.registerTarget.setAttribute("disabled", "")
     this.linkTarget.setAttribute("disabled", "")
     this.linkTarget.classList.remove("d-none")
+
+    // fetch(this.registerTarget.action, {
+    //   method: "POST",
+    //   headers: { "Accept": "application/json" },
+    //   body: new
+    // })
   }
 }

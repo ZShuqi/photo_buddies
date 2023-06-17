@@ -21,24 +21,32 @@
   background-color: $red-title;
 }
 
-.back-btn {
-  transition-duration: 0.4s;
-  background-color: #4267B2;
-  border-radius: 4px;
-  font-weight: bold;
-  color: white;
+.main-btn {
+  color: $grey-background;
+  background-color: $red-title;
+  font-weight: 900;
   text-decoration: none;
-  width: 80px;
-  height: 40px;
-  padding: 5px 5px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 2px 3px $darkgrey;
+  padding: 5px 15px;
+  height: 60px;
+  padding: 5px 15px;
 }
 
-.back-btn:hover {
+.main-btn:hover {
+  color: $red-title;
+  background-color: $grey-background;
+  transition: all 0.3s;
+  font-weight: 900;
+  border: none;
+  border-radius: 5px;
   box-shadow: 1px 2px 3px $darkgrey;
-  top: -2px;
-  opacity: .8;
-  color: white;
+  padding: 5px 15px;
   text-decoration: none;
+  top: -2px;
+  height: 60px;
+  opacity: .7;
 }
 
 .back-button a {

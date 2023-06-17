@@ -10,11 +10,11 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.event = @event
     @booking.user = current_user
-    if @booking.save
-      redirect_to event_bookings_path(@event)
-    else
-      redirect_to event_path(@event), status: :unprocessable_entity
-    end
+    # if @booking.save
+    #   redirect_to event_bookings_path(@event)
+    # else
+    #   redirect_to event_path(@event), status: :unprocessable_entity
+    # end
   end
 
   private

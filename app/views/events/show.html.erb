@@ -37,6 +37,10 @@
               data-disable-button-target="register">
         Register!
       </button>
+      <%# <%= button_to '+',
+          {:controller => "data-disable-button", :action => "disable",
+            :event_id => @event.id, :user_id => @user.id},
+          :method=>:post  %>
       <%# confirm(message) %>
       <a href="./<%= @event.id %>/bookings" class="d-none main-btn ml-2" data-disable-button-target="link">See my bookings</a>
     <% end %>
