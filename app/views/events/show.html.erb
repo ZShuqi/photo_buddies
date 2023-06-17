@@ -28,17 +28,17 @@
     </div>
   </div>
 
-  <div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center" data-controller="disable-button">
     <% if current_user.id == @event.user_id %>
-      <%= link_to "See my bookings", event_bookings_path(@event), class: "btn btn-primary" %>
+      <%= link_to "See my bookings", event_bookings_path(@event), class: "main-btn" %>
     <% else %>
-      <button class="btn btn-primary"
-              data-controller="disable-button"
-              data-action="click->disable-button#disable">
+      <button class="main-btn"
+              data-action="click->disable-button#disable"
+              data-disable-button-target="register">
         Register!
       </button>
       <%# confirm(message) %>
-      <%= link_to "(After click)See my bookings", event_bookings_path(@event), class: "btn btn-primary ml-2 d-none" %>
+      <a href="./<%= @event.id %>/bookings" class="d-none main-btn ml-2" data-disable-button-target="link">See my bookings</a>
     <% end %>
   </div>
 </div>

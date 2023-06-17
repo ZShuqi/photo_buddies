@@ -6,8 +6,12 @@ export default class extends Controller {
     console.log("Hello world")
   }
 
+  static targets = ["register", "link"]
+
   disable() {
-    this.element.innerText = "Registered!"
-    this.element.setAttribute("disabled", "")
+    this.registerTarget.innerText = "Registered!"
+    this.registerTarget.setAttribute("disabled", "")
+    this.linkTarget.setAttribute("disabled", "")
+    this.linkTarget.classList.remove("d-none")
   }
 }
