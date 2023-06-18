@@ -2,11 +2,12 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="disable-button"
 export default class extends Controller {
+  static targets = ["register", "link"]
+
   connect() {
     console.log("Hello world")
+    // console.log(this.registerTarget)
   }
-
-  static targets = ["register", "link"]
 
   disable() {
     this.registerTarget.innerText = "Registered!"

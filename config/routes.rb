@@ -13,8 +13,9 @@ Rails.application.routes.draw do
   end
 
   resources :events, only: [:index, :show] do
-    resources :bookings, only: [:index, :create, :update]
+    resources :bookings, only: [:create, :update]
   end
+  resources :bookings, only: [:index, :destroy]
 
   resources :galleries do
     resources :photos, only: [:show]

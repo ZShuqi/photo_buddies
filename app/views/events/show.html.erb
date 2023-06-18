@@ -30,19 +30,18 @@
 
   <div class="d-flex justify-content-center" data-controller="disable-button">
     <% if current_user.id == @event.user_id %>
-      <%= link_to "See my bookings", event_bookings_path(@event), class: "main-btn" %>
+      <%= link_to "See my bookings", bookings_path, class: "main-btn" %>
     <% else %>
-      <button class="main-btn"
+      <%# ↓ works but can't create post request↓ %>
+      <%# <button class="main-btn"
               data-action="click->disable-button#disable"
               data-disable-button-target="register">
         Register!
-      </button>
-      <%# <%= button_to '+',
-          {:controller => "data-disable-button", :action => "disable",
-            :event_id => @event.id, :user_id => @user.id},
-          :method=>:post  %>
-      <%# confirm(message) %>
-      <a href="./<%= @event.id %>/bookings" class="d-none main-btn ml-2" data-disable-button-target="link">See my bookings</a>
+      </button> %>
+      <%= button_to "Register!", bookings_path, method: :post %>
+      <%# <a href="./<%= @event.id >/bookings" class="main-btn ml-2" data-disable-button-target="link">See my bookings</a> %>
+      <a href="../bookings" class="main-btn ml-2" data-disable-button-target="link">See my bookings</a>
+
     <% end %>
   </div>
 </div>
