@@ -38,7 +38,7 @@
               data-disable-button-target="register">
         Register!
       </button> %>
-      <%= button_to "Register!", bookings_path, method: :post %>
+      <%= button_to "Register!", event_bookings_path(@event), class: "main-btn", method: :post %>
       <%# <a href="./<%= @event.id >/bookings" class="main-btn ml-2" data-disable-button-target="link">See my bookings</a> %>
       <a href="../bookings" class="main-btn ml-2" data-disable-button-target="link">See my bookings</a>
 
