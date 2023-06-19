@@ -52,13 +52,21 @@
   grid-gap: 70px;
 }
 
-.cards border-top pt-5{
+.cards border-top pt-5 {
   grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
 
+.cards mb-1 {
+  grid-gap: 40px;
+
+}
 .card-trip {
   margin: 0px;
+}
+
+.card-trip-infos {
+  padding-top: 50px;
 }
 // .card-avatar {
 //   border-radius: 50%;

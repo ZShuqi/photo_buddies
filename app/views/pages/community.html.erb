@@ -7,11 +7,13 @@
 <div class="cards mb-3">
       <% @com_members.each do |member| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?textures)">
+        <% link_to "/pages/#{member.id}" do %>
           <div class="card-trip-infos">
             <div class="d-flex flex-column align-items-center">
-                <%= cl_image_tag member.photo.key, height: 100, width: 100, radius: "max", crop: :fill, style: "border-radius: 50%; border: solid 4px;" %>
+                <%= cl_image_tag member.photo.key, height: 100, width: 100, crop: :fill, style: "border-radius: 50%; border: solid 4px;" %>
                     <%= member.username %>
             </div>
+            <% end %>
           </div>
         </div>
         <% end %>
