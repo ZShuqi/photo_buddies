@@ -3,10 +3,10 @@
 
 <div class= "banner"> <%= render "shared/banner" %> </div>
 <div class= "carousel slide"> <%= render "shared/carousel" %> </div>
-<%# <div class= "card-trip"> <%= render "shared/tripcard", events: @events %> </div>
+<%# <div class= "card-trip"> <%= render "shared/tripcard", events: @events </div> %>
 
 <div class="container p-3 mb-3">
-    <h4 id="local_events"><strong>Photo events in </strong> <span class="berlin2"> Berlin </span> </h4>
+    <h4 id="local_events"><strong>Photo events in </strong> <span class="berlin2"> <%= current_user.community.name.capitalize %> </span> </h4>
     <div class="grid">
       <% @events.reverse.each do |event| %>
         <%= link_to event_path(event), class: "nav-link" do %>
@@ -47,14 +47,20 @@
     </div>
   </div>
 
-<div style="width: 80%; height: 400px; margin-bottom: 100px;"
+<div
+  id="hot-spot-map"
+  style="width: 80%; height: 400px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
-Add a hotspot to the map:
-<%= simple_form_for @hot_spot do |f| %>
-  <%= f.input :comment %>
-  <%= f.input :address %>
-  <%= f.input :photo, as: :file %>
-<% end %>
+<div id="new-hot-spot-form" class="mb-5">
+  Add a hotspot to the map:
+  <%= simple_form_for @hot_spot do |f| %>
+    <%= f.input :comment %>
+    <%= f.input :address %>
+    <%# autocomplete? %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+  <% end %>
+</div>

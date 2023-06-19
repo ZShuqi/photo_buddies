@@ -11,6 +11,8 @@ class PagesController < ApplicationController
         marker_html: render_to_string(partial: "marker")
       }
     end
+    @hot_spot = HotSpot.new
+    authorize @hot_spot
   end
 
   def show

@@ -16,11 +16,13 @@ Rails.application.routes.draw do
   resources :galleries do
     resources :photos, only: [:show, :destroy]
   end
+
   resources :communities, only: [:show]
+  resources :hot_spots, only: [:create]
 
   resources :users, only: [] do
-      resources :galleries, only: [:new, :create]
-
+    resources :galleries, only: [:new, :create]
   end
+
   # resources :communities, only: [:show]
 end
