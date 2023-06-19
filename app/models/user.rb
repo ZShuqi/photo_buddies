@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :hot_spots
   belongs_to :community
+  has_many :likes
 
   validates :username, presence: true, uniqueness: true
 

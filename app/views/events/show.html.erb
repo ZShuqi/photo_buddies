@@ -4,41 +4,55 @@
   <h5 class="mb-3 p-4 fs-3 text-center"><strong><%= @event.title %></strong></h5>
   <div class="container mb-5">
     <p class="text-center mb-5"><%= @event.description %></p>
-    <div class="rounded d-flex justify-content-around">
-        <div class="mx-3">
-          <p class="ml-1"><i class="fa-solid fa-location-dot px-4"></i>Location<br>&emsp;&emsp;&thinsp;<%= @event.address %></p>
-          <p class="ml-1"><i class="fa-regular fa-clock px-4"></i>Date<br>&emsp;&emsp;&thinsp;<%= @event.date.to_time.strftime('%e %b %Y %H:%M') %></p>
-        </div>
+    <div class="rounded d-flex justify-content-around" data-controller="disable-button">
+      <div class="mx-3">
+        <p class="ml-1"><i class="fa-solid fa-location-dot px-4"></i>Location<br>&emsp;&emsp;&thinsp;<%= @event.address %></p>
+        <p class="ml-1"><i class="fa-regular fa-clock px-4"></i>Date<br>&emsp;&emsp;&thinsp;<%= @event.date.to_time.strftime('%e %b %Y %H:%M') %></p>
+      </div>
 
-        <div>
-          <p>Event Organizer</p>
-          <%# <%= @event.user.username %>
-          <p><% @user = User.find(@event.user_id) %>
-            <%= @user.username.capitalize %>
-            <%= cl_image_tag @user.photo.key, height: 40, width: 40, radius: 20, crop: :fill %>
-            </p>
-          <p>Who is attending?</p>
+      <div>
+        <p>Event Organizer</p>
+        <%# <%= @event.user.username %>
+        <p><% @user = User.find(@event.user_id) %>
+          <%= @user.username.capitalize %>
+          <%= cl_image_tag @user.photo.key, height: 40, width: 40, radius: 20, crop: :fill %>
+          </p>
+        <p>Who is attending?</p>
+          <div data-disable-button-target="items">
             <% @event.bookings.each do |book| %>
-              <% participant = User.find(book.user_id) %>
-              <%= participant.username.capitalize %>
-              <%= cl_image_tag participant.photo.key, height: 40, width: 40, radius: 20, crop: :fill %>
+              <%= render "booking", book: book %>
+              <%# <% participant = User.find(book.user_id) %>
+              <%# <%= participant.username.capitalize %>
+              <%# <%= cl_image_tag participant.photo.key, height: 40, width: 40, radius: 20, crop: :fill %>
               <%# cloudinary note: need to convert to png to have a transparent background %>
             <% end %>
+          </div>
         </div>
     </div>
   </div>
 
   <div class="d-flex justify-content-center">
-    <% if current_user.id == @event.user_id %>
-      <%= link_to "See my bookings", event_bookings_path(@event), class: "btn btn-primary" %>
+    <% @flag = false %>
+    <% current_user.bookings.each do |booking| %>
+      <% if booking.event_id == @event.id %>
+        <% @flag = true %>
+      <% end %>
+    <% end %>
+
+    <% if current_user.id == @event.user_id || @flag %>
+
+      <%= button_tag 'Registered!', type: 'button', class: "disabled-btn" %>
+      <%# <%= button_to "Registered!", event_bookings_path(@event), class: "disabled-btn" %>
+      <%= link_to "See my bookings", bookings_path, class: "main-btn ml-2" %>
     <% else %>
-      <button class="btn btn-primary"
-              data-controller="disable-button"
-              data-action="click->disable-button#disable">
-        Register!
-      </button>
-      <%# confirm(message) %>
-      <%= link_to "(After click)See my bookings", event_bookings_path(@event), class: "btn btn-primary ml-2 d-none" %>
+      <%= simple_form_for([ @event, @booking ], data: {
+                          disable_button_target:"form",
+                          action: "submit->disable-button#send"
+                        }) do |f|%>
+        <%= f.button :submit, "Register!", class: "main-btn" %>
+      <% end %>
+      <%# <a href="./<%= @event.id >/bookings" class="main-btn ml-2" data-disable-button-target="link">See my bookings</a> %>
+      <a href="../bookings" class="main-btn ml-2" data-disable-button-target="link">See my bookings</a>
     <% end %>
   </div>
 </div>

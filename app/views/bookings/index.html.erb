@@ -2,13 +2,19 @@
   <% if @bookings.any?%>
     <% @bookings.each do |booking| %>
       <div class="card m-4 p-4">
-        <h5 class="card-title"><%= @event.title %></h5>
+        <h5 class="card-title"><%= booking.event.title %></h5>
         <div class="d-flex justify-content-left">
-          <p><i class="fa-regular fa-file-lines"></i> <%= @event.description %></p>
-          &emsp;<p><i class="fa-solid fa-location-dot"></i> <%= @event.address %></p>
-          &emsp;<p><i class="fa-regular fa-clock"></i> <%= @event.date.to_time.strftime('%e %b %Y %H:%M') %></p>
-
-          &emsp;<p>Organizer: <%= User.find(@event.user_id).username %>
+          <p><i class="fa-regular fa-file-lines"></i> <%= booking.event.description %></p>
+          &emsp;<p><i class="fa-solid fa-location-dot"></i> <%= booking.event.address %></p>
+          &emsp;<p><i class="fa-regular fa-clock"></i> <%= booking.event.date.to_time.strftime('%e %b %Y %H:%M') %></p>
+          &emsp;<p>Organizer: <%= User.find(booking.event.user_id).username %></p>
+          &emsp;<p></p>
+          <%# <%= button_to "Cancel", booking, method: :delete %>
+          <%= link_to "Cancel",
+            booking_path(booking),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+            class: "main-btn"
+          %>
           </p>
         </div>
       </div>
@@ -18,6 +24,6 @@
   <% end %>
 
   <div class="m-4">
-    <%= link_to "Back", event_path(@event), class: "back-btn" %>
+    <%= link_to "Back", root_path, class: "main-btn" %>
   </div>
 </div>
