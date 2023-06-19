@@ -853,13 +853,15 @@ spot4.save!
 puts "Creating likes..."
 # likes
 users = User.all
-USER_IDS = []
-users.each { |user| USER_IDS << user.id }
+user_ids = []
+users.each { |user| user_ids << user.id }
 photos = Photo.all
-PHOTO_IDS = []
-photos.each { |photo| PHOTO_IDS << photo.id }
-50.times do
-  Like.create!(user_id: USER_IDS.sample, photo_id: PHOTO_IDS.sample)
+
+photos.each do |photo|
+  n = rand(4..12)
+  n.times do
+    Like.create!(user_id: user_ids.sample, photo_id: photo.id)
+  end
 end
 
 puts "Seeding complete!"
