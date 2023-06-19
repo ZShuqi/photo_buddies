@@ -5,6 +5,7 @@ class EventsController < ApplicationController
 
   def show
     set_event
+    @booking = Booking.new
     authorize @event
   end
 

@@ -12,7 +12,17 @@ class BookingsController < ApplicationController
     @booking = Booking.new()
     @booking.event = @event
     @booking.user = current_user
-    @booking.save
+
+    respond_to do |format|
+      if @booking.save
+        format.html { redirect_to event_path(@event) }
+        format.json # Follow the classic Rails flow and look for a create.json view
+      else
+        format.html { render "events/show", status: :unprocessable_entity }
+        format.json # Follow the classic Rails flow and look for a create.json view
+      end
+    end
+    # @booking.save
     # if @booking.save
     #   redirect_to event_bookings_path(@event)
     # else

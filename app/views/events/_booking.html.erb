@@ -1,0 +1,3 @@
+<% participant = User.find(book.user_id) %>
+<%= participant.username.capitalize %>
+<%= cl_image_tag participant.photo.key, height: 40, width: 40, radius: 20, crop: :fill %>

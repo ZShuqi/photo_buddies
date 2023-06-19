@@ -34,6 +34,21 @@
   padding: 5px 15px;
 }
 
+.disabled-btn {
+  color: $red-title;
+  background-color: $grey-background;
+  font-weight: 900;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 2px 3px $darkgrey;
+  padding: 5px 15px;
+  height: 60px;
+  top: -2px;
+  height: 60px;
+  opacity: .7;
+}
+
 .main-btn:hover {
   color: $red-title;
   background-color: $grey-background;
