@@ -57,6 +57,7 @@
       </div>
       <%= button_to("Delete", gallery_photo_path(@gallery, @photo), method: :delete, class: "main-button", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}) if policy(@photo).destroy? %>
     <%# <i class="fa-solid fa-trash"></i> %>
+
     </div>
   </div>
 </div>
