@@ -24,6 +24,17 @@ class GalleriesController < ApplicationController
     end
   end
 
+  def destroy
+    @gallery = Gallery.find(params[:id])
+    authorize @gallery
+
+    if @gallery.destroy
+      redirect_to profile_path, notice: "Gallery deleted successfully."
+    else
+      redirect_to profile_path, alert: "Failed to delete gallery."
+    end
+  end
+
   private
 
   def gallery_params

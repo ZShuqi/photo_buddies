@@ -18,4 +18,8 @@ class GalleryPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def destroy?
+    true
+  end
 end
