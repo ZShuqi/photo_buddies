@@ -97,15 +97,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_19_085429) do
     t.index ["user_id"], name: "index_hot_spots_on_user_id"
   end
 
-  create_table "likes", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "photo_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["photo_id"], name: "index_likes_on_photo_id"
-    t.index ["user_id"], name: "index_likes_on_user_id"
-  end
-
   create_table "pg_search_documents", force: :cascade do |t|
     t.text "content"
     t.string "searchable_type"
@@ -118,6 +109,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_19_085429) do
   create_table "photos", force: :cascade do |t|
     t.string "address"
     t.string "keyword"
+    t.integer "likes", default: 0
     t.bigint "gallery_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -150,8 +142,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_19_085429) do
   add_foreign_key "events", "users"
   add_foreign_key "galleries", "users"
   add_foreign_key "hot_spots", "users"
-  add_foreign_key "likes", "photos"
-  add_foreign_key "likes", "users"
   add_foreign_key "photos", "galleries"
   add_foreign_key "users", "communities"
 end
