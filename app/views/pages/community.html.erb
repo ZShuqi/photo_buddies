@@ -4,39 +4,44 @@
     <%# <img src= "/assets/logo1" class="logo"> %>
 </div>
 
-<div class="cards mb-3">
+<div class="cards mb-3" style="grid-gap: 25px; padding-bottom: 60px;">
       <% @com_members.each do |member| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?textures)">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path member.banner_photo.key %>')">
+          <%= link_to user_path(member) do %>
           <div class="card-trip-infos">
             <div class="d-flex flex-column align-items-center">
-                <%= cl_image_tag member.photo.key, height: 100, width: 100, radius: "max", crop: :fill, style: "border-radius: 50%; border: solid 4px;" %>
-                    <%= member.username.capitalize %>
+                <%= cl_image_tag member.photo.key, height: 100, width: 100, crop: :fill, style: "border-radius: 50%; border: solid 4px;" %>
+                 <%= member.username.capitalize %>
             </div>
           </div>
+            <% end %>
         </div>
         <% end %>
 </div>
+ <h3 id="local_events"><strong>Photo events in </strong> <span class="berlin2"> Berlin </span> </h3>
+ <img scr="assets/photo.png">
 
-<div class="cards border-top pt-3">
+<div class="cards-body" style="width:800px; margin-inline: auto">
   <% @com_events.each do |event| %>
-      <div class="card-trip">
+      <div class="card-trip" style="margin:40px;">
       <%= link_to event_path(event) do %>
         <% if event.images.try(:any?) %>
           <%= cl_image_tag event.images.first.key %>
         <% else %>
           <%= cl_image_tag Photo.first.photo.key %>
         <% end %>
-      <% end %>
+        <% end %>
         <div class="card-trip-infos">
-        <%= button_to "Join", event_path(event), class:"btn btn-outline-dark" %>
-          <div>
+        <%#= button_to "Join", event_path(event), class:"btn btn-outline-dark" %>
             <h2><%= event.title %></h2>
             <p> <%= event.description %></p>
+
+            <h2 class="card-trip-pricing"> Berlin</h2>
+            <img src="http://res.cloudinary.com/daxdbkfkl/image/upload/v1/development/98gl6h0hhpx90lzledkmnvs772i5" class="card-trip-user avatar-bordered"/>
           </div>
-          <h2 class="card-trip-pricing">Photo buddies Berlin</h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        </div>
+          <% end %>
         </div>
       </div>
-<% end %>
-</div>
+    </div>
 </div>
