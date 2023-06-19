@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :comments
   has_many :events
   has_many :bookings
+  has_many :hot_spots
   belongs_to :community
   has_many :likes
 

@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import AddressAutocompleteController from "./address_autocomplete_controller"
+application.register("address-autocomplete", AddressAutocompleteController)
+
 import DisableButtonController from "./disable_button_controller"
 application.register("disable-button", DisableButtonController)
 
@@ -15,6 +18,9 @@ application.register("flatpickr", FlatpickrController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import MapController from "./map_controller"
+application.register("map", MapController)
 
 import NavbarActiveTabController from "./navbar_active_tab_controller"
 application.register("navbar-active-tab", NavbarActiveTabController)

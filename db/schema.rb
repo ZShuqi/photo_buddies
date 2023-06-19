@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_19_065647) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_19_133846) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -65,6 +65,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_19_065647) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
   end
 
   create_table "events", force: :cascade do |t|
@@ -84,6 +85,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_19_065647) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_galleries_on_user_id"
+  end
+
+  create_table "hot_spots", force: :cascade do |t|
+    t.string "address"
+    t.string "comment"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.index ["user_id"], name: "index_hot_spots_on_user_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -138,6 +150,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_19_065647) do
   add_foreign_key "comments", "users"
   add_foreign_key "events", "users"
   add_foreign_key "galleries", "users"
+  add_foreign_key "hot_spots", "users"
   add_foreign_key "likes", "photos"
   add_foreign_key "likes", "users"
   add_foreign_key "photos", "galleries"

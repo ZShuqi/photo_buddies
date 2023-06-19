@@ -3,11 +3,17 @@
 
 <div class= "banner"> <%= render "shared/banner" %> </div>
 <div class= "carousel slide"> <%= render "shared/carousel" %> </div>
-<%# <div class= "card-trip"> <%= render "shared/tripcard", events: @events %> </div>
+<%# <div class= "card-trip"> <%= render "shared/tripcard", events: @events </div> %>
 
 <div class="container p-3 mb-3">
-    <h4 id="local_events"><strong>Photo events in </strong> <span class="berlin2"> Berlin </span> </h4>
-
+    <h4 id="local_events"><strong>Photo events in </strong>
+    <span class="berlin2">
+     <% if user_signed_in? %>
+      <%= current_user.community.name.capitalize %>
+     <% else %>
+      your local community!
+     <% end %>
+     </span> </h4>
   <div class="cards-body" style="width:800px; margin-inline: auto">
   <% @events.reverse.each do |event| %>
       <div class="card-trip" style="margin:40px;">

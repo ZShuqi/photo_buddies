@@ -1,0 +1,6 @@
+<% if hot_spot.photo.try(:any?) %>
+  <%= cl_image_tag hot_spot.photo.key, height: 100, width: 100, crop: :fill %>
+<% end %>
+<p><%= hot_spot.comment %></p>
+<p><%= hot_spot.address %></p>
+<p>By: <%= hot_spot.user.username.capitalize %> <%= cl_image_tag hot_spot.user.photo.key, height: 20, width: 20, radius: 10, crop: :fill %></p>

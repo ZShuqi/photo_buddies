@@ -23,11 +23,13 @@ Rails.application.routes.draw do
       resources :likes, only: [:create]
     end
   end
+
   resources :communities, only: [:show]
+  resources :hot_spots, only: [:create]
 
-  resources :users, only: [:show] do
-    resources :galleries
+  # resources :users, only: [:show] do
+    # resources :galleries
+  # end
 
-  end
   # resources :communities, only: [:show]
 end

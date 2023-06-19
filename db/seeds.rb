@@ -13,13 +13,16 @@ Booking.delete_all
 puts "."
 Event.delete_all
 puts "."
+HotSpot.delete_all
+puts "."
 User.delete_all
 puts "."
 Community.delete_all
 puts "."
 
 puts "Creating community..."
-berlin = Community.create!(name: "Berlin")
+com_desc = "Berlin, the capital city of Germany, is renowned for its exceptional range of landmarks, vibrant cultural scene and way of life that's somehow all go yet relaxed. In fact, the city is best known for its striking contrasts. Historical buildings stand alongside modern architecture as the past and present intermingle. Our Berlin photography thrives in this exciting atmosphere!"
+berlin = Community.create!(name: "Berlin", description: com_desc)
 
 puts "Creating users..."
 # avatars
@@ -40,7 +43,7 @@ user1.banner_photo.attach(io: bannerphoto1, filename: "bannerphoto1.jpg", conten
 user1.save
 puts "."
 user2 = User.new(email: "elisa@gmail.com", password: "123456", username: 'elisa', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
-user2.photo.attach(io: avatar2, filename: "user2.jpg", content_type: "image/pgn")
+user2.photo.attach(io: avatar2, filename: "user2.jpg", content_type: "image/png")
 user2.banner_photo.attach(io: bannerphoto2, filename: "bannerphoto2.jpg", content_type: "image/png")
 user2.save
 puts "."
@@ -65,39 +68,56 @@ avatar10 = URI.open("https://images.unsplash.com/photo-1492633423870-43d1cd2775e
 avatar11 = URI.open("https://images.unsplash.com/photo-1504199367641-aba8151af406?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAzfHxzbWlsZXxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60")
 avatar12 = URI.open("https://images.unsplash.com/photo-1531123414780-f74242c2b052?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTExfHxzbWlsZXxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60")
 
+# copies of banners 1-4, can improve with more variety
+bannerphoto5 = URI.open("https://images.unsplash.com/photo-1546952396-57a6bb8895de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=388&q=80")
+bannerphoto6 = URI.open("https://images.unsplash.com/photo-1588568810409-3e0b4a872171?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80")
+bannerphoto7 = URI.open("https://images.unsplash.com/photo-1501898047706-55903296cd09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")
+bannerphoto8 = URI.open("https://images.unsplash.com/photo-1581268879726-e9066753b737?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")
+bannerphoto9 = URI.open("https://images.unsplash.com/photo-1546952396-57a6bb8895de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=388&q=80")
+bannerphoto10 = URI.open("https://images.unsplash.com/photo-1588568810409-3e0b4a872171?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80")
+bannerphoto11 = URI.open("https://images.unsplash.com/photo-1501898047706-55903296cd09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")
+bannerphoto12 = URI.open("https://images.unsplash.com/photo-1581268879726-e9066753b737?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")
+
 user5 = User.new(email: "maria@gmail.com", password: "123456", username: 'maria', community_id: berlin.id, description: "🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
 user5.photo.attach(io: avatar5, filename: "user5.jpg", content_type: "image/png")
+user5.banner_photo.attach(io: bannerphoto5, filename: "bannerphoto5.jpg", content_type: "image/png")
 user5.save
 puts "."
 user6 = User.new(email: "justine@gmail.com", password: "123456", username: 'justine', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
-user6.photo.attach(io: avatar6, filename: "user6.jpg", content_type: "image/pgn")
+user6.photo.attach(io: avatar6, filename: "user6.jpg", content_type: "image/png")
+user6.banner_photo.attach(io: bannerphoto6, filename: "bannerphoto6.jpg", content_type: "image/png")
 user6.save
 puts "."
 user7 = User.new(email: "yuri@gmail.com", password: "123456", username: 'Yuri', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
 user7.photo.attach(io: avatar7, filename: "user7.jpg", content_type: "image/png")
+user7.banner_photo.attach(io: bannerphoto7, filename: "bannerphoto7.jpg", content_type: "image/png")
 user7.save
 puts "."
 user8 = User.new(email: "rupert@gmail.com", password: "123456", username: 'rupert', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
 user8.photo.attach(io: avatar8, filename: "user8.jpg", content_type: "image/png")
+user8.banner_photo.attach(io: bannerphoto8, filename: "bannerphoto8.jpg", content_type: "image/png")
 user8.save
 puts "."
 user9 = User.new(email: "otto@gmail.com", password: "123456", username: 'otto', community_id: berlin.id, description: "🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
 user9.photo.attach(io: avatar9, filename: "user9.jpg", content_type: "image/png")
+user9.banner_photo.attach(io: bannerphoto9, filename: "bannerphoto9.jpg", content_type: "image/png")
 user9.save
 puts "."
 user10 = User.new(email: "sally@gmail.com", password: "123456", username: 'sally', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
-user10.photo.attach(io: avatar10, filename: "user10.jpg", content_type: "image/pgn")
+user10.photo.attach(io: avatar10, filename: "user10.jpg", content_type: "image/png")
+user10.banner_photo.attach(io: bannerphoto10, filename: "bannerphoto10.jpg", content_type: "image/png")
 user10.save
 puts "."
 user11 = User.new(email: "ronald@gmail.com", password: "123456", username: 'ronald', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
 user11.photo.attach(io: avatar11, filename: "user11.jpg", content_type: "image/png")
+user11.banner_photo.attach(io: bannerphoto11, filename: "bannerphoto11.jpg", content_type: "image/png")
 user11.save
 puts "."
 user12 = User.new(email: "ellie@gmail.com", password: "123456", username: 'ellie', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
 user12.photo.attach(io: avatar12, filename: "user12.jpg", content_type: "image/png")
+user12.banner_photo.attach(io: bannerphoto12, filename: "bannerphoto12.jpg", content_type: "image/png")
 user12.save
 puts "."
-
 
 puts "Creating galleries..."
 
@@ -480,16 +500,36 @@ Booking.create!(event_id: event3.id, user_id: user1.id)
 
 Booking.create!(event_id: event4.id, user_id: user1.id)
 
+puts "Creating hot spots...."
+# hot spots
+spot1_img = URI.open("https://images.unsplash.com/photo-1560969184-10fe8719e047?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmVybGlufGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
+spot2_img = URI.open("https://images.unsplash.com/photo-1496968594384-1736c036e4e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJlcmxpbnxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60")
+spot3_img = URI.open("https://images.unsplash.com/photo-1551354099-068f333a4e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGJlcmxpbnxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60")
+spot4_img = URI.open("https://images.unsplash.com/photo-1574439711512-a43a0fa9fabe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJlcmxpbiUyMG1hdWVycGFya3xlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60")
+
+spot1 = HotSpot.new(comment: "A classic in Berlin", address: "Pariser Platz, Berlin", user_id: 1)
+spot1.photo.attach(io: spot1_img, filename: "spot1.png", content_type: "image/png")
+spot1.save!
+spot2 = HotSpot.new(comment: "The metro lines are really great to shoot here", address: "Burgermeister, Skalitzer Str. 136, Berlin", user_id: 2)
+spot2.photo.attach(io: spot2_img, filename: "spot2.png", content_type: "image/png")
+spot2.save!
+spot3 = HotSpot.new(comment: "Yet another historical landmark", address: "Kreuzberg, Berlin", user_id: 3)
+spot3.photo.attach(io: spot3_img, filename: "spot3.png", content_type: "image/png")
+spot3.save!
+spot4 = HotSpot.new(comment: "Enjoy the social atmosphere at Mauer Park", address: "Mauerpark, Schwedter Str., Berlin", user_id: 4)
+spot4.photo.attach(io: spot4_img, filename: "spot4.png", content_type: "image/png")
+spot4.save!
+
 puts "Creating likes..."
 # likes
-  users = User.all
-  USER_IDS = []
-  users.each { |user| USER_IDS << user.id }
-  photos = Photo.all
-  PHOTO_IDS = []
-  photos.each { |photo| PHOTO_IDS << photo.id }
-  50.times do
-    Like.create!(user_id: USER_IDS.sample, photo_id: PHOTO_IDS.sample)
-  end
+users = User.all
+USER_IDS = []
+users.each { |user| USER_IDS << user.id }
+photos = Photo.all
+PHOTO_IDS = []
+photos.each { |photo| PHOTO_IDS << photo.id }
+50.times do
+  Like.create!(user_id: USER_IDS.sample, photo_id: PHOTO_IDS.sample)
+end
 
 puts "Seeding complete!"
