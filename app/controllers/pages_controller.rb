@@ -2,17 +2,6 @@ class PagesController < ApplicationController
   def home
     @events = Event.all
     @photos = Photo.all
-    @hot_spots = HotSpot.all
-    @markers = @hot_spots.geocoded.map do |hot_spot|
-      {
-        lat: hot_spot.latitude,
-        lng: hot_spot.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {hot_spot: hot_spot}),
-        marker_html: render_to_string(partial: "marker")
-      }
-    end
-    @hot_spot = HotSpot.new
-    authorize @hot_spot
   end
 
   def show
@@ -68,5 +57,17 @@ class PagesController < ApplicationController
     @community = Community.find(current_user.community_id)
     @com_members = User.where(community_id: @community)
     @com_events = Event.where(user_id: @com_members)
+
+    @com_hot_spots = HotSpot.where(user_id: @com_members)
+    @markers = @com_hot_spots.geocoded.map do |hot_spot|
+      {
+        lat: hot_spot.latitude,
+        lng: hot_spot.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {hot_spot: hot_spot}),
+        marker_html: render_to_string(partial: "marker")
+      }
+    end
+    @hot_spot = HotSpot.new
+    authorize @hot_spot
   end
 end

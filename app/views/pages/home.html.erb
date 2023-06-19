@@ -53,22 +53,3 @@
       <% end %>
     </div>
   </div>
-
-<div
-  id="hot-spot-map"
-  style="width: 80%; height: 400px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
-<div id="new-hot-spot-form" class="mb-5">
-  Add a hotspot to the map:
-  <%= simple_form_for @hot_spot do |f| %>
-    <%= f.input :comment %>
-    <%= f.input :address,
-      input_html: {data: {address_autocomplete_target: "address"}},
-      wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit %>
-  <% end %>
-</div>

@@ -42,3 +42,25 @@
 <% end %>
 </div>
 </div>
+
+<h2><%= @community.name %>'s best photo spots!</h2>
+<div class="hot-spot-part">
+  <div
+    id="hot-spot-map"
+    style="width: 50%; height: 400px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+  <div id="new-hot-spot-form" class="mb-5">
+    Add a hotspot to the map:
+    <%= simple_form_for @hot_spot, data: {turbo: false} do |f| %>
+      <%= f.input :comment %>
+      <%= f.input :address,
+        input_html: {data: {address_autocomplete_target: "address"}, class: "d-none" },
+        wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit "Share my spot!" %>
+    <% end %>
+  </div>
+</div>

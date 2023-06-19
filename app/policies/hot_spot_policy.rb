@@ -6,7 +6,7 @@ class HotSpotPolicy < ApplicationPolicy
     # end
   end
 
-  def home?
+  def community?
     true
   end
 

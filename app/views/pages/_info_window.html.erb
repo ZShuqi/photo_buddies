@@ -1,4 +1,4 @@
-<% if hot_spot.photo.key.try(:any?) %>
+<% if hot_spot.photo.try(:any?) %>
   <%= cl_image_tag hot_spot.photo.key, height: 100, width: 100, crop: :fill %>
 <% end %>
 <p><%= hot_spot.comment %></p>
