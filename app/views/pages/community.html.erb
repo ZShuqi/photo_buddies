@@ -6,7 +6,11 @@
 
 <div class="cards mb-3" style="grid-gap: 25px; padding-bottom: 60px;">
       <% @com_members.each do |member| %>
+      <% if member.banner_photo.key  %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path member.banner_photo.key %>')">
+      <% else %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://streetberlin.net/wp-content/uploads/2019/01/berlin-photography-street-photography-Martin-U-Waltz.jpg)">
+      <% end %>
           <%= link_to user_path(member) do %>
           <div class="card-trip-infos">
             <div class="d-flex flex-column align-items-center">
@@ -14,12 +18,11 @@
                  <%= member.username.capitalize %>
             </div>
           </div>
-            <% end %>
+              <% end %>
         </div>
-        <% end %>
+              <% end %>
 </div>
  <h3 id="local_events"><strong>Photo events in </strong> <span class="berlin2"> Berlin </span> </h3>
- <img scr="assets/photo.png">
 
 <div class="cards-body" style="width:800px; margin-inline: auto">
   <% @com_events.each do |event| %>
@@ -37,7 +40,7 @@
             <p> <%= event.description %></p>
 
             <h2 class="card-trip-pricing"> Berlin</h2>
-            <img src="http://res.cloudinary.com/daxdbkfkl/image/upload/v1/development/98gl6h0hhpx90lzledkmnvs772i5" class="card-trip-user avatar-bordered"/>
+             <%= cl_image_tag event.user.photo.key, class: "card-trip-user avatar-bordered"%>
           </div>
         </div>
           <% end %>

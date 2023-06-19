@@ -9,8 +9,6 @@ class UsersController < ApplicationController
     render "pages/profile"
   end
 
-
-
   def edit
     @user = current_user
     authorize @user
