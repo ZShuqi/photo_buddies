@@ -14,12 +14,12 @@ Rails.application.routes.draw do
   end
 
   resources :galleries do
-    resources :photos, only: [:show, :destroy]
+    resources :photos, only: [:show, :destroy, :update]
   end
   resources :communities, only: [:show]
 
   resources :users, only: [] do
-      resources :galleries, only: [:new, :create]
+    resources :galleries, only: [:new, :create]
 
   end
   # resources :communities, only: [:show]
