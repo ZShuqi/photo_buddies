@@ -27,9 +27,9 @@ Rails.application.routes.draw do
   resources :communities, only: [:show]
   resources :hot_spots, only: [:create]
 
-  # resources :users, only: [:show] do
-    # resources :galleries
-  # end
+  resources :users, only: [:show] do
+    resources :galleries
+  end
 
   # resources :communities, only: [:show]
 end
