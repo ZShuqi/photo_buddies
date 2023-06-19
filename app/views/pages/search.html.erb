@@ -7,7 +7,7 @@
             <%= text_field_tag :query,
                   params[:query],
                   class: "search-form",
-                  placeholder: "Hi #{current_user.username.capitalize}, what are we looking for?"
+                  placeholder: user_signed_in? ? "Hi #{current_user.username.capitalize}, what are we looking for?" : "Hi, what are we looking for?"
               %>
 
             <div class="search-categories">
@@ -34,26 +34,39 @@
 
 <div class="container mb-5">
   <% if @results.try(:any?) %>
-  <% if @photo_results.try(:any?) %>
-    <div class="photo-result-cards">
-      <% @photo_results.each do |res| %>
-        <% @photo = Photo.find(res.searchable_id) %>
-        <%= render 'shared/photo_result_card', photo: @photo %>
-      <% end %>
-    </div>
-  <% end %>
 
-  <% if @user_results.try(:any?) %>
-    <div class="user-cards">
-      <% @user_results.each do |res| %>
-        <% @user = User.find(res.searchable_id)  %>
-        <%= render 'shared/user_card', user: @user %>
-      <% end %>
-    </div>
-  <% end %>
+    <% if @photo_results.try(:any?) %>
+      <div class="photo-result-cards">
+        <% @photo_results.each do |res| %>
+          <% @photo = Photo.find(res.searchable_id) %>
+          <%= render 'shared/photo_result_card', photo: @photo %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <% if @user_results.try(:any?) %>
+      <div class="user-cards">
+        <% @user_results.each do |res| %>
+          <% @user = User.find(res.searchable_id)  %>
+          <%= render 'shared/user_card', user: @user %>
+        <% end %>
+      </div>
+    <% end %>
 
   <% else %>
     <%= @message %>
+    <div class="photo-result-cards">
+      <% @photo_results.each do |photo| %>
+        <%= render 'shared/photo_result_card', photo: photo %>
+      <% end %>
+      <% if user_signed_in? %>
+        <div class="user-cards">
+          <% @user_results.each do |user| %>
+            <%= render 'shared/user_card', user: user %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   <% end %>
 </div>
 
