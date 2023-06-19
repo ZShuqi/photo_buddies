@@ -1,0 +1,10 @@
+<div id="new-hot-spot-form" class="mb-5">
+  <%= simple_form_for hot_spot, defaults: { label_html: { class: 'fw-bold' }, input_html: { class: 'bg-secondary-subtle rounded-4' } }, data: {turbo: false} do |f| %>
+    <%= f.input :comment, label: false, input_html: { placeholder: "What is great about this place?" }  %>
+    <%= f.input :address, label: "Where is it?",
+      input_html: {data: {address_autocomplete_target: "address"}, class: "d-none" },
+      wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%>
+    <%= f.input :photo, as: :file, label: "Share photos of your spot!" %>
+    <%= f.submit "Share my spot!", class: "main-button" %>
+  <% end %>
+</div>
