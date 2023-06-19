@@ -10,10 +10,12 @@ class User < ApplicationRecord
   has_many :events
   has_many :bookings
   belongs_to :community
+  has_many :likes
 
   validates :username, presence: true, uniqueness: true
 
   has_one_attached :photo
+  has_one_attached :banner_photo
 
   include PgSearch::Model
   multisearchable against: [:username],

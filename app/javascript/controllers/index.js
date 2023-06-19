@@ -10,5 +10,11 @@ application.register("disable-button", DisableButtonController)
 import FakeDropdownController from "./fake_dropdown_controller"
 application.register("fake-dropdown", FakeDropdownController)
 
+import FlatpickrController from "./flatpickr_controller"
+application.register("flatpickr", FlatpickrController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import NavbarActiveTabController from "./navbar_active_tab_controller"
+application.register("navbar-active-tab", NavbarActiveTabController)

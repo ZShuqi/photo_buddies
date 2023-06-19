@@ -6,19 +6,20 @@
   </div>
   <div class ='row'>
     <div class = 'user-details'>
-       <h4><strong> <%= @user.username %><strong> </h4>
+       <h4><strong> <%= @user.username.capitalize %><strong> </h4>
        <p> <%= @user.description %> </p>
     </div>
   </div>
   <div class = 'row cen mt-5'>
       <h5 class = ' mb-5'><strong><%= @user.username%>'s gallery</strong></h5>
-      <% @my_galleries.each do |gallery| %>
-        <% photo = gallery.photos.first %>
-        <% bg_img = photo&.photo&.attached? ? cl_image_path(photo.photo.key) : 'https://images.unsplash.com/photo-1528203455795-d2211546bd8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80' %>
-        <a class="dropdown-item dropdown-item-styling" href="#" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= bg_img %>')">
-          <%= gallery.name %>
-        </a>
+      <% @my_galleries.each do |g| %>
+      <h5 class='below'><%= g.name %></h5>
+      <%= link_to gallery_photo_path(g, g) do %>
+      <div class="carousel slide m-3 d-flex justify-content-center caro-drop">
+        <%= render 'shared/gallery_carousel', my_pics: g %>
+      </div>
       <% end %>
+    <% end %>
     </div>
   </div>
   <div class="container cen p-3 mb-3">

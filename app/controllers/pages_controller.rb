@@ -17,6 +17,7 @@ class PagesController < ApplicationController
     @my_galleries = Gallery.where(user_id: current_user.id)
     @events = Event.all
     @my_events = Event.where(user_id: current_user.id)
+    @gallery = Gallery.new
   end
 
   def search
