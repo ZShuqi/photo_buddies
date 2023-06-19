@@ -3,6 +3,8 @@ require "open-uri"
 puts "Cleaning database..."
 Comment.delete_all
 puts "."
+Like.delete_all
+puts "."
 Photo.delete_all
 puts "."
 Gallery.delete_all
@@ -52,6 +54,51 @@ user4.photo.attach(io: avatar4, filename: "user4.jpg", content_type: "image/png"
 user4.banner_photo.attach(io: bannerphoto4, filename: "bannerphoto4.jpg", content_type: "image/png")
 user4.save
 puts "."
+
+# extra users
+avatar5 = URI.open("https://images.unsplash.com/photo-1599566219227-2efe0c9b7f5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c21pbGV8ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=500&q=60")
+avatar6 = URI.open("https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
+avatar7 = URI.open("https://images.unsplash.com/photo-1535295972055-1c762f4483e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
+avatar8 = URI.open("https://images.unsplash.com/photo-1548213238-0da7521bd6e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
+avatar9 = URI.open("https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
+avatar10 = URI.open("https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODd8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
+avatar11 = URI.open("https://images.unsplash.com/photo-1504199367641-aba8151af406?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAzfHxzbWlsZXxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60")
+avatar12 = URI.open("https://images.unsplash.com/photo-1531123414780-f74242c2b052?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTExfHxzbWlsZXxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60")
+
+user5 = User.new(email: "maria@gmail.com", password: "123456", username: 'maria', community_id: berlin.id, description: "🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
+user5.photo.attach(io: avatar5, filename: "user5.jpg", content_type: "image/png")
+user5.save
+puts "."
+user6 = User.new(email: "justine@gmail.com", password: "123456", username: 'justine', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
+user6.photo.attach(io: avatar6, filename: "user6.jpg", content_type: "image/pgn")
+user6.save
+puts "."
+user7 = User.new(email: "yuri@gmail.com", password: "123456", username: 'Yuri', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
+user7.photo.attach(io: avatar7, filename: "user7.jpg", content_type: "image/png")
+user7.save
+puts "."
+user8 = User.new(email: "rupert@gmail.com", password: "123456", username: 'rupert', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
+user8.photo.attach(io: avatar8, filename: "user8.jpg", content_type: "image/png")
+user8.save
+puts "."
+user9 = User.new(email: "otto@gmail.com", password: "123456", username: 'otto', community_id: berlin.id, description: "🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
+user9.photo.attach(io: avatar9, filename: "user9.jpg", content_type: "image/png")
+user9.save
+puts "."
+user10 = User.new(email: "sally@gmail.com", password: "123456", username: 'sally', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
+user10.photo.attach(io: avatar10, filename: "user10.jpg", content_type: "image/pgn")
+user10.save
+puts "."
+user11 = User.new(email: "ronald@gmail.com", password: "123456", username: 'ronald', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
+user11.photo.attach(io: avatar11, filename: "user11.jpg", content_type: "image/png")
+user11.save
+puts "."
+user12 = User.new(email: "ellie@gmail.com", password: "123456", username: 'ellie', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
+user12.photo.attach(io: avatar12, filename: "user12.jpg", content_type: "image/png")
+user12.save
+puts "."
+
+
 puts "Creating galleries..."
 
 
@@ -135,19 +182,19 @@ ph2 = URI.open("https://images.unsplash.com/photo-1453989799106-bbad8d7b5191?ixl
 ph3 = URI.open("https://images.unsplash.com/photo-1612150929345-8b3c73bb74f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dXJiYW4lMjBncmFmZml0aXxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=700&q=60")
 ph4 = URI.open("https://images.unsplash.com/photo-1555972694-13c981cd550c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dXJiYW4lMjBncmFmZml0aXxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=700&q=60")
 
-photo1 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", likes: 4, gallery_id: gallery1.id)
+photo1 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery1.id)
 photo1.photo.attach(io: ph1, filename: "nes.png", content_type: "image/png")
 photo1.save
 puts "."
-photo2 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", likes: 12, gallery_id: gallery1.id)
+photo2 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery1.id)
 photo2.photo.attach(io: ph2, filename: "nes.png", content_type: "image/png")
 photo2.save
 puts "."
-photo3 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", likes: 8, gallery_id: gallery1.id)
+photo3 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery1.id)
 photo3.photo.attach(io: ph3, filename: "nes.png", content_type: "image/png")
 photo3.save
 puts "."
-photo4 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", likes: 3, gallery_id: gallery1.id)
+photo4 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery1.id)
 photo4.photo.attach(io: ph4, filename: "nes.png", content_type: "image/png")
 photo4.save
 puts "."
@@ -157,19 +204,19 @@ ph6 = URI.open("https://images.unsplash.com/photo-1542202229-7d93c33f5d07?ixlib=
 ph7 = URI.open("https://images.unsplash.com/photo-1596237563267-84ffd99c80e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Zm9yZXN0fGVufDB8fDB8fHwy&auto=format&fit=crop&w=700&q=60")
 ph8 = URI.open("https://images.unsplash.com/photo-1516214104703-d870798883c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGZvcmVzdHxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=700&q=60")
 
-photo5 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", likes: 9, gallery_id: gallery2.id)
+photo5 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery2.id)
 photo5.photo.attach(io: ph5, filename: "nes.png", content_type: "image/png")
 photo5.save
 puts "."
-photo6 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", likes: 3, gallery_id: gallery2.id)
+photo6 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery2.id)
 photo6.photo.attach(io: ph6, filename: "nes.png", content_type: "image/png")
 photo6.save
 puts "."
-photo7 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", likes: 2, gallery_id: gallery2.id)
+photo7 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery2.id)
 photo7.photo.attach(io: ph7, filename: "nes.png", content_type: "image/png")
 photo7.save
 puts "."
-photo8 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", likes: 20, gallery_id: gallery2.id)
+photo8 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery2.id)
 photo8.photo.attach(io: ph8, filename: "nes.png", content_type: "image/png")
 photo8.save
 puts "."
@@ -179,19 +226,19 @@ ph10 = URI.open("https://images.unsplash.com/photo-1599575239832-9a211999a97a?ix
 ph11 = URI.open("https://images.unsplash.com/photo-1536092617418-62993979e6b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGxha2UlMjBmb3Jlc3R8ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=700&q=60")
 ph12 = URI.open("https://images.unsplash.com/photo-1534612723680-c1555b985788?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFrZSUyMGZvcmVzdCUyMHN1bnNldHxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=700&q=60")
 
-photo9 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", likes: 30, gallery_id: gallery3.id)
+photo9 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery3.id)
 photo9.photo.attach(io: ph9, filename: "nes.png", content_type: "image/png")
 photo9.save
 puts "."
-photo10 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", likes: 15, gallery_id: gallery3.id)
+photo10 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery3.id)
 photo10.photo.attach(io: ph10, filename: "nes.png", content_type: "image/png")
 photo10.save
 puts "."
-photo11 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", likes: 6, gallery_id: gallery3.id)
+photo11 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery3.id)
 photo11.photo.attach(io: ph11, filename: "nes.png", content_type: "image/png")
 photo11.save
 puts "."
-photo12 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", likes: 10, gallery_id: gallery3.id)
+photo12 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery3.id)
 photo12.photo.attach(io: ph12, filename: "nes.png", content_type: "image/png")
 photo12.save
 puts "."
@@ -201,19 +248,19 @@ ph14 = URI.open("https://images.unsplash.com/photo-1575248667635-8202792796e9?ix
 ph15 = URI.open("https://images.unsplash.com/photo-1657073901567-ae69a6ba4fcf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBlb3BsZSUyMGRlc2lnbiUyMGZhc2hpb24lMjBoYXBweXxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=700&q=60")
 ph16 = URI.open("https://images.unsplash.com/photo-1553845757-677a58d78127?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHBlb3BsZSUyMGRlc2lnbiUyMGZhc2hpb24lMjBoYXBweXxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=700&q=60n")
 
-photo13 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", likes: 20, gallery_id: gallery4.id)
+photo13 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", gallery_id: gallery4.id)
 photo13.photo.attach(io: ph13, filename: "nes.png", content_type: "image/png")
 photo13.save
 puts "."
-photo14 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", likes: 7, gallery_id: gallery4.id)
+photo14 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", gallery_id: gallery4.id)
 photo14.photo.attach(io: ph14, filename: "nes.png", content_type: "image/png")
 photo14.save
 puts "."
-photo15 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", likes: 6, gallery_id: gallery4.id)
+photo15 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", gallery_id: gallery4.id)
 photo15.photo.attach(io: ph15, filename: "nes.png", content_type: "image/png")
 photo15.save
 puts "."
-photo16 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", likes: 13, gallery_id: gallery4.id)
+photo16 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", gallery_id: gallery4.id)
 photo16.photo.attach(io: ph16, filename: "nes.png", content_type: "image/png")
 photo16.save
 puts "."
@@ -223,19 +270,19 @@ ph18 = URI.open("https://images.unsplash.com/photo-1522767458873-9e098ac1ec82?ix
 ph19 = URI.open("https://images.unsplash.com/photo-1527646736858-63d6105cf796?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fHVyYmFuJTIwbmlnaHR8ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=1000&q=60")
 ph20 = URI.open("https://images.unsplash.com/photo-1506021180614-27b3f7489640?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dXJiYW4lMjBncmFmZml0aXxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=1000&q=60")
 
-photo17 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", likes: 4, gallery_id: gallery5.id)
+photo17 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery5.id)
 photo17.photo.attach(io: ph17, filename: "nes.png", content_type: "image/png")
 photo17.save
 puts "."
-photo18 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", likes: 12, gallery_id: gallery5.id)
+photo18 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery5.id)
 photo18.photo.attach(io: ph18, filename: "nes.png", content_type: "image/png")
 photo18.save
 puts "."
-photo19 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", likes: 8, gallery_id: gallery5.id)
+photo19 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery5.id)
 photo19.photo.attach(io: ph19, filename: "nes.png", content_type: "image/png")
 photo19.save
 puts "."
-photo20 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", likes: 3, gallery_id: gallery5.id)
+photo20 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery5.id)
 photo20.photo.attach(io: ph20, filename: "nes.png", content_type: "image/png")
 photo20.save
 puts "."
@@ -245,19 +292,19 @@ ph22 = URI.open("https://images.unsplash.com/photo-1603346996604-cd77fc859e1d?ix
 ph23 = URI.open("https://images.unsplash.com/photo-1527863207983-b38888c0d9d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9yZXN0JTIwYmlyZHxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=1000&q=60")
 ph24 = URI.open("https://images.unsplash.com/photo-1588274267755-23d87baaadb2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Zm9yZXN0JTIwYmlyZHxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=1000&q=60")
 
-photo21 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", likes: 9, gallery_id: gallery6.id)
+photo21 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery6.id)
 photo21.photo.attach(io: ph21, filename: "nes.png", content_type: "image/png")
 photo21.save
 puts "."
-photo22 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", likes: 3, gallery_id: gallery6.id)
+photo22 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery6.id)
 photo22.photo.attach(io: ph22, filename: "nes.png", content_type: "image/png")
 photo22.save
 puts "."
-photo23 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", likes: 2, gallery_id: gallery6.id)
+photo23 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery6.id)
 photo23.photo.attach(io: ph23, filename: "nes.png", content_type: "image/png")
 photo23.save
 puts "."
-photo24 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", likes: 20, gallery_id: gallery6.id)
+photo24 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery6.id)
 photo24.photo.attach(io: ph24, filename: "nes.png", content_type: "image/png")
 photo24.save
 puts "."
@@ -267,19 +314,19 @@ ph26 = URI.open("https://images.unsplash.com/photo-1592424002053-21f369ad7fdb?ix
 ph27 = URI.open("https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNvbXB1dGVyJTIwY29kZXxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=700&q=60")
 ph28 = URI.open("https://images.unsplash.com/photo-1551641145-a1e18544acb9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29tcHV0ZXIlMjBjb2RlJTIwcmFpbnxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=700&q=60")
 
-photo25 = Photo.new(address: "Ostkreuz, Berlin", keyword: "work", likes: 9, gallery_id: gallery7.id)
+photo25 = Photo.new(address: "Ostkreuz, Berlin", keyword: "work", gallery_id: gallery7.id)
 photo25.photo.attach(io: ph25, filename: "nes.png", content_type: "image/png")
 photo25.save
 puts "."
-photo26 = Photo.new(address: "Ostkreuz, Berlin", keyword: "work", likes: 3, gallery_id: gallery7.id)
+photo26 = Photo.new(address: "Ostkreuz, Berlin", keyword: "work", gallery_id: gallery7.id)
 photo26.photo.attach(io: ph26, filename: "nes.png", content_type: "image/png")
 photo26.save
 puts "."
-photo27 = Photo.new(address: "Ostkreuz, Berlin", keyword: "work", likes: 2, gallery_id: gallery7.id)
+photo27 = Photo.new(address: "Ostkreuz, Berlin", keyword: "work", gallery_id: gallery7.id)
 photo27.photo.attach(io: ph27, filename: "nes.png", content_type: "image/png")
 photo27.save
 puts "."
-photo28 = Photo.new(address: "Ostkreuz, Berlin", keyword: "work", likes: 20, gallery_id: gallery7.id)
+photo28 = Photo.new(address: "Ostkreuz, Berlin", keyword: "work", gallery_id: gallery7.id)
 photo28.photo.attach(io: ph28, filename: "nes.png", content_type: "image/png")
 photo28.save
 puts "."
@@ -432,5 +479,17 @@ Booking.create!(event_id: event2.id, user_id: user4.id)
 Booking.create!(event_id: event3.id, user_id: user1.id)
 
 Booking.create!(event_id: event4.id, user_id: user1.id)
+
+puts "Creating likes..."
+# likes
+  users = User.all
+  USER_IDS = []
+  users.each { |user| USER_IDS << user.id }
+  photos = Photo.all
+  PHOTO_IDS = []
+  photos.each { |photo| PHOTO_IDS << photo.id }
+  50.times do
+    Like.create!(user_id: USER_IDS.sample, photo_id: PHOTO_IDS.sample)
+  end
 
 puts "Seeding complete!"
