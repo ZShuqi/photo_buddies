@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
   resources :communities, only: [:show]
 
-  resources :users, only: [] do
+  resources :users, only: [:show] do
       resources :galleries, only: [:new, :create]
 
   end
