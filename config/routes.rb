@@ -10,9 +10,14 @@ Rails.application.routes.draw do
   patch 'update_profile', to: 'pages#updateprofile', as: 'update_profile'
   get '/community', to: 'pages#community', as: 'community'
 
-  resources :events, only: [:index, :show, :new, :create] do
-    resources :bookings, only: [:index, :create, :update]
+  resources :pages do
+    get '/pages/:id', to: 'pages#show'
   end
+
+  resources :events, only: [:index, :show] do
+    resources :bookings, only: [:create, :update]
+  end
+  resources :bookings, only: [:index, :destroy]
 
   resources :galleries do
     resources :photos, only: [:show, :destroy] do
