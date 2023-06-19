@@ -1,0 +1,5 @@
+meta_name: "PhotoBuddies"
+meta_title: "PhotoBuddies - Your Local Photography Community"
+meta_description: "PhotoBuddies brings photographer enthusiasts closer to their local community. By sharing great shots and photo spots, taking part in local photography events, PhotoBuddies members contribute to dynamize the local photography art scene!"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@your_twitter_account"   # required for Twitter Cards
