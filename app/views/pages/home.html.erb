@@ -6,12 +6,16 @@
 <%# <div class= "card-trip"> <%= render "shared/tripcard", events: @events %> </div>
 
 <div class="container p-3 mb-3">
-    <h4><strong>Photo events in </strong> <span class="berlin2"> Berlin </span> </h4>
+    <h4 id="local_events"><strong>Photo events in </strong> <span class="berlin2"> Berlin </span> </h4>
     <div class="grid">
       <% @events.reverse.each do |event| %>
         <%= link_to event_path(event), class: "nav-link" do %>
           <div class="card">
-            <img src="https://source.unsplash.com/random/?event" alt="random pic">
+            <% if event.images.try(:any?) %>
+              <%= cl_image_tag event.images.first.key %>
+            <% else %>
+              <%= cl_image_tag Photo.first.photo.key %>
+            <% end %>
             <div class="card-body">
               <h5 class="card-title"><%= event.title %></h5>
               <div class="d-flex flex-column">

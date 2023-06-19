@@ -23,7 +23,11 @@
   <% @com_events.each do |event| %>
       <div class="card-trip">
       <%= link_to event_path(event) do %>
-        <%= cl_image_tag event.images.first.key %>
+        <% if event.images.try(:any?) %>
+          <%= cl_image_tag event.images.first.key %>
+        <% else %>
+          <%= cl_image_tag Photo.first.photo.key %>
+        <% end %>
       <% end %>
         <div class="card-trip-infos">
         <%= button_to "Join", event_path(event), class:"btn btn-outline-dark" %>

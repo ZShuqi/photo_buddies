@@ -6,20 +6,28 @@
   </div>
   <div class='row'>
     <div class='user-details'>
-      <h4><strong><%= @user.username %></strong></h4>
+      <h4><strong><%= @user.username.capitalize %></strong></h4>
       <p><%= @user.description %></p>
     </div>
   </div>
   <br>
+  <div class="col pt-1" data-controller="fake-dropdown">
+
+
+  <%= link_to "Create Gallery", new_user_gallery_path(@user), class: "btn btn-success  cgb m-5" %>
   <div class='row cen'>
     <h4><strong>My galleries</strong></h4>
     <% @my_galleries.each do |g| %>
-      <% my_pics = g.photo_ids %>
       <h5 class='below'><%= g.name %></h5>
+      <%= link_to gallery_photo_path(g, g.photos.first) do %>
       <div class="carousel slide m-3 d-flex justify-content-center caro-drop">
-        <%= render 'shared/gallery_carousel', my_pics: my_pics %>
+        <%= render 'shared/gallery_carousel', my_pics: g %>
       </div>
+      <% end %>
     <% end %>
+  <div>
+
+  </div>
   </div>
 
   <div class="container p-3 mb-3">
