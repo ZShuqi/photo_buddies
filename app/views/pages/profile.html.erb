@@ -2,24 +2,28 @@
   <div class='row'>
     <div class="card-product" style="background-image: url(https://source.unsplash.com/random/?sunset)">
       <%= cl_image_tag @user.photo.key %>
+      <%= link_to edit_user_path(@user)do %>
+        <i class="fa-solid fa-pen up"></i>
+      <% end %>
     </div>
   </div>
   <div class='row'>
     <div class='user-details'>
       <h4><strong><%= @user.username.capitalize %></strong></h4>
       <p><%= @user.description %></p>
+
     </div>
   </div>
   <br>
-  <div class="col pt-1" data-controller="fake-dropdown">
-
-
-  <%= link_to "Create Gallery", new_user_gallery_path(@user), class: "btn btn-success  cgb m-5" %>
   <div class='row cen'>
     <h4><strong>My galleries</strong></h4>
+    <%= link_to new_user_gallery_path(@user) do %>
+      <i class="fa-solid fa-plus plus"></i>
+    <% end %>
+
     <% @my_galleries.each do |g| %>
       <h5 class='below'><%= g.name %></h5>
-      <%= link_to gallery_photo_path(g, my_pics.first) do %>
+      <%= link_to gallery_photo_path(g, g) do %>
       <div class="carousel slide m-3 d-flex justify-content-center caro-drop">
         <%= render 'shared/gallery_carousel', my_pics: g %>
       </div>
