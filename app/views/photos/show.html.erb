@@ -61,13 +61,20 @@
   </div>
 </div>
 
+<%= @likes.length %>
+<% if @like_status %>
+  <i class="fa-solid fa-heart"></i>
+<% else %>
+  <%= simple_form_for [@gallery, @photo, @like] do |f| %>
+    <button type="submit" class="like-btn">
+      <i class="fa-regular fa-heart"></i>
+    </button>
+  <% end %>
+<% end %>
 
-
-<%# for record for "like" action implementation %>
-<%# <div class="container"> %>
-  <%# <p><i class="fa-regular fa-heart"></i><i class="fa-solid fa-heart"></i> </p> %>
-<%# </div> %>
-
+<% @likes.each do |like| %>
+  <%= cl_image_tag like.user.photo.key, height: 40, width: 40, radius: 20, crop: :fill %>
+<% end %>
 
 <% coms = @photo.comments %>
 <% if coms.try(:any?) %>

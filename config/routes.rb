@@ -8,19 +8,19 @@ Rails.application.routes.draw do
   get '/profile', to: 'pages#profile', as: 'profile'
   get '/community', to: 'pages#community', as: 'community'
 
-
   resources :events, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:index, :create, :update]
   end
 
   resources :galleries do
-    resources :photos, only: [:show, :destroy]
+    resources :photos, only: [:show, :destroy] do
+      resources :likes, only: [:create]
+    end
   end
   resources :communities, only: [:show]
 
   resources :users, only: [] do
     resources :galleries, only: [:new, :create]
-
   end
   # resources :communities, only: [:show]
 end

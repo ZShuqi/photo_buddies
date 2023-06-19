@@ -4,6 +4,9 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     authorize @photo
     @gallery = Gallery.find(params[:gallery_id])
+    @likes = @photo.likes
+    @like_status = Like.where(user_id: current_user.id, photo_id: @photo.id).any?
+    @like = Like.new
   end
 
   # def update
