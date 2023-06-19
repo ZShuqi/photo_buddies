@@ -507,16 +507,16 @@ spot2_img = URI.open("https://images.unsplash.com/photo-1496968594384-1736c036e4
 spot3_img = URI.open("https://images.unsplash.com/photo-1551354099-068f333a4e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGJlcmxpbnxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60")
 spot4_img = URI.open("https://images.unsplash.com/photo-1574439711512-a43a0fa9fabe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJlcmxpbiUyMG1hdWVycGFya3xlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60")
 
-spot1 = HotSpot.new(comment: "A classic in Berlin", address: "Pariser Platz, Berlin", user_id: 1)
+spot1 = HotSpot.new(comment: "A classic in Berlin", address: "Pariser Platz, Berlin", user_id: user1)
 spot1.photo.attach(io: spot1_img, filename: "spot1.png", content_type: "image/png")
 spot1.save!
-spot2 = HotSpot.new(comment: "The metro lines are really great to shoot here", address: "Burgermeister, Skalitzer Str. 136, Berlin", user_id: 2)
+spot2 = HotSpot.new(comment: "The metro lines are really great to shoot here", address: "Burgermeister, Skalitzer Str. 136, Berlin", user_id: user2)
 spot2.photo.attach(io: spot2_img, filename: "spot2.png", content_type: "image/png")
 spot2.save!
-spot3 = HotSpot.new(comment: "Yet another historical landmark", address: "Kreuzberg, Berlin", user_id: 3)
+spot3 = HotSpot.new(comment: "Yet another historical landmark", address: "Kreuzberg, Berlin", user_id: user3)
 spot3.photo.attach(io: spot3_img, filename: "spot3.png", content_type: "image/png")
 spot3.save!
-spot4 = HotSpot.new(comment: "Enjoy the social atmosphere at Mauer Park", address: "Mauerpark, Schwedter Str., Berlin", user_id: 4)
+spot4 = HotSpot.new(comment: "Enjoy the social atmosphere at Mauer Park", address: "Mauerpark, Schwedter Str., Berlin", user_id: user4)
 spot4.photo.attach(io: spot4_img, filename: "spot4.png", content_type: "image/png")
 spot4.save!
 
