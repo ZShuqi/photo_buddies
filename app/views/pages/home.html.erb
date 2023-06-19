@@ -6,7 +6,14 @@
 <%# <div class= "card-trip"> <%= render "shared/tripcard", events: @events </div> %>
 
 <div class="container p-3 mb-3">
-    <h4 id="local_events"><strong>Photo events in </strong> <span class="berlin2"> <%= current_user.community.name.capitalize %> </span> </h4>
+    <h4 id="local_events"><strong>Photo events in </strong>
+     <span class="berlin2">
+     <% if user_signed_in? %>
+      <%= current_user.community.name.capitalize %>
+     <% else %>
+      your local community!
+     <% end %>
+     </span> </h4>
     <div class="grid">
       <% @events.reverse.each do |event| %>
         <%= link_to event_path(event), class: "nav-link" do %>
