@@ -2,6 +2,15 @@ class PagesController < ApplicationController
   def home
     @events = Event.all
     @photos = Photo.all
+    @hot_spots = HotSpot.all
+    @markers = @hot_spots.geocoded.map do |hot_spot|
+      {
+        lat: hot_spot.latitude,
+        lng: hot_spot.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {hot_spot: hot_spot}),
+        marker_html: render_to_string(partial: "marker")
+      }
+    end
   end
 
   def show

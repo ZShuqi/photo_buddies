@@ -46,3 +46,15 @@
       <% end %>
     </div>
   </div>
+
+<div style="width: 80%; height: 400px; margin-bottom: 100px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+Add a hotspot to the map:
+<%= simple_form_for @hot_spot do |f| %>
+  <%= f.input :comment %>
+  <%= f.input :address %>
+  <%= f.input :photo, as: :file %>
+<% end %>

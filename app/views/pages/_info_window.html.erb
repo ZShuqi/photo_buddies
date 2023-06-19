@@ -1,0 +1,4 @@
+<p><%= hot_spot.comment %></p>
+<p><%= hot_spot.address %></p>
+<p>By: <%= hot_spot.user.username.capitalize %> <%= cl_image_tag hot_spot.user.photo.key, height: 20, width: 20, radius: 10, crop: :fill %></p>
+<%# add photo when attachment link done %>
