@@ -31,7 +31,12 @@ user1.photo.attach(io: avatar1, filename: "user1.jpg", content_type: "image/png"
 user1.save
 puts "."
 user2 = User.new(email: "elisa@gmail.com", password: "123456", username: 'elisa', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
+<<<<<<< Updated upstream
 user2.photo.attach(io: avatar2, filename: "user2.jpg", content_type: "image/pgn")
+=======
+user2.photo.attach(io: avatar2, filename: "user2.jpg", content_type: "image/png")
+user2.banner_photo.attach(io: bannerphoto2, filename: "bannerphoto2.jpg", content_type: "image/png")
+>>>>>>> Stashed changes
 user2.save
 puts "."
 user3 = User.new(email: "shuqi@gmail.com", password: "123456", username: 'shuqi', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
@@ -43,6 +48,70 @@ user4.photo.attach(io: avatar4, filename: "user4.jpg", content_type: "image/png"
 user4.save
 puts "."
 
+<<<<<<< Updated upstream
+=======
+# extra users
+avatar5 = URI.open("https://images.unsplash.com/photo-1599566219227-2efe0c9b7f5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c21pbGV8ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=500&q=60")
+avatar6 = URI.open("https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
+avatar7 = URI.open("https://images.unsplash.com/photo-1535295972055-1c762f4483e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
+avatar8 = URI.open("https://images.unsplash.com/photo-1548213238-0da7521bd6e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
+avatar9 = URI.open("https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
+avatar10 = URI.open("https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODd8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
+avatar11 = URI.open("https://images.unsplash.com/photo-1504199367641-aba8151af406?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAzfHxzbWlsZXxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60")
+avatar12 = URI.open("https://images.unsplash.com/photo-1531123414780-f74242c2b052?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTExfHxzbWlsZXxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60")
+
+bannerphoto5 = URI.open("https://images.unsplash.com/photo-1546952396-57a6bb8895de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=388&q=80")
+bannerphoto6 = URI.open("https://images.unsplash.com/photo-1588568810409-3e0b4a872171?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80")
+bannerphoto7 = URI.open("https://images.unsplash.com/photo-1501898047706-55903296cd09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")
+bannerphoto8 = URI.open("https://images.unsplash.com/photo-1581268879726-e9066753b737?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")
+bannerphoto9 = URI.open("https://images.unsplash.com/photo-1546952396-57a6bb8895de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=388&q=80")
+bannerphoto10 = URI.open("https://images.unsplash.com/photo-1588568810409-3e0b4a872171?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80")
+bannerphoto11 = URI.open("https://images.unsplash.com/photo-1501898047706-55903296cd09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")
+bannerphoto12 = URI.open("https://images.unsplash.com/photo-1581268879726-e9066753b737?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")
+
+user5 = User.new(email: "maria@gmail.com", password: "123456", username: 'maria', community_id: berlin.id, description: "🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
+user5.photo.attach(io: avatar5, filename: "user5.jpg", content_type: "image/png")
+user5.banner_photo.attach(io: bannerphoto5, filename: "bannerphoto5.jpg", content_type: "image/png")
+user5.save
+puts "."
+user6 = User.new(email: "justine@gmail.com", password: "123456", username: 'justine', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
+user6.photo.attach(io: avatar6, filename: "user6.jpg", content_type: "image/png")
+user6.banner_photo.attach(io: bannerphoto6, filename: "bannerphoto6.jpg", content_type: "image/png")
+user6.save
+puts "."
+user7 = User.new(email: "yuri@gmail.com", password: "123456", username: 'Yuri', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
+user7.photo.attach(io: avatar7, filename: "user7.jpg", content_type: "image/png")
+use7.banner_photo.attach(io: bannerphoto7, filename: "bannerphoto7.jpg", content_type: "image/png")
+user7.save
+puts "."
+user8 = User.new(email: "rupert@gmail.com", password: "123456", username: 'rupert', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
+user8.photo.attach(io: avatar8, filename: "user8.jpg", content_type: "image/png")
+user8.banner_photo.attach(io: bannerphoto8, filename: "bannerphoto8.jpg", content_type: "image/png")
+user8.save
+puts "."
+user9 = User.new(email: "otto@gmail.com", password: "123456", username: 'otto', community_id: berlin.id, description: "🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
+user9.photo.attach(io: avatar9, filename: "user9.jpg", content_type: "image/png")
+user9.banner_photo.attach(io: bannerphoto9, filename: "bannerphoto9.jpg", content_type: "image/png")
+user9.save
+puts "."
+user10 = User.new(email: "sally@gmail.com", password: "123456", username: 'sally', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
+user10.photo.attach(io: avatar10, filename: "user10.jpg", content_type: "image/png")
+user10.banner_photo.attach(io: bannerphoto10, filename: "bannerphoto10.jpg", content_type: "image/png")
+user10.save
+puts "."
+user11 = User.new(email: "ronald@gmail.com", password: "123456", username: 'ronald', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
+user11.photo.attach(io: avatar11, filename: "user11.jpg", content_type: "image/png")
+user11.banner_photo.attach(io: bannerphoto11, filename: "bannerphoto11.jpg", content_type: "image/png")
+user11.save
+puts "."
+user12 = User.new(email: "ellie@gmail.com", password: "123456", username: 'ellie', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
+user12.photo.attach(io: avatar12, filename: "user12.jpg", content_type: "image/png")
+user12.banner_photo.attach(io: bannerphoto12, filename: "bannerphoto12.jpg", content_type: "image/png")
+user12.save
+puts "."
+
+
+>>>>>>> Stashed changes
 puts "Creating galleries..."
 # galleries
 gallery1 = Gallery.create!(user_id: user1.id, name: "Urban vibes")
