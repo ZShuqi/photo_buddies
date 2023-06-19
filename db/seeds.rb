@@ -30,13 +30,10 @@ user1 = User.new(email: "ayub@gmail.com", password: "123456", username: 'ayub', 
 user1.photo.attach(io: avatar1, filename: "user1.jpg", content_type: "image/png")
 user1.save
 puts "."
+
 user2 = User.new(email: "elisa@gmail.com", password: "123456", username: 'elisa', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
-<<<<<<< Updated upstream
-user2.photo.attach(io: avatar2, filename: "user2.jpg", content_type: "image/pgn")
-=======
 user2.photo.attach(io: avatar2, filename: "user2.jpg", content_type: "image/png")
 user2.banner_photo.attach(io: bannerphoto2, filename: "bannerphoto2.jpg", content_type: "image/png")
->>>>>>> Stashed changes
 user2.save
 puts "."
 user3 = User.new(email: "shuqi@gmail.com", password: "123456", username: 'shuqi', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
@@ -48,8 +45,6 @@ user4.photo.attach(io: avatar4, filename: "user4.jpg", content_type: "image/png"
 user4.save
 puts "."
 
-<<<<<<< Updated upstream
-=======
 # extra users
 avatar5 = URI.open("https://images.unsplash.com/photo-1599566219227-2efe0c9b7f5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c21pbGV8ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=500&q=60")
 avatar6 = URI.open("https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
@@ -111,7 +106,6 @@ user12.save
 puts "."
 
 
->>>>>>> Stashed changes
 puts "Creating galleries..."
 # galleries
 gallery1 = Gallery.create!(user_id: user1.id, name: "Urban vibes")
