@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :events
   has_many :bookings
   belongs_to :community
+  has_many :likes
 
   validates :username, presence: true, uniqueness: true
 
