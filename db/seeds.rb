@@ -25,24 +25,33 @@ avatar1 = URI.open("https://images.unsplash.com/photo-1595152772835-219674b2a8a6
 avatar2 = URI.open("https://images.unsplash.com/photo-1515023115689-589c33041d3c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
 avatar3 = URI.open("https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
 avatar4 = URI.open("https://images.unsplash.com/photo-1580465446361-8aae5321522b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
+# banner_photo
+bannerphoto1 = URI.open("https://images.unsplash.com/photo-1546952396-57a6bb8895de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=388&q=80")
+bannerphoto2 = URI.open("https://images.unsplash.com/photo-1588568810409-3e0b4a872171?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80")
+bannerphoto3 = URI.open("https://images.unsplash.com/photo-1501898047706-55903296cd09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")
+bannerphoto4 = URI.open("https://images.unsplash.com/photo-1581268879726-e9066753b737?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")
+
 # users
 user1 = User.new(email: "ayub@gmail.com", password: "123456", username: 'ayub', community_id: berlin.id, description: "🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
 user1.photo.attach(io: avatar1, filename: "user1.jpg", content_type: "image/png")
+user1.banner_photo.attach(io: bannerphoto1, filename: "bannerphoto1.jpg", content_type: "image/png")
 user1.save
 puts "."
 user2 = User.new(email: "elisa@gmail.com", password: "123456", username: 'elisa', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
 user2.photo.attach(io: avatar2, filename: "user2.jpg", content_type: "image/pgn")
+user2.banner_photo.attach(io: bannerphoto2, filename: "bannerphoto2.jpg", content_type: "image/png")
 user2.save
 puts "."
 user3 = User.new(email: "shuqi@gmail.com", password: "123456", username: 'shuqi', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
 user3.photo.attach(io: avatar3, filename: "user3.jpg", content_type: "image/png")
+user3.banner_photo.attach(io: bannerphoto3, filename: "bannerphoto3.jpg", content_type: "image/png")
 user3.save
 puts "."
 user4 = User.new(email: "lucile@gmail.com", password: "123456", username: 'lucile', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
 user4.photo.attach(io: avatar4, filename: "user4.jpg", content_type: "image/png")
+user4.banner_photo.attach(io: bannerphoto4, filename: "bannerphoto4.jpg", content_type: "image/png")
 user4.save
 puts "."
-
 puts "Creating galleries..."
 
 
