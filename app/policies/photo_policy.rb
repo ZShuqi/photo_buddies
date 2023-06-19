@@ -10,10 +10,6 @@ class PhotoPolicy < ApplicationPolicy
     true
   end
 
-  def update?
-    true
-  end
-
   def destroy?
     record.gallery.user == user
   end

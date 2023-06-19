@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :galleries do
-    resources :photos, only: [:show, :destroy, :update]
+    resources :photos, only: [:show, :destroy]
   end
   resources :communities, only: [:show]
 
