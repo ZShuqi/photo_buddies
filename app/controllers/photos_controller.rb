@@ -5,6 +5,19 @@ class PhotosController < ApplicationController
     authorize @photo
     @gallery = Gallery.find(params[:gallery_id])
     @likes = @photo.likes
+
+    @gallery_user = User.find(@gallery.user_id)
+    @gallery_photos = Photo.where(gallery_id: @gallery.id)
+    @photo_ids_array = []
+    @gallery_photos.each do |ph|
+      @photo_ids_array << ph.id
+    end
+    @current_photo_index = @photo_ids_array.index(@photo.id)
+    @next_photo_index = @current_photo_index + 1
+    @next_photo_id = @photo_ids_array.at(@next_photo_index)
+    @previous_photo_index = @current_photo_index - 1
+    @previous_photo_id = @photo_ids_array.at(@previous_photo_index)
+
     if user_signed_in?
       @like_status = Like.where(user_id: current_user.id, photo_id: @photo.id).any?
     else
