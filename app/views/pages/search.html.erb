@@ -34,39 +34,92 @@
 
 <div class="container mb-5">
   <% if @results.try(:any?) %>
-
-    <% if @photo_results.try(:any?) %>
-      <div class="photo-result-cards">
-        <% @photo_results.each do |res| %>
-          <% @photo = Photo.find(res.searchable_id) %>
-          <%= render 'shared/photo_result_card', photo: @photo %>
-        <% end %>
+    <div class="accordion" id="searchAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Results in Art ( <%= @results.length %> )
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#searchAccordion">
+          <div class="accordion-body">
+            <% if @photo_results.try(:any?) %>
+              <div class="photo-result-cards">
+                <% @photo_results.each do |res| %>
+                  <% @photo = Photo.find(res.searchable_id) %>
+                  <%= render 'shared/photo_result_card', photo: @photo %>
+                <% end %>
+              </div>
+            <% else %>
+              <p>No art found :(</p>
+            <% end %>
+          </div>
+        </div>
       </div>
-    <% end %>
-
-    <% if @user_results.try(:any?) %>
-      <div class="user-cards">
-        <% @user_results.each do |res| %>
-          <% @user = User.find(res.searchable_id)  %>
-          <%= render 'shared/user_card', user: @user %>
-        <% end %>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Results in People ( <%= @results.length %> )
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#searchAccordion">
+          <div class="accordion-body">
+            <% if @user_results.try(:any?) %>
+              <div class="user-cards">
+                <% @user_results.each do |res| %>
+                  <% @user = User.find(res.searchable_id)  %>
+                  <%= render 'shared/user_card', user: @user %>
+                <% end %>
+              </div>
+            <% else %>
+              <p>No members found :(</p>
+            <% end %>
+          </div>
+        </div>
       </div>
-    <% end %>
+    </div>
 
   <% else %>
     <%= @message %>
-    <div class="photo-result-cards">
-      <% @photo_results.reverse.each do |photo| %>
-        <%= render 'shared/photo_result_card', photo: photo %>
-      <% end %>
-    </div>
-    <% if user_signed_in? %>
-        <div class="user-cards">
-          <% @user_results.each do |user| %>
-            <%= render 'shared/user_card', user: user %>
-          <% end %>
+
+    <div class="accordion" id="secondSearchAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Results in Art ( <%= @photo_results.length %> )
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#secondSearchAccordion">
+          <div class="accordion-body">
+            <div class="photo-result-cards">
+              <% @photo_results.reverse.each do |photo| %>
+                <%= render 'shared/photo_result_card', photo: photo %>
+              <% end %>
+            </div>
+          </div>
         </div>
-      <% end %>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Results in People ( <%= @user_results.length %> )
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#secondSearchAccordion">
+          <div class="accordion-body">
+            <% if user_signed_in? %>
+              <div class="user-cards">
+                <% @user_results.each do |user| %>
+                  <%= render 'shared/user_card', user: user %>
+                <% end %>
+              </div>
+            <% else %>
+              <p>Log in to browse through your local community members!</p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
 

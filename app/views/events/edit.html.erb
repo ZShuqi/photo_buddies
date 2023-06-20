@@ -1,0 +1,11 @@
+<div class="container d-flex flex-column mb-5">
+      <%= simple_form_for @event, data: { disable_button_target: "form", action: "submit->disable-button#send" } do |f| %>
+        <%= f.input :title %>
+        <%= f.input :address%>
+        <%= f.input :description%>
+        <%= f.input :date%>
+        <%= f.input :images, as: :file, input_html: { multiple: true }, label: "Images" %>
+
+        <%= f.button :submit, "Update Event", class: "main-btn" %>
+      <% end %>
+    </div>
