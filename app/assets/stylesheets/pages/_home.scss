@@ -11,3 +11,8 @@ body {
   color: $forest-title;
 }
 
+
+.cards-body{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

@@ -65,6 +65,8 @@
   margin: 30px;
   background: #E08E6D;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
 }
 
 .card-trip > a > img {
@@ -94,6 +96,7 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  flex-grow: 1;
 }
 
 .card-trip-infos .card-trip-user {
@@ -101,6 +104,8 @@
   right: 16px;
   top: -50px;
   width: 70px;
+  height: 70px;
+  object-fit: cover;
 }
 
 .cards mb-3 {
