@@ -25,6 +25,7 @@ class GalleriesController < ApplicationController
   end
 
   def edit
+    @user = current_user
     @gallery = Gallery.find(params[:id])
     authorize @gallery
   end

@@ -26,4 +26,12 @@ class GalleryPolicy < ApplicationPolicy
   def destroy?
     true
   end
+
+  def edit?
+    true
+  end
+
+  def update?
+    true
+  end
 end
