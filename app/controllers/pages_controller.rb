@@ -10,6 +10,7 @@ class PagesController < ApplicationController
     @my_galleries = Gallery.where(user_id: params[:id])
     @events = Event.all
     @my_events = Event.where(user_id: params[:id])
+
   end
 
   def profile

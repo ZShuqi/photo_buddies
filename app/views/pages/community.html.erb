@@ -11,7 +11,7 @@
       <% else %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://streetberlin.net/wp-content/uploads/2019/01/berlin-photography-street-photography-Martin-U-Waltz.jpg)">
       <% end %>
-          <%= link_to user_path(member) do %>
+          <%= link_to page_path(member) do %>
           <div class="card-trip-infos">
             <div class="d-flex flex-column align-items-center">
                 <%= cl_image_tag member.photo.key, height: 100, width: 100, crop: :fill, style: "border-radius: 50%; border: solid 4px;" %>
@@ -70,7 +70,7 @@
       <ul>
         <% @com_members.each do |member| %>
 
-        <li><%= link_to user_path(member) do %><%= cl_image_tag member.photo.key, height: 100, width: 100, crop: :fill %><% end %>
+        <li><%= link_to page_path(member) do %><%= cl_image_tag member.photo.key, height: 100, width: 100, crop: :fill %><% end %>
             <p><%= member.username.capitalize %></p></li>
 
         <% end %>

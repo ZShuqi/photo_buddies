@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     get '/pages/:id', to: 'pages#show'
   end
 
-  resources :events, only: [:index, :show] do
+  resources :events do
     resources :bookings, only: [:create, :update]
   end
   resources :bookings, only: [:index, :destroy]
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   resources :communities, only: [:show]
   resources :hot_spots, only: [:create]
 
-  resources :users, only: [:show] do
+  resources :users do
     resources :galleries
   end
 

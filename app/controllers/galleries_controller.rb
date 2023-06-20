@@ -24,6 +24,23 @@ class GalleriesController < ApplicationController
     end
   end
 
+  def edit
+    @user = current_user
+    @gallery = Gallery.find(params[:id])
+    authorize @gallery
+  end
+
+  def update
+    @gallery = Gallery.find(params[:id])
+    authorize @gallery
+
+    if @gallery.update(gallery_params)
+      redirect_to profile_path, notice: "Gallery updated successfully."
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     @gallery = Gallery.find(params[:id])
     authorize @gallery
