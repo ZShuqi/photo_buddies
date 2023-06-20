@@ -1,23 +1,7 @@
-<%# ** don't remove! %>
-<% gal_user = User.find(@gallery.user_id) %>
-<% ph_id_arr = [] %>
-<% @gallery.photos.each do |ph| %>
-  <% ph_id_arr << ph.id %>
-<% end %>
-
-<% curr_ph_index = ph_id_arr.index(@photo.id) %>
-<% next_index = curr_ph_index + 1 %>
-<% next_id = ph_id_arr.at(next_index) %>
-<% previous_index = curr_ph_index - 1 %>
-<% previous_id = ph_id_arr.at(previous_index) %>
-
-<%# don't remove! ** %>
-
-
 <div class="back-button">
-  <%= link_to "/pages/#{@gallery.user_id}" do %>
+  <%= link_to "/pages/#{@gallery_user}" do %>
   <i class="fa-solid fa-chevron-left"></i>
-   By <%= gal_user.username.capitalize %>
+   By <%= @gallery_user.username.capitalize %>
   <% end %>
 </div>
 
@@ -25,57 +9,57 @@
 <div class="container">
   <div class="photo-box">
     <div class="photo-navigation">
-        <% if @photo == @gallery.photos.last %>
-          <%= link_to gallery_photo_path(@gallery.id, previous_id) do %>
+        <% if @photo == @gallery_photos.last %>
+          <%= link_to gallery_photo_path(@gallery.id, @previous_photo_id) do %>
             <i class="fa-solid fa-chevron-left"></i>
           <% end %>
-          <p><%= ph_id_arr.length - 1 %> more photos in this gallery</p>
-        <% elsif @photo == @gallery.photos.first %>
-          <%= link_to gallery_photo_path(@gallery.id, next_id) do %>
+          <p><%= @photo_ids_array.length - 1 %> more photos in this gallery</p>
+        <% elsif @photo == @gallery_photos.first %>
+          <%= link_to gallery_photo_path(@gallery.id, @next_photo_id) do %>
             <i class="fa-solid fa-chevron-right"></i>
           <% end %>
-          <p><%= ph_id_arr.length - 1 %> more photos in this gallery</p>
-        <% elsif ph_id_arr.length == 1 %>
+          <p><%= @photo_ids_array.length - 1 %> more photos in this gallery</p>
+        <% elsif @photo_ids_array.length == 1 %>
           <p>This is the only photo.</p>
         <% else %>
-        <div class="d-flex">
-          <%= link_to gallery_photo_path(@gallery.id, previous_id) do %>
-            <i class="fa-solid fa-chevron-left"></i>
-          <% end %>
-          <%= link_to gallery_photo_path(@gallery.id, next_id) do %>
-            <i class="fa-solid fa-chevron-right"></i>
-          <% end %>
-            <p><%= ph_id_arr.length - 1 %> more photos in this gallery</p>
-        </div>
+          <div class="d-flex">
+            <%= link_to gallery_photo_path(@gallery.id, @previous_photo_id) do %>
+              <i class="fa-solid fa-chevron-left"></i>
+            <% end %>
+            <%= link_to gallery_photo_path(@gallery.id, @next_photo_id) do %>
+              <i class="fa-solid fa-chevron-right"></i>
+            <% end %>
+              <p><%= @photo_ids_array.length - 1 %> more photos in this gallery</p>
+          </div>
         <% end %>
       </div>
     <%= cl_image_tag @photo.photo.key, height: 600, crop: :fill %>
-    <div class="photo-details">
-      <div class="photo-data">
-        <p><i class="fa-solid fa-location-dot px-4"></i><%= @photo.address %></p>
-        <p><%= @photo.likes %> <i class="fa-regular fa-heart"></i></p>
-      </div>
-      <%= button_to("Delete", gallery_photo_path(@gallery, @photo), method: :delete, class: "main-button", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}) if policy(@photo).destroy? %>
-    <%# <i class="fa-solid fa-trash"></i> %>
-
-    </div>
   </div>
 </div>
 
-<%= @likes.length %>
-<% if @like_status %>
-  <i class="fa-solid fa-heart"></i>
-<% else %>
-  <%= simple_form_for [@gallery, @photo, @like] do |f| %>
-    <button type="submit" class="like-btn">
-      <i class="fa-regular fa-heart"></i>
-    </button>
-  <% end %>
-<% end %>
 
-<% @likes.each do |like| %>
-  <%= cl_image_tag like.user.photo.key, height: 40, width: 40, radius: 20, crop: :fill %>
-<% end %>
+<div class="photo-details">
+  <div class="photo-data">
+    <p><i class="fa-solid fa-location-dot px-4"></i><%= @photo.address %></p>
+    <p><%= @likes.length %>
+      <% if @like_status %>
+        <i class="fa-solid fa-heart"></i>
+      <% else %>
+        <%= simple_form_for [@gallery, @photo, @like] do |f| %>
+          <button type="submit" class="like-btn">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+        <% end %>
+      <% end %>
+      <% @likes.each do |like| %>
+        <%= cl_image_tag like.user.photo.key, height: 40, width: 40, radius: 20, crop: :fill %>
+      <% end %>
+    </p>
+  </div>
+  <%= button_to("Delete", gallery_photo_path(@gallery, @photo), method: :delete, class: "main-button", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}) if policy(@photo).destroy? %>
+  <%# <i class="fa-solid fa-trash"></i> %>
+</div>
+
 
 <% coms = @photo.comments %>
 <% if coms.try(:any?) %>

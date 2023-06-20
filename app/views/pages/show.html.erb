@@ -1,6 +1,6 @@
 <div class='container'>
   <div class = 'row'>
-    <div class="card-product" style="background-image: url(https://source.unsplash.com/random/?photo)">
+    <div class="card-product" style="background-image: url('<%= cl_image_path @user.banner_photo.key %>')">
      <%= cl_image_tag @user.photo.key %>
     </div>
   </div>
