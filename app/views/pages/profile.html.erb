@@ -1,6 +1,6 @@
 <div class='container'>
   <div class='row'>
-    <div class="card-product" style="background-image: url(https://source.unsplash.com/random/?sunset)">
+    <div class="card-product" style="background-image: url('https://source.unsplash.com/random/?sunset')"> <%#= cl_image_path member.banner_photo.key %>
       <%= cl_image_tag @user.photo.key %>
       <%= link_to edit_user_path(@user)do %>
         <i class="fa-solid fa-pen up"></i>
