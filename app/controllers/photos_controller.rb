@@ -26,11 +26,29 @@ class PhotosController < ApplicationController
     @like = Like.new
   end
 
+  def create
+    @photo = Photo.new(photo_params)
+    @gallery = Gallery.find(params[:gallery_id])
+    @photo.gallery_id = @gallery.id
+    authorize @photo
+    if @photo.save
+      redirect_to gallery_path(@gallery), notice: "Photo successfully added to #{@gallery.name} gallery!"
+    else
+      redirect_to gallery_path(@gallery), notice: :unprocessable_entity
+    end
+  end
+
   def destroy
     @gallery = Gallery.find(params[:gallery_id])
     @photo = Photo.find(params[:id])
     authorize @photo
     @photo.destroy
     redirect_to profile_path
+  end
+
+  private
+
+  def photo_params
+    params.require(:photo).permit(:address, :keyword, :photo)
   end
 end

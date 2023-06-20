@@ -1,25 +1,24 @@
 class GalleriesController < ApplicationController
   def show
-  @user = User.find(params[:id])
-  @gallery = Gallery.find(params[:id])
-  authorize @gallery
-  authorize @user
+    @user = User.find(params[:user_id])
+    @gallery = Gallery.find(params[:id])
+    @gallery_photos = Photo.where(gallery_id: @gallery.id)
+    authorize @gallery
+    authorize @user
+    @photo = Photo.new
   end
 
   def new
-    @user = current_user
     @gallery = Gallery.new
     authorize @gallery
   end
 
   def create
-    # need to create photos (from photo model/controller)
     @gallery = Gallery.new(gallery_params)
     @gallery.user = current_user
     authorize @gallery
-
-    if @gallery.save!
-      redirect_to profile_path, notice: "Gallery created successfully."
+    if @gallery.save
+      redirect_to user_gallery_path(current_user, @gallery), notice: "Gallery created successfully."
     else
       render :new, status: :unprocessable_entity
     end
@@ -34,7 +33,6 @@ class GalleriesController < ApplicationController
   def update
     @gallery = Gallery.find(params[:id])
     authorize @gallery
-
     if @gallery.update(gallery_params)
       redirect_to profile_path, notice: "Gallery updated successfully."
     else
@@ -56,6 +54,6 @@ class GalleriesController < ApplicationController
   private
 
   def gallery_params
-    params.require(:gallery).permit(:name, photos: [])
+    params.require(:gallery).permit(:name)
   end
 end

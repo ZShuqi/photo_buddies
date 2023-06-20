@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resources :bookings, only: [:index, :destroy]
 
   resources :galleries do
-    resources :photos, only: [:show, :destroy] do
+    resources :photos, only: [:show, :destroy, :create] do
       resources :likes, only: [:create]
     end
   end

@@ -1,1 +1,22 @@
-<%= @gallery.name %>
+<h2><%= @gallery.name %></h2>
+
+<% if @gallery_photos.try(:any?) %>
+  <div class="new-gal-grid">
+    <div class="gal-carousel">
+      <div class="gal-carousel-inner slide caro-drop">
+        <%= render 'shared/gallery_carousel', my_pics: @gallery %>
+      </div>
+    </div>
+    <div>
+      <p>Add another picture?</p>
+      <%= render 'shared/new_photo_form', gallery: @gallery, photo: @photo %>
+    </div>
+  </div>
+<% else %>
+  <div class="new-gal-grid">
+    <div class="empty-gal-carousel">
+    </div>
+    <p>This gallery is empty. Add some photos to it!</p>
+    <%= render 'shared/new_photo_form', gallery: @gallery, photo: @photo %>
+  </div>
+<% end %>
