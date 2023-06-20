@@ -366,53 +366,53 @@ photo4.save
 puts "."
 
 photo5 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery2.id)
-# photo5.photo.attach(io: ph5, filename: "nes.png", content_type: "image/png")
+photo5.photo.attach(io: ph5, filename: "nes.png", content_type: "image/png")
 photo5.save
 puts "."
 photo6 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery2.id)
-# photo6.photo.attach(io: ph6, filename: "nes.png", content_type: "image/png")
+photo6.photo.attach(io: ph6, filename: "nes.png", content_type: "image/png")
 photo6.save
 puts "."
 photo7 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery2.id)
-# photo7.photo.attach(io: ph7, filename: "nes.png", content_type: "image/png")
+photo7.photo.attach(io: ph7, filename: "nes.png", content_type: "image/png")
 photo7.save
 puts "."
 photo8 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery2.id)
-# photo8.photo.attach(io: ph8, filename: "nes.png", content_type: "image/png")
+photo8.photo.attach(io: ph8, filename: "nes.png", content_type: "image/png")
 photo8.save
 puts "."
 
 photo9 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery3.id)
-# photo9.photo.attach(io: ph9, filename: "nes.png", content_type: "image/png")
+photo9.photo.attach(io: ph9, filename: "nes.png", content_type: "image/png")
 photo9.save
 puts "."
 photo10 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery3.id)
-# photo10.photo.attach(io: ph10, filename: "nes.png", content_type: "image/png")
+photo10.photo.attach(io: ph10, filename: "nes.png", content_type: "image/png")
 photo10.save
 puts "."
 photo11 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery3.id)
-# photo11.photo.attach(io: ph11, filename: "nes.png", content_type: "image/png")
+photo11.photo.attach(io: ph11, filename: "nes.png", content_type: "image/png")
 photo11.save
 puts "."
 photo12 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery3.id)
-# photo12.photo.attach(io: ph12, filename: "nes.png", content_type: "image/png")
+photo12.photo.attach(io: ph12, filename: "nes.png", content_type: "image/png")
 photo12.save
 puts "."
 
 photo13 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", gallery_id: gallery4.id)
-# photo13.photo.attach(io: ph13, filename: "nes.png", content_type: "image/png")
+photo13.photo.attach(io: ph13, filename: "nes.png", content_type: "image/png")
 photo13.save
 puts "."
 photo14 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", gallery_id: gallery4.id)
-# photo14.photo.attach(io: ph14, filename: "nes.png", content_type: "image/png")
+photo14.photo.attach(io: ph14, filename: "nes.png", content_type: "image/png")
 photo14.save
 puts "."
 photo15 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", gallery_id: gallery4.id)
-# photo15.photo.attach(io: ph15, filename: "nes.png", content_type: "image/png")
+photo15.photo.attach(io: ph15, filename: "nes.png", content_type: "image/png")
 photo15.save
 puts "."
 photo16 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", gallery_id: gallery4.id)
-# photo16.photo.attach(io: ph16, filename: "nes.png", content_type: "image/png")
+photo16.photo.attach(io: ph16, filename: "nes.png", content_type: "image/png")
 photo16.save
 puts "."
 
@@ -476,7 +476,7 @@ photo30.photo.attach(io: ph30, filename: "nes.png", content_type: "image/png")
 photo30.save
 puts "."
 photo31 = Photo.new(address: "Alexanderplatz, Alexanderstr., Berlin", keyword: "food", gallery_id: gallery11.id)
-photo31photo.attach(io: ph31, filename: "nes.png", content_type: "image/png")
+photo31.photo.attach(io: ph31, filename: "nes.png", content_type: "image/png")
 photo31.save
 puts "."
 photo32 = Photo.new(address: "Alexanderplatz, Alexanderstr., Berlin", keyword: "food", gallery_id: gallery11.id)
@@ -595,7 +595,7 @@ photo58.photo.attach(io: ph58, filename: "nes.png", content_type: "image/png")
 photo58.save
 puts "."
 photo59 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery18.id)
-photo59.photo.attach(io: ph11, filename: "nes.png", content_type: "image/png")
+photo59.photo.attach(io: ph59, filename: "nes.png", content_type: "image/png")
 photo59.save
 puts "."
 photo60 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery18.id)
