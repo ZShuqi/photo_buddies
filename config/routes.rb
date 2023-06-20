@@ -19,9 +19,14 @@ Rails.application.routes.draw do
   resources :bookings, only: [:index, :destroy]
 
   resources :galleries do
-    resources :photos, only: [:show, :destroy] do
+    resources :photos, only: [:show, :destroy]
       resources :likes, only: [:create]
-    end
+      # resources :comments, only: [:index, :create, :destroy]
+    # end
+  end
+
+  resources :photos, only: [] do
+    resources :comments, only: [:index, :create, :destroy]
   end
 
   resources :communities, only: [:show]

@@ -24,6 +24,7 @@ class PhotosController < ApplicationController
       @like_status = true
     end
     @like = Like.new
+    @comment = Comment.new
   end
 
   def destroy

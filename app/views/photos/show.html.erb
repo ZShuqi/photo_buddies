@@ -60,15 +60,27 @@
   <%# <i class="fa-solid fa-trash"></i> %>
 </div>
 
-
-<% coms = @photo.comments %>
-<% if coms.try(:any?) %>
-  <% coms.each do |com| %>
-    <div class="comment-cards">
-      <% commentor = User.find(com.user_id) %>
-      <%= render "shared/comment_card", commentor: commentor, com: com %>
-    </div>
+<%= turbo_frame_tag dom_id(@photo, :comments) do %>
+  <% coms = @photo.comments %>
+  <% if coms.try(:any?) %>
+    <% coms.each do |com| %>
+      <div class="comment-cards">
+        <% commentor = User.find(com.user_id) %>
+        <%= render "shared/comment_card", commentor: commentor, com: com %>
+      </div>
+    <% end %>
+    <%# <div> %>
+      <%# <% render "form", photo: @photo, comment: @comment %>
+      <%= simple_form_for([@photo, @comment],
+                      data: {
+                        insert_comment_target: "form",
+                        action: "submit->insert-comment#send"
+                      }) do |f| %>
+        <%= f.input :content, as: :string %>
+        <%= f.button :submit, "Send", class: "main-btn" %>
+      <% end %>
+    <%# </div> %>
+  <% else %>
+    <p>Be the first to leave a comment on this piece of art!</p>
   <% end %>
-<% else %>
-  <p>Be the first to leave a comment on this piece of art!</p>
 <% end %>
