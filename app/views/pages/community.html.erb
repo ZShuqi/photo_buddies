@@ -22,6 +22,8 @@
         </div>
               <% end %>
 </div>
+
+
  <h3 id="local_events"><strong>Photo events in </strong> <span class="berlin2"> Berlin </span> </h3>
 
 <div class="cards-body" style="width:800px; margin-inline: auto">
@@ -56,4 +58,24 @@
   <%= render 'shared/hot_spot_map' %>
 
   <%= render 'shared/new_hot_spot_form', hot_spot: @hot_spot %>
+</div>
+
+<div class="container">
+  <div class="com-elements">
+    <div id="desc-text">
+      <p><%= @community.description %></p>
+    </div>
+
+    <div id="polaroid">
+      <ul>
+        <% @com_members.each do |member| %>
+
+        <li><%= link_to user_path(member) do %><%= cl_image_tag member.photo.key, height: 100, width: 100, crop: :fill %><% end %>
+            <p><%= member.username.capitalize %></p></li>
+
+        <% end %>
+      </ul>
+      <div class="light"></div>
+    </div>
+  </div>
 </div>

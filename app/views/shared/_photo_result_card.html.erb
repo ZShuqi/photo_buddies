@@ -2,7 +2,7 @@
 <%= link_to gallery_photo_path(gal, photo.id) do %>
   <div class="photo-result">
     <%= cl_image_tag photo.photo.key, height: 400, width: 400, crop: :fill %>
-    <p class="likes"><strong><%= photo.likes %></strong> <i class="fa-regular fa-heart"></i></p>
+    <p class="likes"><strong><%= photo.likes.length %> </strong> <i class="fa-regular fa-heart"></i></p>
     <p class="comments"><strong><%= photo.comments.length %></strong> <i class="fa-regular fa-message"></i></p>
   </div>
 <% end %>

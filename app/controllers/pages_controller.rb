@@ -46,10 +46,15 @@ class PagesController < ApplicationController
       end
 
       if params[:query].present? && @results.blank?
-        @message = "Sorry, no results found."
+        @message = "Sorry, no results found. Have a look at our recommendations for you!"
+        @photo_results = Photo.all
+        # if user_signed_in?
+          @user_results = User.where(community_id: current_user.community_id)
+        # end
       end
     else
-      @message = "Run a search!"
+      @message = "New on PhotoBuddies:"
+      @photo_results = Photo.last(20)
     end
   end
 
