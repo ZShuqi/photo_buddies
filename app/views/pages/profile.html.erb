@@ -26,9 +26,6 @@
       <%= link_to user_gallery_path(@user, g), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn bin', title: 'Delete Gallery' do %>
         <i class="fa-sharp fa-solid fa-trash"></i>
       <% end %>
-      <%= link_to edit_gallery_path(g)do %>
-        <i class="fa-solid fa-pen up"></i>
-      <% end %>
 
       <div class="carousel slide m-3 d-flex justify-content-center caro-drop">
         <%= render 'shared/gallery_carousel', my_pics: g %>
@@ -45,6 +42,10 @@
 
   <div class="container p-3 mb-3">
     <h4><strong>My Events</strong></h4>
+      <%= link_to new_event_path, class: 'btn edit-gal', id: "add-event-btn" do %>
+        <i class="fa-solid fa-plus"></i> Add an event
+      <% end %>
+
     <div class="grid">
       <% @my_events.reverse.each do |event| %>
         <%= link_to event_path(event), class: "nav-link" do %>
@@ -81,9 +82,3 @@
     </div>
   </div>
 </div>
-
-
-
-<%# <%= link_to new_event_path, class: "main-button", id: "add-event-btn" do %>
-  <%# <i class="fa-solid fa-plus"></i> Add an event %>
-<%# <% end %>

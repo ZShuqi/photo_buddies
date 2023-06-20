@@ -35,10 +35,10 @@
 <div class="container mb-5">
   <% if @results.try(:any?) %>
     <div class="accordion" id="searchAccordion">
-      <div class="accordion-item">
+      <div class="accordion-item bg-white">
         <h2 class="accordion-header">
           <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            Results in Art ( <%= @results.length %> )
+            Results in Art ( <%= @photo_results.length %> )
           </button>
         </h2>
         <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#searchAccordion">
@@ -59,7 +59,7 @@
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            Results in People ( <%= @results.length %> )
+            Results in People ( <%= @user_results.length %> )
           </button>
         </h2>
         <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#searchAccordion">
