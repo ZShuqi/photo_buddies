@@ -42,82 +42,82 @@ user1.photo.attach(io: avatar1, filename: "user1.jpg", content_type: "image/png"
 user1.banner_photo.attach(io: bannerphoto1, filename: "bannerphoto1.jpg", content_type: "image/png")
 user1.save
 puts "."
-# user2 = User.new(email: "elisa@gmail.com", password: "123456", username: 'elisa', community_id: berlin.id, description: "🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
-# user2.photo.attach(io: avatar2, filename: "user2.jpg", content_type: "image/png")
-# user2.banner_photo.attach(io: bannerphoto2, filename: "bannerphoto2.jpg", content_type: "image/png")
-# user2.save
-# puts "."
-# user3 = User.new(email: "shuqi@gmail.com", password: "123456", username: 'shuqi', community_id: berlin.id, description: "I am a landscape and travel photographer since 2008. I love to organize events in my city to meet new people!")
-# user3.photo.attach(io: avatar3, filename: "user3.jpg", content_type: "image/png")
-# user3.banner_photo.attach(io: bannerphoto3, filename: "bannerphoto3.jpg", content_type: "image/png")
-# user3.save
-# puts "."
-# user4 = User.new(email: "lucile@gmail.com", password: "123456", username: 'lucile', community_id: berlin.id, description: "I love beautiful content! When I am not coding, I'm most probably walking around Berlin taking photos of the city.")
-# user4.photo.attach(io: avatar4, filename: "user4.jpg", content_type: "image/png")
-# user4.banner_photo.attach(io: bannerphoto4, filename: "bannerphoto4.jpg", content_type: "image/png")
-# user4.save
-# puts "."
+user2 = User.new(email: "elisa@gmail.com", password: "123456", username: 'elisa', community_id: berlin.id, description: "🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
+user2.photo.attach(io: avatar2, filename: "user2.jpg", content_type: "image/png")
+user2.banner_photo.attach(io: bannerphoto2, filename: "bannerphoto2.jpg", content_type: "image/png")
+user2.save
+puts "."
+user3 = User.new(email: "shuqi@gmail.com", password: "123456", username: 'shuqi', community_id: berlin.id, description: "I am a landscape and travel photographer since 2008. I love to organize events in my city to meet new people!")
+user3.photo.attach(io: avatar3, filename: "user3.jpg", content_type: "image/png")
+user3.banner_photo.attach(io: bannerphoto3, filename: "bannerphoto3.jpg", content_type: "image/png")
+user3.save
+puts "."
+user4 = User.new(email: "lucile@gmail.com", password: "123456", username: 'lucile', community_id: berlin.id, description: "I love beautiful content! When I am not coding, I'm most probably walking around Berlin taking photos of the city.")
+user4.photo.attach(io: avatar4, filename: "user4.jpg", content_type: "image/png")
+user4.banner_photo.attach(io: bannerphoto4, filename: "bannerphoto4.jpg", content_type: "image/png")
+user4.save
+puts "."
 
 # # extra users
-# avatar5 = URI.open("https://images.unsplash.com/photo-1599566219227-2efe0c9b7f5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c21pbGV8ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=500&q=60")
-# avatar6 = URI.open("https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
-# avatar7 = URI.open("https://images.unsplash.com/photo-1535295972055-1c762f4483e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
-# avatar8 = URI.open("https://images.unsplash.com/photo-1548213238-0da7521bd6e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
-# avatar9 = URI.open("https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
-# avatar10 = URI.open("https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODd8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
-# avatar11 = URI.open("https://images.unsplash.com/photo-1504199367641-aba8151af406?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAzfHxzbWlsZXxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60")
-# avatar12 = URI.open("https://images.unsplash.com/photo-1531123414780-f74242c2b052?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTExfHxzbWlsZXxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60")
+avatar5 = URI.open("https://images.unsplash.com/photo-1599566219227-2efe0c9b7f5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c21pbGV8ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=500&q=60")
+avatar6 = URI.open("https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
+avatar7 = URI.open("https://images.unsplash.com/photo-1535295972055-1c762f4483e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
+avatar8 = URI.open("https://images.unsplash.com/photo-1548213238-0da7521bd6e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
+avatar9 = URI.open("https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
+avatar10 = URI.open("https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODd8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
+avatar11 = URI.open("https://images.unsplash.com/photo-1504199367641-aba8151af406?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAzfHxzbWlsZXxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60")
+avatar12 = URI.open("https://images.unsplash.com/photo-1531123414780-f74242c2b052?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTExfHxzbWlsZXxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60")
 
-# # copies of banners 1-4, can improve with more variety
-# bannerphoto5 = URI.open("https://images.unsplash.com/photo-1682687220566-5599dbbebf11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxzZWFyY2h8MXx8c3Vuc2V0fGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
-# bannerphoto6 = URI.open("https://images.unsplash.com/photo-1586348943529-beaae6c28db9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3Vuc2V0fGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
-# bannerphoto7 = URI.open("https://images.unsplash.com/photo-1517685633466-403d6955aeab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHN1bnNldHxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60")
-# bannerphoto8 = URI.open("https://images.unsplash.com/photo-1515705576963-95cad62945b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c3RhcnN8ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=500&q=60")
-# bannerphoto9 = URI.open("https://images.unsplash.com/photo-1508193638397-1c4234db14d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZvcmVzdHxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60")
-# bannerphoto10 = URI.open("https://images.unsplash.com/photo-1478265409131-1f65c88f965c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNub3d8ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=500&q=60")
-# bannerphoto11 = URI.open("https://images.unsplash.com/photo-1517384084767-6bc118943770?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2FuZHxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60")
-# bannerphoto12 = URI.open("https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2FuZHxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60")
+# copies of banners 1-4, can improve with more variety
+bannerphoto5 = URI.open("https://images.unsplash.com/photo-1682687220566-5599dbbebf11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxzZWFyY2h8MXx8c3Vuc2V0fGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
+bannerphoto6 = URI.open("https://images.unsplash.com/photo-1586348943529-beaae6c28db9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3Vuc2V0fGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
+bannerphoto7 = URI.open("https://images.unsplash.com/photo-1517685633466-403d6955aeab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHN1bnNldHxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60")
+bannerphoto8 = URI.open("https://images.unsplash.com/photo-1515705576963-95cad62945b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c3RhcnN8ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=500&q=60")
+bannerphoto9 = URI.open("https://images.unsplash.com/photo-1508193638397-1c4234db14d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZvcmVzdHxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60")
+bannerphoto10 = URI.open("https://images.unsplash.com/photo-1478265409131-1f65c88f965c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNub3d8ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=500&q=60")
+bannerphoto11 = URI.open("https://images.unsplash.com/photo-1517384084767-6bc118943770?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2FuZHxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60")
+bannerphoto12 = URI.open("https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2FuZHxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60")
 
-# user5 = User.new(email: "maria@gmail.com", password: "123456", username: 'maria', community_id: berlin.id, description: "I am an independent commercial photographer with a strong interest in art and mechanical equipments since childhood.")
-# user5.photo.attach(io: avatar5, filename: "user5.jpg", content_type: "image/png")
-# user5.banner_photo.attach(io: bannerphoto5, filename: "bannerphoto5.jpg", content_type: "image/png")
-# user5.save
-# puts "."
-# user6 = User.new(email: "justine@gmail.com", password: "123456", username: 'justine', community_id: berlin.id, description:"📷 Hi! I am an amateur photographer trying to capture the story of people on the street with black-and-white photography.")
-# user6.photo.attach(io: avatar6, filename: "user6.jpg", content_type: "image/png")
-# user6.banner_photo.attach(io: bannerphoto6, filename: "bannerphoto6.jpg", content_type: "image/png")
-# user6.save
-# puts "."
-# user7 = User.new(email: "yuri@gmail.com", password: "123456", username: 'Yuri', community_id: berlin.id, description:"Hi ☺️! I am an amateur photographer and a food stylist. Feel free to reach out for a chat!")
-# user7.photo.attach(io: avatar7, filename: "user7.jpg", content_type: "image/png")
-# user7.banner_photo.attach(io: bannerphoto7, filename: "bannerphoto7.jpg", content_type: "image/png")
-# user7.save
-# puts "."
-# user8 = User.new(email: "rupert@gmail.com", password: "123456", username: 'rupert', community_id: berlin.id, description:"When I'm not shooting for the Harry Potter series, I like to go hiking in the mountains to take some great shots.")
-# user8.photo.attach(io: avatar8, filename: "user8.jpg", content_type: "image/png")
-# user8.banner_photo.attach(io: bannerphoto8, filename: "bannerphoto8.jpg", content_type: "image/png")
-# user8.save
-# puts "."
-# user9 = User.new(email: "otto@gmail.com", password: "123456", username: 'otto', community_id: berlin.id, description: "Hello there ✨✨✨ I'm not just a photographer. I'm also a model, hairdresser, stylist, and makeup artist. Nice to meet you!")
-# user9.photo.attach(io: avatar9, filename: "user9.jpg", content_type: "image/png")
-# user9.banner_photo.attach(io: bannerphoto9, filename: "bannerphoto9.jpg", content_type: "image/png")
-# user9.save
-# puts "."
-# user10 = User.new(email: "sally@gmail.com", password: "123456", username: 'sally', community_id: berlin.id, description:"Hi people, I've been working as a commercial photographer for more than ten years. I'd love to share my experience with you!")
-# user10.photo.attach(io: avatar10, filename: "user10.jpg", content_type: "image/png")
-# user10.banner_photo.attach(io: bannerphoto10, filename: "bannerphoto10.jpg", content_type: "image/png")
-# user10.save
-# puts "."
-# user11 = User.new(email: "ronald@gmail.com", password: "123456", username: 'ronald', community_id: berlin.id, description:"I am a photography enthusiast and I'd love to know more about great photo spots in our great city!")
-# user11.photo.attach(io: avatar11, filename: "user11.jpg", content_type: "image/png")
-# user11.banner_photo.attach(io: bannerphoto11, filename: "bannerphoto11.jpg", content_type: "image/png")
-# user11.save
-# puts "."
-# user12 = User.new(email: "ellie@gmail.com", password: "123456", username: 'ellie', community_id: berlin.id, description:"When I'm not teaching at the kindergarten, I like to roam about the city to discover its great architecture landmarks.")
-# user12.photo.attach(io: avatar12, filename: "user12.jpg", content_type: "image/png")
-# user12.banner_photo.attach(io: bannerphoto12, filename: "bannerphoto12.jpg", content_type: "image/png")
-# user12.save
-# puts "."
+user5 = User.new(email: "maria@gmail.com", password: "123456", username: 'maria', community_id: berlin.id, description: "I am an independent commercial photographer with a strong interest in art and mechanical equipments since childhood.")
+user5.photo.attach(io: avatar5, filename: "user5.jpg", content_type: "image/png")
+user5.banner_photo.attach(io: bannerphoto5, filename: "bannerphoto5.jpg", content_type: "image/png")
+user5.save
+puts "."
+user6 = User.new(email: "justine@gmail.com", password: "123456", username: 'justine', community_id: berlin.id, description:"📷 Hi! I am an amateur photographer trying to capture the story of people on the street with black-and-white photography.")
+user6.photo.attach(io: avatar6, filename: "user6.jpg", content_type: "image/png")
+user6.banner_photo.attach(io: bannerphoto6, filename: "bannerphoto6.jpg", content_type: "image/png")
+user6.save
+puts "."
+user7 = User.new(email: "yuri@gmail.com", password: "123456", username: 'Yuri', community_id: berlin.id, description:"Hi ☺️! I am an amateur photographer and a food stylist. Feel free to reach out for a chat!")
+user7.photo.attach(io: avatar7, filename: "user7.jpg", content_type: "image/png")
+user7.banner_photo.attach(io: bannerphoto7, filename: "bannerphoto7.jpg", content_type: "image/png")
+user7.save
+puts "."
+user8 = User.new(email: "rupert@gmail.com", password: "123456", username: 'rupert', community_id: berlin.id, description:"When I'm not shooting for the Harry Potter series, I like to go hiking in the mountains to take some great shots.")
+user8.photo.attach(io: avatar8, filename: "user8.jpg", content_type: "image/png")
+user8.banner_photo.attach(io: bannerphoto8, filename: "bannerphoto8.jpg", content_type: "image/png")
+user8.save
+puts "."
+user9 = User.new(email: "otto@gmail.com", password: "123456", username: 'otto', community_id: berlin.id, description: "Hello there ✨✨✨ I'm not just a photographer. I'm also a model, hairdresser, stylist, and makeup artist. Nice to meet you!")
+user9.photo.attach(io: avatar9, filename: "user9.jpg", content_type: "image/png")
+user9.banner_photo.attach(io: bannerphoto9, filename: "bannerphoto9.jpg", content_type: "image/png")
+user9.save
+puts "."
+user10 = User.new(email: "sally@gmail.com", password: "123456", username: 'sally', community_id: berlin.id, description:"Hi people, I've been working as a commercial photographer for more than ten years. I'd love to share my experience with you!")
+user10.photo.attach(io: avatar10, filename: "user10.jpg", content_type: "image/png")
+user10.banner_photo.attach(io: bannerphoto10, filename: "bannerphoto10.jpg", content_type: "image/png")
+user10.save
+puts "."
+user11 = User.new(email: "ronald@gmail.com", password: "123456", username: 'ronald', community_id: berlin.id, description:"I am a photography enthusiast and I'd love to know more about great photo spots in our great city!")
+user11.photo.attach(io: avatar11, filename: "user11.jpg", content_type: "image/png")
+user11.banner_photo.attach(io: bannerphoto11, filename: "bannerphoto11.jpg", content_type: "image/png")
+user11.save
+puts "."
+user12 = User.new(email: "ellie@gmail.com", password: "123456", username: 'ellie', community_id: berlin.id, description:"When I'm not teaching at the kindergarten, I like to roam about the city to discover its great architecture landmarks.")
+user12.photo.attach(io: avatar12, filename: "user12.jpg", content_type: "image/png")
+user12.banner_photo.attach(io: bannerphoto12, filename: "bannerphoto12.jpg", content_type: "image/png")
+user12.save
+puts "."
 
 puts "Creating galleries..."
 
@@ -230,120 +230,120 @@ gallery1 = Gallery.create!(user_id: user1.id, name: "Urban vibes")
 # gallery1.photos.attach(io: ph3, filename: "nes.png", content_type: "image/png")
 # gallery1.photos.attach(io: ph4, filename: "nes.png", content_type: "image/png")
 puts "."
-# gallery2 = Gallery.create!(user_id: user1.id, name: "A Walk in the Forest")
+gallery2 = Gallery.create!(user_id: user1.id, name: "A Walk in the Forest")
 # gallery2.photos.attach(io: ph5, filename: "nes.png", content_type: "image/png")
 # gallery2.photos.attach(io: ph6, filename: "nes.png", content_type: "image/png")
 # gallery2.photos.attach(io: ph7, filename: "nes.png", content_type: "image/png")
 # gallery2.photos.attach(io: ph8, filename: "nes.png", content_type: "image/png")
-# puts "."
-# gallery3 = Gallery.create!(user_id: user2.id, name: "By the Lake")
+puts "."
+gallery3 = Gallery.create!(user_id: user2.id, name: "By the Lake")
 # gallery3.photos.attach(io: ph9, filename: "nes.png", content_type: "image/png")
 # gallery3.photos.attach(io: ph10, filename: "nes.png", content_type: "image/png")
 # gallery3.photos.attach(io: ph11, filename: "nes.png", content_type: "image/png")
 # gallery3.photos.attach(io: ph12, filename: "nes.png", content_type: "image/png")
-# puts "."
-# gallery4 = Gallery.create!(user_id: user2.id, name: "Design Photo Shoot!")
+puts "."
+gallery4 = Gallery.create!(user_id: user2.id, name: "Design Photo Shoot!")
 # gallery4.photos.attach(io: ph13, filename: "nes.png", content_type: "image/png")
 # gallery4.photos.attach(io: ph14, filename: "nes.png", content_type: "image/png")
 # gallery4.photos.attach(io: ph15, filename: "nes.png", content_type: "image/png")
 # gallery4.photos.attach(io: ph16, filename: "nes.png", content_type: "image/png")
-# puts "."
-# gallery5 = Gallery.create!(user_id: user3.id, name: "Urban vibes")
+puts "."
+gallery5 = Gallery.create!(user_id: user3.id, name: "Urban vibes")
 # gallery5.photos.attach(io: ph17, filename: "nes.png", content_type: "image/png")
 # gallery5.photos.attach(io: ph18, filename: "nes.png", content_type: "image/png")
 # gallery5.photos.attach(io: ph19, filename: "nes.png", content_type: "image/png")
 # gallery5.photos.attach(io: ph20, filename: "nes.png", content_type: "image/png")
-# puts "."
-# gallery6 = Gallery.create!(user_id: user3.id, name: "A Walk in the Forest")
+puts "."
+gallery6 = Gallery.create!(user_id: user3.id, name: "A Walk in the Forest")
 # gallery6.photos.attach(io: ph21, filename: "nes.png", content_type: "image/png")
 # gallery6.photos.attach(io: ph22, filename: "nes.png", content_type: "image/png")
 # gallery6.photos.attach(io: ph23, filename: "nes.png", content_type: "image/png")
 # gallery6.photos.attach(io: ph24, filename: "nes.png", content_type: "image/png")
-# puts "."
-# gallery7 = Gallery.create!(user_id: user4.id, name: "A Summer Coding")
+puts "."
+gallery7 = Gallery.create!(user_id: user4.id, name: "A Summer Coding")
 # gallery7.photos.attach(io: ph25, filename: "nes.png", content_type: "image/png")
 # gallery7.photos.attach(io: ph26, filename: "nes.png", content_type: "image/png")
 # gallery7.photos.attach(io: ph27, filename: "nes.png", content_type: "image/png")
 # gallery7.photos.attach(io: ph28, filename: "nes.png", content_type: "image/png")
-# puts "."
-# gallery8 = Gallery.create!(user_id: user5.id, name: "Design Photo Shoot!")
+puts "."
+gallery8 = Gallery.create!(user_id: user5.id, name: "Design Photo Shoot!")
 # gallery8.photos.attach(io: ph65, filename: "nes.png", content_type: "image/png")
 # gallery8.photos.attach(io: ph66, filename: "nes.png", content_type: "image/png")
 # gallery8.photos.attach(io: ph67, filename: "nes.png", content_type: "image/png")
 # gallery8.photos.attach(io: ph68, filename: "nes.png", content_type: "image/png")
-# puts "."
-# gallery9 = Gallery.create!(user_id: user5.id, name: "Urban vibes")
+puts "."
+gallery9 = Gallery.create!(user_id: user5.id, name: "Urban vibes")
 # gallery9.photos.attach(io: ph69, filename: "nes.png", content_type: "image/png")
 # gallery9.photos.attach(io: ph70, filename: "nes.png", content_type: "image/png")
 # gallery9.photos.attach(io: ph71, filename: "nes.png", content_type: "image/png")
 # gallery9.photos.attach(io: ph72, filename: "nes.png", content_type: "image/png")
-# puts "."
-# gallery10 = Gallery.create!(user_id: user6.id, name: "By the Lake")
+puts "."
+gallery10 = Gallery.create!(user_id: user6.id, name: "By the Lake")
 # gallery10.photos.attach(io: ph45, filename: "nes.png", content_type: "image/png")
 # gallery10.photos.attach(io: ph46, filename: "nes.png", content_type: "image/png")
 # gallery10.photos.attach(io: ph47, filename: "nes.png", content_type: "image/png")
 # gallery10.photos.attach(io: ph48, filename: "nes.png", content_type: "image/png")
-# puts "."
-# gallery11 = Gallery.create!(user_id: user7.id, name: "Foods")
+puts "."
+gallery11 = Gallery.create!(user_id: user7.id, name: "Foods")
 # gallery11.photos.attach(io: ph29, filename: "nes.png", content_type: "image/png")
 # gallery11.photos.attach(io: ph30, filename: "nes.png", content_type: "image/png")
 # gallery11.photos.attach(io: ph31, filename: "nes.png", content_type: "image/png")
 # gallery11.photos.attach(io: ph32, filename: "nes.png", content_type: "image/png")
-# puts "."
-# gallery12 = Gallery.create!(user_id: user7.id, name: "Drinks")
+puts "."
+gallery12 = Gallery.create!(user_id: user7.id, name: "Drinks")
 # gallery12.photos.attach(io: ph33, filename: "nes.png", content_type: "image/png")
 # gallery12.photos.attach(io: ph34, filename: "nes.png", content_type: "image/png")
 # gallery12.photos.attach(io: ph35, filename: "nes.png", content_type: "image/png")
 # gallery12.photos.attach(io: ph36, filename: "nes.png", content_type: "image/png")
-# puts "."
-# gallery13 = Gallery.create!(user_id: user8.id, name: "A Walk in the Forest")
+puts "."
+gallery13 = Gallery.create!(user_id: user8.id, name: "A Walk in the Forest")
 # gallery13.photos.attach(io: ph37, filename: "nes.png", content_type: "image/png")
 # gallery13.photos.attach(io: ph38, filename: "nes.png", content_type: "image/png")
 # gallery13.photos.attach(io: ph39, filename: "nes.png", content_type: "image/png")
 # gallery13.photos.attach(io: ph40, filename: "nes.png", content_type: "image/png")
-# puts "."
-# gallery14 = Gallery.create!(user_id: user9.id, name: "By the Lake")
+puts "."
+gallery14 = Gallery.create!(user_id: user9.id, name: "By the Lake")
 # gallery14.photos.attach(io: ph49, filename: "nes.png", content_type: "image/png")
 # gallery14.photos.attach(io: ph50, filename: "nes.png", content_type: "image/png")
 # gallery14.photos.attach(io: ph51, filename: "nes.png", content_type: "image/png")
 # gallery14.photos.attach(io: ph52, filename: "nes.png", content_type: "image/png")
-# puts "."
-# gallery15 = Gallery.create!(user_id: user9.id, name: "Urban vibes")
+puts "."
+gallery15 = Gallery.create!(user_id: user9.id, name: "Urban vibes")
 # gallery15.photos.attach(io: ph73, filename: "nes.png", content_type: "image/png")
 # gallery15.photos.attach(io: ph74, filename: "nes.png", content_type: "image/png")
 # gallery15.photos.attach(io: ph75, filename: "nes.png", content_type: "image/png")
 # gallery15.photos.attach(io: ph76, filename: "nes.png", content_type: "image/png")
-# puts "."
-# gallery16 = Gallery.create!(user_id: user10.id, name: "By the Lake")
+puts "."
+gallery16 = Gallery.create!(user_id: user10.id, name: "By the Lake")
 # gallery16.photos.attach(io: ph53, filename: "nes.png", content_type: "image/png")
 # gallery16.photos.attach(io: ph54, filename: "nes.png", content_type: "image/png")
 # gallery16.photos.attach(io: ph55, filename: "nes.png", content_type: "image/png")
 # gallery16.photos.attach(io: ph56, filename: "nes.png", content_type: "image/png")
-# puts "."
-# gallery17 = Gallery.create!(user_id: user11.id, name: "A Walk in the Forest")
+puts "."
+gallery17 = Gallery.create!(user_id: user11.id, name: "A Walk in the Forest")
 # gallery17.photos.attach(io: ph41, filename: "nes.png", content_type: "image/png")
 # gallery17.photos.attach(io: ph42, filename: "nes.png", content_type: "image/png")
 # gallery17.photos.attach(io: ph43, filename: "nes.png", content_type: "image/png")
 # gallery17.photos.attach(io: ph44, filename: "nes.png", content_type: "image/png")
-# puts "."
-# gallery18 = Gallery.create!(user_id: user11.id, name: "By the Lake")
+puts "."
+gallery18 = Gallery.create!(user_id: user11.id, name: "By the Lake")
 # gallery18.photos.attach(io: ph57, filename: "nes.png", content_type: "image/png")
 # gallery18.photos.attach(io: ph58, filename: "nes.png", content_type: "image/png")
 # gallery18.photos.attach(io: ph59, filename: "nes.png", content_type: "image/png")
 # gallery18.photos.attach(io: ph60, filename: "nes.png", content_type: "image/png")
-# puts "."
-# gallery19 = Gallery.create!(user_id: user12.id, name: "Urban vibes")
+puts "."
+gallery19 = Gallery.create!(user_id: user12.id, name: "Urban vibes")
 # gallery19.photos.attach(io: ph77, filename: "nes.png", content_type: "image/png")
 # gallery19.photos.attach(io: ph78, filename: "nes.png", content_type: "image/png")
 # gallery19.photos.attach(io: ph79, filename: "nes.png", content_type: "image/png")
 # gallery19.photos.attach(io: ph80, filename: "nes.png", content_type: "image/png")
-# puts "."
-# gallery20 = Gallery.create!(user_id: user12.id, name: "By the Lake")
+puts "."
+gallery20 = Gallery.create!(user_id: user12.id, name: "By the Lake")
 # gallery20.photos.attach(io: ph61, filename: "nes.png", content_type: "image/png")
 # gallery20.photos.attach(io: ph62, filename: "nes.png", content_type: "image/png")
 # gallery20.photos.attach(io: ph63, filename: "nes.png", content_type: "image/png")
 # gallery20.photos.attach(io: ph64, filename: "nes.png", content_type: "image/png")
-# puts "."
+puts "."
 
 puts "Creating photos..."
 # photos
@@ -365,328 +365,328 @@ photo4.photo.attach(io: ph4, filename: "nes.png", content_type: "image/png")
 photo4.save
 puts "."
 
-# photo5 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery2.id)
-# # photo5.photo.attach(io: ph5, filename: "nes.png", content_type: "image/png")
-# photo5.save
-# puts "."
-# photo6 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery2.id)
-# # photo6.photo.attach(io: ph6, filename: "nes.png", content_type: "image/png")
-# photo6.save
-# puts "."
-# photo7 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery2.id)
-# # photo7.photo.attach(io: ph7, filename: "nes.png", content_type: "image/png")
-# photo7.save
-# puts "."
-# photo8 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery2.id)
-# # photo8.photo.attach(io: ph8, filename: "nes.png", content_type: "image/png")
-# photo8.save
-# puts "."
+photo5 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery2.id)
+# photo5.photo.attach(io: ph5, filename: "nes.png", content_type: "image/png")
+photo5.save
+puts "."
+photo6 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery2.id)
+# photo6.photo.attach(io: ph6, filename: "nes.png", content_type: "image/png")
+photo6.save
+puts "."
+photo7 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery2.id)
+# photo7.photo.attach(io: ph7, filename: "nes.png", content_type: "image/png")
+photo7.save
+puts "."
+photo8 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery2.id)
+# photo8.photo.attach(io: ph8, filename: "nes.png", content_type: "image/png")
+photo8.save
+puts "."
 
-# photo9 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery3.id)
-# # photo9.photo.attach(io: ph9, filename: "nes.png", content_type: "image/png")
-# photo9.save
-# puts "."
-# photo10 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery3.id)
-# # photo10.photo.attach(io: ph10, filename: "nes.png", content_type: "image/png")
-# photo10.save
-# puts "."
-# photo11 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery3.id)
-# # photo11.photo.attach(io: ph11, filename: "nes.png", content_type: "image/png")
-# photo11.save
-# puts "."
-# photo12 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery3.id)
-# # photo12.photo.attach(io: ph12, filename: "nes.png", content_type: "image/png")
-# photo12.save
-# puts "."
+photo9 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery3.id)
+# photo9.photo.attach(io: ph9, filename: "nes.png", content_type: "image/png")
+photo9.save
+puts "."
+photo10 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery3.id)
+# photo10.photo.attach(io: ph10, filename: "nes.png", content_type: "image/png")
+photo10.save
+puts "."
+photo11 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery3.id)
+# photo11.photo.attach(io: ph11, filename: "nes.png", content_type: "image/png")
+photo11.save
+puts "."
+photo12 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery3.id)
+# photo12.photo.attach(io: ph12, filename: "nes.png", content_type: "image/png")
+photo12.save
+puts "."
 
-# photo13 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", gallery_id: gallery4.id)
-# # photo13.photo.attach(io: ph13, filename: "nes.png", content_type: "image/png")
-# photo13.save
-# puts "."
-# photo14 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", gallery_id: gallery4.id)
-# # photo14.photo.attach(io: ph14, filename: "nes.png", content_type: "image/png")
-# photo14.save
-# puts "."
-# photo15 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", gallery_id: gallery4.id)
-# # photo15.photo.attach(io: ph15, filename: "nes.png", content_type: "image/png")
-# photo15.save
-# puts "."
-# photo16 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", gallery_id: gallery4.id)
-# # photo16.photo.attach(io: ph16, filename: "nes.png", content_type: "image/png")
-# photo16.save
-# puts "."
+photo13 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", gallery_id: gallery4.id)
+# photo13.photo.attach(io: ph13, filename: "nes.png", content_type: "image/png")
+photo13.save
+puts "."
+photo14 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", gallery_id: gallery4.id)
+# photo14.photo.attach(io: ph14, filename: "nes.png", content_type: "image/png")
+photo14.save
+puts "."
+photo15 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", gallery_id: gallery4.id)
+# photo15.photo.attach(io: ph15, filename: "nes.png", content_type: "image/png")
+photo15.save
+puts "."
+photo16 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", gallery_id: gallery4.id)
+# photo16.photo.attach(io: ph16, filename: "nes.png", content_type: "image/png")
+photo16.save
+puts "."
 
-# photo17 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery5.id)
-# photo17.photo.attach(io: ph17, filename: "nes.png", content_type: "image/png")
-# photo17.save
-# puts "."
-# photo18 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery5.id)
-# photo18.photo.attach(io: ph18, filename: "nes.png", content_type: "image/png")
-# photo18.save
-# puts "."
-# photo19 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery5.id)
-# photo19.photo.attach(io: ph19, filename: "nes.png", content_type: "image/png")
-# photo19.save
-# puts "."
-# photo20 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery5.id)
-# photo20.photo.attach(io: ph20, filename: "nes.png", content_type: "image/png")
-# photo20.save
-# puts "."
+photo17 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery5.id)
+photo17.photo.attach(io: ph17, filename: "nes.png", content_type: "image/png")
+photo17.save
+puts "."
+photo18 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery5.id)
+photo18.photo.attach(io: ph18, filename: "nes.png", content_type: "image/png")
+photo18.save
+puts "."
+photo19 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery5.id)
+photo19.photo.attach(io: ph19, filename: "nes.png", content_type: "image/png")
+photo19.save
+puts "."
+photo20 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery5.id)
+photo20.photo.attach(io: ph20, filename: "nes.png", content_type: "image/png")
+photo20.save
+puts "."
 
-# photo21 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery6.id)
-# photo21.photo.attach(io: ph21, filename: "nes.png", content_type: "image/png")
-# photo21.save
-# puts "."
-# photo22 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery6.id)
-# photo22.photo.attach(io: ph22, filename: "nes.png", content_type: "image/png")
-# photo22.save
-# puts "."
-# photo23 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery6.id)
-# photo23.photo.attach(io: ph23, filename: "nes.png", content_type: "image/png")
-# photo23.save
-# puts "."
-# photo24 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery6.id)
-# photo24.photo.attach(io: ph24, filename: "nes.png", content_type: "image/png")
-# photo24.save
-# puts "."
+photo21 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery6.id)
+photo21.photo.attach(io: ph21, filename: "nes.png", content_type: "image/png")
+photo21.save
+puts "."
+photo22 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery6.id)
+photo22.photo.attach(io: ph22, filename: "nes.png", content_type: "image/png")
+photo22.save
+puts "."
+photo23 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery6.id)
+photo23.photo.attach(io: ph23, filename: "nes.png", content_type: "image/png")
+photo23.save
+puts "."
+photo24 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery6.id)
+photo24.photo.attach(io: ph24, filename: "nes.png", content_type: "image/png")
+photo24.save
+puts "."
 
-# photo25 = Photo.new(address: "Ostkreuz, Berlin", keyword: "work", gallery_id: gallery7.id)
-# photo25.photo.attach(io: ph25, filename: "nes.png", content_type: "image/png")
-# photo25.save
-# puts "."
-# photo26 = Photo.new(address: "Ostkreuz, Berlin", keyword: "work", gallery_id: gallery7.id)
-# photo26.photo.attach(io: ph26, filename: "nes.png", content_type: "image/png")
-# photo26.save
-# puts "."
-# photo27 = Photo.new(address: "Ostkreuz, Berlin", keyword: "work", gallery_id: gallery7.id)
-# photo27.photo.attach(io: ph27, filename: "nes.png", content_type: "image/png")
-# photo27.save
-# puts "."
-# photo28 = Photo.new(address: "Ostkreuz, Berlin", keyword: "work", gallery_id: gallery7.id)
-# photo28.photo.attach(io: ph28, filename: "nes.png", content_type: "image/png")
-# photo28.save
-# puts "."
+photo25 = Photo.new(address: "Ostkreuz, Berlin", keyword: "work", gallery_id: gallery7.id)
+photo25.photo.attach(io: ph25, filename: "nes.png", content_type: "image/png")
+photo25.save
+puts "."
+photo26 = Photo.new(address: "Ostkreuz, Berlin", keyword: "work", gallery_id: gallery7.id)
+photo26.photo.attach(io: ph26, filename: "nes.png", content_type: "image/png")
+photo26.save
+puts "."
+photo27 = Photo.new(address: "Ostkreuz, Berlin", keyword: "work", gallery_id: gallery7.id)
+photo27.photo.attach(io: ph27, filename: "nes.png", content_type: "image/png")
+photo27.save
+puts "."
+photo28 = Photo.new(address: "Ostkreuz, Berlin", keyword: "work", gallery_id: gallery7.id)
+photo28.photo.attach(io: ph28, filename: "nes.png", content_type: "image/png")
+photo28.save
+puts "."
 
-# photo29 = Photo.new(address: "Alexanderplatz, Alexanderstr., Berlin", keyword: "food", gallery_id: gallery11.id)
-# photo29.photo.attach(io: ph29, filename: "nes.png", content_type: "image/png")
-# photo29.save
-# puts "."
-# photo30 = Photo.new(address: "Alexanderplatz, Alexanderstr., Berlin", keyword: "food", gallery_id: gallery11.id)
-# photo30.photo.attach(io: ph30, filename: "nes.png", content_type: "image/png")
-# photo30.save
-# puts "."
-# photo31 = Photo.new(address: "Alexanderplatz, Alexanderstr., Berlin", keyword: "food", gallery_id: gallery11.id)
-# photo31photo.attach(io: ph31, filename: "nes.png", content_type: "image/png")
-# photo31.save
-# puts "."
-# photo32 = Photo.new(address: "Alexanderplatz, Alexanderstr., Berlin", keyword: "food", gallery_id: gallery11.id)
-# photo32.photo.attach(io: ph32, filename: "nes.png", content_type: "image/png")
-# photo32.save
-# puts "."
+photo29 = Photo.new(address: "Alexanderplatz, Alexanderstr., Berlin", keyword: "food", gallery_id: gallery11.id)
+photo29.photo.attach(io: ph29, filename: "nes.png", content_type: "image/png")
+photo29.save
+puts "."
+photo30 = Photo.new(address: "Alexanderplatz, Alexanderstr., Berlin", keyword: "food", gallery_id: gallery11.id)
+photo30.photo.attach(io: ph30, filename: "nes.png", content_type: "image/png")
+photo30.save
+puts "."
+photo31 = Photo.new(address: "Alexanderplatz, Alexanderstr., Berlin", keyword: "food", gallery_id: gallery11.id)
+photo31photo.attach(io: ph31, filename: "nes.png", content_type: "image/png")
+photo31.save
+puts "."
+photo32 = Photo.new(address: "Alexanderplatz, Alexanderstr., Berlin", keyword: "food", gallery_id: gallery11.id)
+photo32.photo.attach(io: ph32, filename: "nes.png", content_type: "image/png")
+photo32.save
+puts "."
 
-# photo33 = Photo.new(address: "Alexanderplatz, Alexanderstr., Berlin", keyword: "food", gallery_id: gallery12.id)
-# photo33.photo.attach(io: ph33, filename: "nes.png", content_type: "image/png")
-# photo33.save
-# puts "."
-# photo34 = Photo.new(address: "Alexanderplatz, Alexanderstr., Berlin", keyword: "food", gallery_id: gallery12.id)
-# photo34.photo.attach(io: ph34, filename: "nes.png", content_type: "image/png")
-# photo34.save
-# puts "."
-# photo35 = Photo.new(address: "Alexanderplatz, Alexanderstr., Berlin", keyword: "food", gallery_id: gallery12.id)
-# photo35.photo.attach(io: ph35, filename: "nes.png", content_type: "image/png")
-# photo35.save
-# puts "."
-# photo36 = Photo.new(address: "Alexanderplatz, Alexanderstr., Berlin", keyword: "food", gallery_id: gallery12.id)
-# photo36.photo.attach(io: ph36, filename: "nes.png", content_type: "image/png")
-# photo36.save
-# puts "."
+photo33 = Photo.new(address: "Alexanderplatz, Alexanderstr., Berlin", keyword: "food", gallery_id: gallery12.id)
+photo33.photo.attach(io: ph33, filename: "nes.png", content_type: "image/png")
+photo33.save
+puts "."
+photo34 = Photo.new(address: "Alexanderplatz, Alexanderstr., Berlin", keyword: "food", gallery_id: gallery12.id)
+photo34.photo.attach(io: ph34, filename: "nes.png", content_type: "image/png")
+photo34.save
+puts "."
+photo35 = Photo.new(address: "Alexanderplatz, Alexanderstr., Berlin", keyword: "food", gallery_id: gallery12.id)
+photo35.photo.attach(io: ph35, filename: "nes.png", content_type: "image/png")
+photo35.save
+puts "."
+photo36 = Photo.new(address: "Alexanderplatz, Alexanderstr., Berlin", keyword: "food", gallery_id: gallery12.id)
+photo36.photo.attach(io: ph36, filename: "nes.png", content_type: "image/png")
+photo36.save
+puts "."
 
-# photo37 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery13.id)
-# photo37.photo.attach(io: ph37, filename: "nes.png", content_type: "image/png")
-# photo37.save
-# puts "."
-# photo38 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery13.id)
-# photo38.photo.attach(io: ph38, filename: "nes.png", content_type: "image/png")
-# photo38.save
-# puts "."
-# photo39 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery13.id)
-# photo39.photo.attach(io: ph39, filename: "nes.png", content_type: "image/png")
-# photo39.save
-# puts "."
-# photo40 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery13.id)
-# photo40.photo.attach(io: ph40, filename: "nes.png", content_type: "image/png")
-# photo40.save
-# puts "."
+photo37 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery13.id)
+photo37.photo.attach(io: ph37, filename: "nes.png", content_type: "image/png")
+photo37.save
+puts "."
+photo38 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery13.id)
+photo38.photo.attach(io: ph38, filename: "nes.png", content_type: "image/png")
+photo38.save
+puts "."
+photo39 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery13.id)
+photo39.photo.attach(io: ph39, filename: "nes.png", content_type: "image/png")
+photo39.save
+puts "."
+photo40 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery13.id)
+photo40.photo.attach(io: ph40, filename: "nes.png", content_type: "image/png")
+photo40.save
+puts "."
 
-# photo41 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery17.id)
-# photo41.photo.attach(io: ph41, filename: "nes.png", content_type: "image/png")
-# photo41.save
-# puts "."
-# photo42 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery17.id)
-# photo42.photo.attach(io: ph42, filename: "nes.png", content_type: "image/png")
-# photo42.save
-# puts "."
-# photo43 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery17.id)
-# photo43.photo.attach(io: ph43, filename: "nes.png", content_type: "image/png")
-# photo43.save
-# puts "."
-# photo44 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery17.id)
-# photo44.photo.attach(io: ph44, filename: "nes.png", content_type: "image/png")
-# photo44.save
-# puts "."
+photo41 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery17.id)
+photo41.photo.attach(io: ph41, filename: "nes.png", content_type: "image/png")
+photo41.save
+puts "."
+photo42 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery17.id)
+photo42.photo.attach(io: ph42, filename: "nes.png", content_type: "image/png")
+photo42.save
+puts "."
+photo43 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery17.id)
+photo43.photo.attach(io: ph43, filename: "nes.png", content_type: "image/png")
+photo43.save
+puts "."
+photo44 = Photo.new(address: "Forst Grunewald, Berlin", keyword: "forest", gallery_id: gallery17.id)
+photo44.photo.attach(io: ph44, filename: "nes.png", content_type: "image/png")
+photo44.save
+puts "."
 
-# photo45 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery10.id)
-# photo45.photo.attach(io: ph45, filename: "nes.png", content_type: "image/png")
-# photo45.save
-# puts "."
-# photo46 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery10.id)
-# photo46.photo.attach(io: ph46, filename: "nes.png", content_type: "image/png")
-# photo46.save
-# puts "."
-# photo47 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery10.id)
-# photo47.photo.attach(io: ph47, filename: "nes.png", content_type: "image/png")
-# photo47.save
-# puts "."
-# photo48 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery10.id)
-# photo48.photo.attach(io: ph48, filename: "nes.png", content_type: "image/png")
-# photo48.save
-# puts "."
+photo45 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery10.id)
+photo45.photo.attach(io: ph45, filename: "nes.png", content_type: "image/png")
+photo45.save
+puts "."
+photo46 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery10.id)
+photo46.photo.attach(io: ph46, filename: "nes.png", content_type: "image/png")
+photo46.save
+puts "."
+photo47 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery10.id)
+photo47.photo.attach(io: ph47, filename: "nes.png", content_type: "image/png")
+photo47.save
+puts "."
+photo48 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery10.id)
+photo48.photo.attach(io: ph48, filename: "nes.png", content_type: "image/png")
+photo48.save
+puts "."
 
-# photo49 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery14.id)
-# photo49.photo.attach(io: ph49, filename: "nes.png", content_type: "image/png")
-# photo49.save
-# puts "."
-# photo50 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery14.id)
-# photo50.photo.attach(io: ph50, filename: "nes.png", content_type: "image/png")
-# photo50.save
-# puts "."
-# photo51 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery14.id)
-# photo51.photo.attach(io: ph51, filename: "nes.png", content_type: "image/png")
-# photo51.save
-# puts "."
-# photo52 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery14.id)
-# photo52.photo.attach(io: ph52, filename: "nes.png", content_type: "image/png")
-# photo52.save
-# puts "."
+photo49 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery14.id)
+photo49.photo.attach(io: ph49, filename: "nes.png", content_type: "image/png")
+photo49.save
+puts "."
+photo50 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery14.id)
+photo50.photo.attach(io: ph50, filename: "nes.png", content_type: "image/png")
+photo50.save
+puts "."
+photo51 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery14.id)
+photo51.photo.attach(io: ph51, filename: "nes.png", content_type: "image/png")
+photo51.save
+puts "."
+photo52 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery14.id)
+photo52.photo.attach(io: ph52, filename: "nes.png", content_type: "image/png")
+photo52.save
+puts "."
 
-# photo53 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery16.id)
-# photo53.photo.attach(io: ph53, filename: "nes.png", content_type: "image/png")
-# photo53.save
-# puts "."
-# photo54 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery16.id)
-# photo54.photo.attach(io: ph54, filename: "nes.png", content_type: "image/png")
-# photo54.save
-# puts "."
-# photo55 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery16.id)
-# photo55.photo.attach(io: ph55, filename: "nes.png", content_type: "image/png")
-# photo55.save
-# puts "."
-# photo56 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery16.id)
-# photo56.photo.attach(io: ph56, filename: "nes.png", content_type: "image/png")
-# photo56.save
-# puts "."
+photo53 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery16.id)
+photo53.photo.attach(io: ph53, filename: "nes.png", content_type: "image/png")
+photo53.save
+puts "."
+photo54 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery16.id)
+photo54.photo.attach(io: ph54, filename: "nes.png", content_type: "image/png")
+photo54.save
+puts "."
+photo55 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery16.id)
+photo55.photo.attach(io: ph55, filename: "nes.png", content_type: "image/png")
+photo55.save
+puts "."
+photo56 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery16.id)
+photo56.photo.attach(io: ph56, filename: "nes.png", content_type: "image/png")
+photo56.save
+puts "."
 
-# photo57 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery18.id)
-# photo57.photo.attach(io: ph57, filename: "nes.png", content_type: "image/png")
-# photo57.save
-# puts "."
-# photo58 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery18.id)
-# photo58.photo.attach(io: ph58, filename: "nes.png", content_type: "image/png")
-# photo58.save
-# puts "."
-# photo59 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery18.id)
-# photo59.photo.attach(io: ph11, filename: "nes.png", content_type: "image/png")
-# photo59.save
-# puts "."
-# photo60 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery18.id)
-# photo60.photo.attach(io: ph60, filename: "nes.png", content_type: "image/png")
-# photo60.save
-# puts "."
+photo57 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery18.id)
+photo57.photo.attach(io: ph57, filename: "nes.png", content_type: "image/png")
+photo57.save
+puts "."
+photo58 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery18.id)
+photo58.photo.attach(io: ph58, filename: "nes.png", content_type: "image/png")
+photo58.save
+puts "."
+photo59 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery18.id)
+photo59.photo.attach(io: ph11, filename: "nes.png", content_type: "image/png")
+photo59.save
+puts "."
+photo60 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery18.id)
+photo60.photo.attach(io: ph60, filename: "nes.png", content_type: "image/png")
+photo60.save
+puts "."
 
-# photo61 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery20.id)
-# photo61.photo.attach(io: ph61, filename: "nes.png", content_type: "image/png")
-# photo61.save
-# puts "."
-# photo62 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery20.id)
-# photo62.photo.attach(io: ph62, filename: "nes.png", content_type: "image/png")
-# photo62.save
-# puts "."
-# photo63 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery20.id)
-# photo63.photo.attach(io: ph63, filename: "nes.png", content_type: "image/png")
-# photo63.save
-# puts "."
-# photo64 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery20.id)
-# photo64.photo.attach(io: ph64, filename: "nes.png", content_type: "image/png")
-# photo64.save
-# puts "."
+photo61 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery20.id)
+photo61.photo.attach(io: ph61, filename: "nes.png", content_type: "image/png")
+photo61.save
+puts "."
+photo62 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery20.id)
+photo62.photo.attach(io: ph62, filename: "nes.png", content_type: "image/png")
+photo62.save
+puts "."
+photo63 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery20.id)
+photo63.photo.attach(io: ph63, filename: "nes.png", content_type: "image/png")
+photo63.save
+puts "."
+photo64 = Photo.new(address: "Grosser Müggelsee, Berlin", keyword: "lake", gallery_id: gallery20.id)
+photo64.photo.attach(io: ph64, filename: "nes.png", content_type: "image/png")
+photo64.save
+puts "."
 
-# photo65 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", gallery_id: gallery8.id)
-# photo65.photo.attach(io: ph65, filename: "nes.png", content_type: "image/png")
-# photo65.save
-# puts "."
-# photo66 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", gallery_id: gallery8.id)
-# photo66.photo.attach(io: ph66, filename: "nes.png", content_type: "image/png")
-# photo66.save
-# puts "."
-# photo67 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", gallery_id: gallery8.id)
-# photo67.photo.attach(io: ph67, filename: "nes.png", content_type: "image/png")
-# photo67.save
-# puts "."
-# photo68 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", gallery_id: gallery8.id)
-# photo68.photo.attach(io: ph68, filename: "nes.png", content_type: "image/png")
-# photo68.save
-# puts "."
+photo65 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", gallery_id: gallery8.id)
+photo65.photo.attach(io: ph65, filename: "nes.png", content_type: "image/png")
+photo65.save
+puts "."
+photo66 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", gallery_id: gallery8.id)
+photo66.photo.attach(io: ph66, filename: "nes.png", content_type: "image/png")
+photo66.save
+puts "."
+photo67 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", gallery_id: gallery8.id)
+photo67.photo.attach(io: ph67, filename: "nes.png", content_type: "image/png")
+photo67.save
+puts "."
+photo68 = Photo.new(address: "Kreuzberg, Berlin", keyword: "people", gallery_id: gallery8.id)
+photo68.photo.attach(io: ph68, filename: "nes.png", content_type: "image/png")
+photo68.save
+puts "."
 
-# photo69 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery9.id)
-# photo69.photo.attach(io: ph69, filename: "nes.png", content_type: "image/png")
-# photo69.save
-# puts "."
-# photo70 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery9.id)
-# photo70.photo.attach(io: ph70, filename: "nes.png", content_type: "image/png")
-# photo70.save
-# puts "."
-# photo71 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery9.id)
-# photo71.photo.attach(io: ph71, filename: "nes.png", content_type: "image/png")
-# photo71.save
-# puts "."
-# photo72 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery9.id)
-# photo72.photo.attach(io: ph72, filename: "nes.png", content_type: "image/png")
-# photo72.save
-# puts "."
+photo69 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery9.id)
+photo69.photo.attach(io: ph69, filename: "nes.png", content_type: "image/png")
+photo69.save
+puts "."
+photo70 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery9.id)
+photo70.photo.attach(io: ph70, filename: "nes.png", content_type: "image/png")
+photo70.save
+puts "."
+photo71 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery9.id)
+photo71.photo.attach(io: ph71, filename: "nes.png", content_type: "image/png")
+photo71.save
+puts "."
+photo72 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery9.id)
+photo72.photo.attach(io: ph72, filename: "nes.png", content_type: "image/png")
+photo72.save
+puts "."
 
-# photo73 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery15.id)
-# photo73.photo.attach(io: ph73, filename: "nes.png", content_type: "image/png")
-# photo73.save
-# puts "."
-# photo74 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery15.id)
-# photo74.photo.attach(io: ph74, filename: "nes.png", content_type: "image/png")
-# photo74.save
-# puts "."
-# photo75 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery15.id)
-# photo75.photo.attach(io: ph75, filename: "nes.png", content_type: "image/png")
-# photo75.save
-# puts "."
-# photo76 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery15.id)
-# photo76.photo.attach(io: ph76, filename: "nes.png", content_type: "image/png")
-# photo76.save
-# puts "."
+photo73 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery15.id)
+photo73.photo.attach(io: ph73, filename: "nes.png", content_type: "image/png")
+photo73.save
+puts "."
+photo74 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery15.id)
+photo74.photo.attach(io: ph74, filename: "nes.png", content_type: "image/png")
+photo74.save
+puts "."
+photo75 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery15.id)
+photo75.photo.attach(io: ph75, filename: "nes.png", content_type: "image/png")
+photo75.save
+puts "."
+photo76 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery15.id)
+photo76.photo.attach(io: ph76, filename: "nes.png", content_type: "image/png")
+photo76.save
+puts "."
 
-# photo77 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery19.id)
-# photo77.photo.attach(io: ph77, filename: "nes.png", content_type: "image/png")
-# photo77.save
-# puts "."
-# photo78 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery19.id)
-# photo78.photo.attach(io: ph78, filename: "nes.png", content_type: "image/png")
-# photo78.save
-# puts "."
-# photo79 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery19.id)
-# photo79.photo.attach(io: ph79, filename: "nes.png", content_type: "image/png")
-# photo79.save
-# puts "."
-# photo80 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery19.id)
-# photo80.photo.attach(io: ph80, filename: "nes.png", content_type: "image/png")
-# photo80.save
-# puts "."
+photo77 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery19.id)
+photo77.photo.attach(io: ph77, filename: "nes.png", content_type: "image/png")
+photo77.save
+puts "."
+photo78 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery19.id)
+photo78.photo.attach(io: ph78, filename: "nes.png", content_type: "image/png")
+photo78.save
+puts "."
+photo79 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery19.id)
+photo79.photo.attach(io: ph79, filename: "nes.png", content_type: "image/png")
+photo79.save
+puts "."
+photo80 = Photo.new(address: "Friedrichschain, Berlin", keyword: "urban", gallery_id: gallery19.id)
+photo80.photo.attach(io: ph80, filename: "nes.png", content_type: "image/png")
+photo80.save
+puts "."
 
 puts "Creating comments..."
 
