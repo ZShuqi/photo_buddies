@@ -13,6 +13,7 @@ class GalleriesController < ApplicationController
   end
 
   def create
+    # need to create photos (from photo model/controller)
     @gallery = Gallery.new(gallery_params)
     @gallery.user = current_user
     authorize @gallery

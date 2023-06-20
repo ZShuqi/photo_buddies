@@ -56,17 +56,17 @@
   <% else %>
     <%= @message %>
     <div class="photo-result-cards">
-      <% @photo_results.each do |photo| %>
+      <% @photo_results.reverse.each do |photo| %>
         <%= render 'shared/photo_result_card', photo: photo %>
       <% end %>
-      <% if user_signed_in? %>
+    </div>
+    <% if user_signed_in? %>
         <div class="user-cards">
           <% @user_results.each do |user| %>
             <%= render 'shared/user_card', user: user %>
           <% end %>
         </div>
       <% end %>
-    </div>
   <% end %>
 </div>
 
