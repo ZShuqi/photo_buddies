@@ -24,6 +24,9 @@
     <% @my_galleries.each do |g| %>
       <h5 class='below'><%= g.name %></h5>
       <%= link_to 'Delete Gallery', user_gallery_path(@user, g), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},  class: 'btn' %>
+      <%= link_to edit_gallery_path(g)do %>
+        <i class="fa-solid fa-pen up"></i>
+      <% end %>
       <div class="carousel slide m-3 d-flex justify-content-center caro-drop">
         <%= render 'shared/gallery_carousel', my_pics: g %>
       </div>

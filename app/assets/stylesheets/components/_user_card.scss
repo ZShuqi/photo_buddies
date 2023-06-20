@@ -20,7 +20,7 @@
 .card-user {
   overflow: hidden;
   height: 100px;
-  background: $grey-background;
+  background: $white;
   box-shadow: 0 0 15px $grey-background;
   display: flex;
   align-items: center;
@@ -28,14 +28,14 @@
 }
 
 .card-user h2 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   margin: 0;
-  color: $red-title;
+  color: $chocolate;
 }
 
 .card-user p {
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.4;
   margin-bottom: 0;
   margin-top: 8px;
@@ -47,7 +47,7 @@
 }
 
 .card-user i {
-  color: $red-title;
+  color: $grey-background;
   font-size: xx-large;
   margin: 10px 20px 0;
 }

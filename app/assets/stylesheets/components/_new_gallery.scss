@@ -1,0 +1,37 @@
+.gal-carousel {
+  border: 1px solid $grey-background;
+  box-shadow: 1px 1px 3px $grey-background;
+  width: 100%;
+}
+
+.empty-gal-carousel {
+  background-color: white;
+  border: 1px solid $grey-background;
+  box-shadow: 1px 1px 3px $grey-background;
+}
+
+.new-gal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
+@media (min-width: 100px) and (max-width: 768px) {
+  .user-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .user-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.new-photo-form {
+  width: 100%;
+}
+
+// .gal-carousel-inner img {
+//   width: 100%;
+// }
