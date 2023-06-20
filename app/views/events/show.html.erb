@@ -49,7 +49,7 @@
       <%# <%= button_to "Registered!", event_bookings_path(@event), class: "disabled-btn" %>
       <%= link_to "See my bookings", bookings_path, class: "main-btn ml-2" %>
     <% else %>
-      <%= simple_form_for([ @event, @booking ], data: {
+      <%= simple_form_for([@event, @booking], data: {
                           disable_button_target:"form",
                           action: "submit->disable-button#send"
                         }) do |f|%>
