@@ -31,5 +31,6 @@ Rails.application.routes.draw do
     resources :galleries
   end
 
+  resources :chatrooms, only: [:show]
   # resources :communities, only: [:show]
 end
