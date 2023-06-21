@@ -5,7 +5,7 @@
 <div class= "carousel slide"> <%= render "shared/carousel" %> </div>
 <%# <div class= "card-trip"> <%= render "shared/tripcard", events: @events </div> %>
 
-<div class="container p-3 mb-3">
+<div class="container p-3 m-3">
     <h4 id="local_events"><strong>Photo events in </strong>
     <span class="berlin2">
      <% if user_signed_in? %>
@@ -29,14 +29,12 @@
             <h2><%= event.title %></h2>
             <p> <%= event.description %></p>
 
-            <h2 class="card-trip-pricing"> Berlin</h2>
+            <h2 class="card-trip-pricing"></h2>
              <%= cl_image_tag event.user.photo.key, class: "card-trip-user avatar-bordered"%>
-          </div>
-        </div>
-          <% end %>
         </div>
       </div>
-    </div>
+        <% end %>
+  </div>
 </div>
 
 

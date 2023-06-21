@@ -16,6 +16,21 @@
   text-decoration: none;
 }
 
+
+.main-button-home:hover {
+  color: $red-title;
+  background-color: $grey-background;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.main-button-home1:hover {
+  color: $red-title;
+  background-color: $grey-background;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
 .main-button:active {
   box-shadow: none;
   color: $red-title;
@@ -92,4 +107,33 @@ background-color: seagreen;
   background-color: white;
   color: $red-title;
   border: none;
+}
+
+.main-button-home {
+  color: $grey-background;
+  background-color: $red-title;
+  font-weight: 900;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 1px 2px 3px $darkgrey;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  border-style: inset;
+  margin-right: 30px;
+  margin-left: 130px;
+}
+
+.main-button-home1 {
+  color: $grey-background;
+  background-color: $red-title;
+  font-weight: 900;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 1px 2px 3px $darkgrey;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  border-style: inset;
+  margin-right: 30px;
 }
