@@ -47,15 +47,20 @@
 }
 
 .navbar-tab img {
-  height: 50px;
+  height: 40px;
 }
 
 .navbar-tab {
   margin-right: 35%;
 }
 
-.navbar-tab h1 {
+#app-titlename {
   font-weight: 900;
-  font-size: xx-large;
-  // padding-top: 15px;
+  font-size: 30px;
+  padding-top: 10px;
+}
+
+#name-and-logo {
+  display: flex;
+  align-items: center;
 }

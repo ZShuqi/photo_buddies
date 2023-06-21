@@ -1,13 +1,15 @@
 class PagesController < ApplicationController
   def home
     @events = Event.all
-    @com_users = User.where(community_id: current_user.community_id)
-    # @com_photos = Photo.where(gallery_id.user.id: @com_users_id)
-    # @tr = @com_photos.first.likes.length
-    # @com_photos.select do |com_ph|
-    #   com_ph.likes.length > 10
-    # end
-    # @popular_com_photos = @com_photos.where(likes.length > 10)
+    if user_signed_in?
+      @com_users = User.where(community_id: current_user.community_id)
+      @com_galleries = Gallery.where(user_id: @com_users)
+      @com_photos = Photo.where(gallery_id: @com_galleries)
+      @sorted_photos = @com_photos.sort_by { |ph| ph.likes.length }
+      @exerpt = @sorted_photos.reverse.first(12)
+    else
+      @exerpt = Photo.all.first(12)
+    end
   end
 
   def show

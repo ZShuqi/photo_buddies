@@ -1,7 +1,8 @@
 <div class="main-container mx-5">
-<div class="banner_community">
-    <h2>Welcome to <span class="berlin"> <%= @community.name %></span>'s photo community!</h2>
-    <%# <img src= "/assets/logo1" class="logo"> %>
+  <div class="community-banner">
+    <%= image_tag "logo-all-white.png" %>
+    <h1 id="banner-title"><span class="community-name"><%= @community.name.capitalize %></span></h1>
+  </div>
 </div>
 
 <div class="cards mb-3" style="grid-gap: 25px; padding-bottom: 60px; margin: 60px; margin-top: 20px;">
@@ -50,33 +51,9 @@
       </div>
     </div>
 
-
-<h4><%= @community.description %></h4>
-
 <h2 style="margin-left: 50px;"><%= @community.name %>'s best photo spots!</h2>
 <div class="hot-spot-part">
   <%= render 'shared/hot_spot_map' %>
 
   <%= render 'shared/new_hot_spot_form', hot_spot: @hot_spot %>
-</div>
-
-<div class="container">
-  <div class="com-elements">
-    <div id="desc-text">
-      <p><%= @community.description %></p>
-    </div>
-
-    <div id="polaroid">
-      <ul>
-        <% @com_members.each do |member| %>
-
-        <li><%= link_to member_path(member) do %><%= cl_image_tag member.photo.key, height: 100, width: 100, crop: :fill %><% end %>
-            <p><%= member.username.capitalize %></p></li>
-
-        <% end %>
-      </ul>
-      <div class="light"></div>
-    </div>
-  </div>
-</div>
 </div>
