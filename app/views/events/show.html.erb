@@ -47,7 +47,7 @@
 
       <%= button_tag 'Registered!', type: 'button', class: "disabled-btn" %>
       <%# <%= button_to "Registered!", event_bookings_path(@event), class: "disabled-btn" %>
-      <%= link_to "See my bookings", bookings_path, class: "main-btn ml-2" %>
+      <%= link_to "My registered events", bookings_path, class: "main-btn ml-2" %>
     <% else %>
       <%= simple_form_for([@event, @booking], data: {
                           disable_button_target:"form",
@@ -56,7 +56,7 @@
         <%= f.button :submit, "Register!", class: "main-btn" %>
       <% end %>
       <%# <a href="./<%= @event.id >/bookings" class="main-btn ml-2" data-disable-button-target="link">See my bookings</a> %>
-      <a href="../bookings" class="main-btn ml-2" data-disable-button-target="link">See my bookings</a>
+      <a href="../bookings" class="main-btn ml-2 d-none" data-disable-button-target="link">My registered events</a>
     <% end %>
   </div>
 
