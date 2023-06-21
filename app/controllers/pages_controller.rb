@@ -23,8 +23,10 @@ class PagesController < ApplicationController
 
   def search
     @users = User.all
+
     if params[:query].present?
       @results = PgSearch.multisearch(params[:query])
+      # raise
       if params[:photos].present?
         @photo_results = @results.select do |result|
           result.searchable_type == "Photo"
@@ -38,6 +40,7 @@ class PagesController < ApplicationController
       end
 
       if params[:users].blank? && params[:photos].blank?
+
         @photo_results = @results.select do |result|
           result.searchable_type == "Photo"
         end
@@ -56,6 +59,9 @@ class PagesController < ApplicationController
       @photo_results = Photo.last(20)
       @user_results = User.where(community_id: current_user.community_id).last(4)
     end
+    # params.delete(:query)
+    # params.delete(:users)
+    # params.delete(:photos)
   end
 
   def community
