@@ -29,7 +29,9 @@
           <p> <%= event.description %></p>
 
           <div class="event-organizer">
-            <%= cl_image_tag event.user.photo.key, class: "card-trip-user avatar-bordered"%>
+            <%= link_to member_path(event.user) do %>
+              <%= cl_image_tag event.user.photo.key, class: "card-trip-user avatar-bordered"%>
+            <% end %>
             <p class="card-trip-pricing">By <%= event.user.username.capitalize %></p>
           </div>
         </div>
