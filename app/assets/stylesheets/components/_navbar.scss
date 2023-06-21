@@ -11,10 +11,6 @@
   flex-grow: 0;
 }
 
-// .navbar-lewagon .navbar-brand img {
-//   width: 5px;
-// }
-
 .navbar-lewagon h2 {
   font-size: large;
   font-weight: 600;
@@ -32,7 +28,6 @@
   padding: 0;
   margin: 0;
   display: flex;
-  //flex-direction: column;
   align-items: center;
 }
 
@@ -42,15 +37,25 @@
 
   h2, i {
     color: $cool-green;
+    // margin-top: 10px;
   }
 }
 
 #navbar-tabs {
   display: flex;
   align-items: center;
-  // justify-content: space-around;
 }
 
 .navbar-tab img {
-  height: 50px;
+  height: 60px;
+}
+
+.navbar-tab {
+  margin-right: 35%;
+}
+
+.navbar-tab h1 {
+  font-weight: 900;
+  font-size: xx-large;
+  // padding-top: 15px;
 }
