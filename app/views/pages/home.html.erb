@@ -2,9 +2,7 @@
 <% content_for :meta_description, "Photos, people, events and iconic places!" %>
 
 <div class= "banner"> <%= render "shared/banner" %> </div>
-<h4 class="container" id="local_events"><strong>Popular in </strong>
-  <span class="community-name"><%= user_signed_in? ? current_user.community.name.capitalize : "here" %>:</span>
-</h4>
+<h4 class="container" id="local_events"><strong>Popular Art:</strong></h4>
 
 <%# <%= @com_users.first %>
 
@@ -13,8 +11,7 @@
 <%# <div class= "card-trip"> <%= render "shared/tripcard", events: @events </div> %>
 
 <div class="container py-3 my-3">
-  <h4 id="local_events"><strong>Happening in </strong>
-    <span class="community-name"><%= user_signed_in? ? current_user.community.name.capitalize : "here" %>:</span>
+  <h4 id="local_events"><strong>Happening Lately:</strong>
   </h4>
   <div class="cards-body" style="width:1200px; margin-inline: auto">
     <% @events.shuffle.each do |event| %>
