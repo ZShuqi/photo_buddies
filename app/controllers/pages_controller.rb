@@ -19,6 +19,7 @@ class PagesController < ApplicationController
     @events = Event.all
     @my_events = Event.where(user_id: current_user.id)
     @gallery = Gallery.new
+    @bookings = Booking.where(user_id: current_user)
   end
 
   def search
@@ -63,6 +64,7 @@ class PagesController < ApplicationController
     # params.delete(:users)
     # params.delete(:photos)
   end
+
 
   def community
     @community = Community.find(current_user.community_id)
