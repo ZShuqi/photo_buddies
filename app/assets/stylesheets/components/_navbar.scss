@@ -1,10 +1,10 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background-color: $grey-background;
+  background-color: white;
   padding-bottom: 0px;
   // padding-top: 15px;
   text-align: center;
-  box-shadow: 3px 3px 9px $grey-background;
+  box-shadow: 3px 3px 9px $shadow-grey;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -18,12 +18,12 @@
 .navbar-lewagon h2 {
   font-size: large;
   font-weight: 600;
-  color: $chocolate;
+  color: black;
   padding: 10px;
 }
 
 .navbar i {
-  color: $chocolate;
+  color: black;
   font-size: large;
   padding: 0;
 }
@@ -37,11 +37,11 @@
 }
 
 .navbar-tab.active {
-  color: white;
-  border-bottom: 5px solid white;
+  color: $cool-green;
+  border-bottom: 5px solid $cool-green;
 
   h2, i {
-    color: white;
+    color: $cool-green;
   }
 }
 
@@ -49,4 +49,8 @@
   display: flex;
   align-items: center;
   // justify-content: space-around;
+}
+
+.navbar-tab img {
+  height: 50px;
 }

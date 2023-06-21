@@ -9,9 +9,11 @@ Rails.application.routes.draw do
 
   get '/community', to: 'pages#community', as: 'community'
 
-  resources :pages do
-    get '/pages/:id', to: 'pages#show'
-  end
+  get '/pages/:id', to: 'pages#show', as: 'member'
+
+  # resources :pages do
+  #   get '/pages/:id', to: 'pages#show'
+  # end
 
   resources :events do
     resources :bookings, only: [:create, :update]
