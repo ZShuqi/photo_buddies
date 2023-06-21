@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   resources :users, only: [:show, :edit, :update]
-  resources :pages, only: [:show]
+  # resources :pages, only: [:show]
   get '/search', to: 'pages#search', as: 'search'
   get '/profile', to: 'pages#profile', as: 'profile'
 

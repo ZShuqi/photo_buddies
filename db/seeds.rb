@@ -928,4 +928,7 @@ photos.each do |photo|
   end
 end
 
+PgSearch::Multisearch.rebuild(Photo)
+PgSearch::Multisearch.rebuild(User)
+
 puts "Seeding complete!"
