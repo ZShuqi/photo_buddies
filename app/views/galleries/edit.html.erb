@@ -1,16 +1,12 @@
-<h2>Edit Gallery</h2>
-
-<%= simple_form_for([@user, @gallery], url: user_gallery_path(@user, @gallery), method: :patch) do |form| %>
-  <%= form.error_notification %>
-
-  <div class="form-inputs">
-    <%= form.input :name %>
-
-  </div>
-
-  <div class="form-actions mt-4">
-    <%= form.button :submit, class: "btn btn-danger cgb mt-4" "Update Gallery" %>
+<%= turbo_frame_tag :modal do %>
+  <div class='align-items-center d-flex fixed-top justify-content-center min-vh-100 min-vw-100'>
+    <%= link_to '', profile_path, class:"modal-darken" %>
+    <div class="modal-container">
+      <div class="form-inputs">
+        <h1>Create Gallery</h1>
+        <%= render 'gallery_form', gallery: @gallery %>
+        <%= link_to 'Cancel', profile_path, class: 'btn btn-white' %>
+      </div>
+    </div>
   </div>
 <% end %>
-
-<%= link_to "Back", profile_path %>

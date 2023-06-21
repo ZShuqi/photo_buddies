@@ -20,8 +20,8 @@
 .card-user {
   overflow: hidden;
   height: 100px;
-  background: $white;
-  box-shadow: 0 0 15px $grey-background;
+  background: white;
+  box-shadow: 0 0 6px $shadow-grey;
   display: flex;
   align-items: center;
   margin: 10px auto;
@@ -31,7 +31,7 @@
   font-size: 18px;
   font-weight: bold;
   margin: 0;
-  color: $chocolate;
+  color: $cool-green;
 }
 
 .card-user p {
@@ -39,7 +39,7 @@
   line-height: 1.4;
   margin-bottom: 0;
   margin-top: 8px;
-  color: $darkgrey;
+  color: black;
 }
 
 .card-user .card-user-infos {
@@ -47,7 +47,7 @@
 }
 
 .card-user i {
-  color: $grey-background;
+  color: $cool-green;
   font-size: xx-large;
   margin: 10px 20px 0;
 }

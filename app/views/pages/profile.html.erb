@@ -8,9 +8,9 @@
       <% end %>
     </div>
   </div>
-  <div class='row'>
+  <div class='row negative'>
     <div class='user-details'>
-      <h4><strong><%= @user.username.capitalize %></strong></h4>
+      <h4 class = username><strong><%= @user.username.capitalize %></strong></h4>
       <p><%= @user.description %></p>
 
     </div>
@@ -21,9 +21,9 @@
 
 
     <% @my_galleries.each do |g| %>
-      <h5 class='below'>
+      <h5 class='below mt-5'>
       <%= g.name %>
-      <%= link_to new_user_gallery_path(@user) do %>
+      <%= link_to new_user_gallery_path(@user), data: {turbo_frame: :modal} do %>
           <i class="fa-solid fa-plus plus"></i>
         <% end %>
       </h5>
@@ -31,13 +31,15 @@
         <i class="fa-sharp fa-solid fa-trash"></i>
       <% end %>
 
-      <div class="carousel slide m-3 d-flex justify-content-center caro-drop">
-        <%= render 'shared/gallery_carousel', my_pics: g %>
-        <%= link_to edit_user_gallery_path(@user, g), class: 'btn edit-gal ' do %>
-        <i class="fa-solid fa-pen"></i>
+      <%= link_to user_gallery_path(@user, g) do %>
+        <div class="carousel slide m-3 d-flex justify-content-center caro-drop">
+          <%= render 'shared/gallery_carousel', my_pics: g %>
+          <%= link_to edit_user_gallery_path(@user, g),  data: {turbo_frame: :modal} , class: 'btn edit-gal ' do %>
+            <i class="fa-solid fa-pen"></i>
+          <% end %>
+        </div>
       <% end %>
-      </div>
-    <% end %>
+      <%end%>
   </div>
 
 

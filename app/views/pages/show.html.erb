@@ -4,9 +4,9 @@
      <%= cl_image_tag @user.photo.key %>
     </div>
   </div>
-  <div class ='row'>
+  <div class ='row negative'>
     <div class = 'user-details'>
-       <h4><strong> <%= @user.username.capitalize %><strong> </h4>
+       <h4 class = "username"><strong> <%= @user.username.capitalize %><strong> </h4>
        <p> <%= @user.description %> </p>
     </div>
   </div>

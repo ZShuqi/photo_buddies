@@ -3,9 +3,9 @@ body {
   background-color: $white;
 }
 
-.carousel slide {
+// .carousel slide {
 
-}
+// }
 
 #home {
   color: $forest-title;
@@ -15,4 +15,8 @@ body {
 .cards-body{
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+h4 {
+  font-size: 50px;
 }
