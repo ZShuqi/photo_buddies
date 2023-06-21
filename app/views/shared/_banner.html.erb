@@ -1,23 +1,20 @@
 
 <div class="d-md-flex banner">
-    <h1 style= "margin-bottom: 0px;"> <span class="Photo">Photo</span>
-    <span class="buddies"> buddies</span> <span class="berlin2">
-    <% if user_signed_in? %>
-      <%= current_user.community.name.capitalize %>
-     <% else %>
-      your local community!
-     <% end %></span> </h1>
+    <h1 style= "margin-bottom: 0px;">
+      <span class="app-name">PhotoBuddies</span>
+      <span class="community-name">
+        <% if user_signed_in? %>
+          <%= current_user.community.name.capitalize %>
+        <% end %>
+      </span>
+    </h1>
     <%# <img src= "/assets/logo1" class="logo"> %>
     <div>
-    <%= link_to "community", community_path, class: "main-button-home" %>
+    <%= link_to community_path do %>
+    <% end %>
     <%= link_to "events", "#local_events", class: "main-button-home1" %>
     </div>
     <div> </div>
     <%# <button type="button" class="main-button2">Events</button> %>
 
 </div>
-
-
-<%# //   style= margin: 30px;
-//  margin-bottom: 4px;
- // padding: 2px;> %>

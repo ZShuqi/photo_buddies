@@ -1,17 +1,17 @@
 .main-button {
-  color: $grey-background;
-  background-color: $red-title;
+  color: white;
+  background-color: $cool-green;
   font-weight: 900;
   border: none;
   border-radius: 10px;
-  box-shadow: 1px 2px 3px $darkgrey;
+  box-shadow: 1px 2px 3px $shadow-grey;
   padding: 10px 15px;
   text-decoration: none;
 }
 
 .main-button:hover {
-  color: $red-title;
-  background-color: $grey-background;
+  color: $cool-green;
+  background-color: white;
   transition: all 0.3s;
   text-decoration: none;
 }
@@ -33,8 +33,8 @@
 
 .main-button:active {
   box-shadow: none;
-  color: $red-title;
-  background-color: $red-title;
+  color: $cool-green;
+  background-color: $cool-green;
   text-decoration: none;
 }
 

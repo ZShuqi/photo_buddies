@@ -5,35 +5,32 @@
 <div class= "carousel"> <%= render "shared/carousel" %> </div>
 <%# <div class= "card-trip"> <%= render "shared/tripcard", events: @events </div> %>
 
-<div class="container p-3 m-3">
-    <h4 id="local_events"><strong>Photo events in </strong>
-    <span class="berlin2">
-     <% if user_signed_in? %>
-      <%= current_user.community.name.capitalize %>
-     <% else %>
-      your local community!
-     <% end %>
-     </span> </h4>
+<div class="container py-3 my-3">
+  <h4 id="local_events"><strong>Happening in </strong>
+    <span class="community-name"><%= user_signed_in? ? current_user.community.name.capitalize : "here" %>:</span>
+  </h4>
   <div class="cards-body" style="width:1200px; margin-inline: auto">
-  <% @events.reverse.each do |event| %>
+    <% @events.shuffle.each do |event| %>
       <div class="card-trip" style="margin:40px;">
-      <%= link_to event_path(event) do %>
-        <% if event.images.try(:any?) %>
-          <%= cl_image_tag event.images.first.key %>
-        <% else %>
-          <%= cl_image_tag Photo.first.photo.key %>
+        <%= link_to event_path(event) do %>
+          <% if event.images.try(:any?) %>
+            <%= cl_image_tag event.images.first.key %>
+          <% else %>
+            <%= cl_image_tag Photo.first.photo.key %>
+          <% end %>
         <% end %>
-        <% end %>
-        <div class="card-trip-infos">
-        <%#= button_to "Join", event_path(event), class:"btn btn-outline-dark" %>
-            <h2><%= event.title %></h2>
-            <p> <%= event.description %></p>
 
-            <h2 class="card-trip-pricing"></h2>
-             <%= cl_image_tag event.user.photo.key, class: "card-trip-user avatar-bordered"%>
+        <div class="card-trip-infos">
+          <h2><%= event.title %></h2>
+          <p> <%= event.description %></p>
+
+          <div class="event-organizer">
+            <%= cl_image_tag event.user.photo.key, class: "card-trip-user avatar-bordered"%>
+            <p class="card-trip-pricing">By <%= event.user.username.capitalize %></p>
+          </div>
         </div>
       </div>
-        <% end %>
+    <% end %>
   </div>
 </div>
 

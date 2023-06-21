@@ -5,9 +5,10 @@
 .photo-result .likes, .photo-result .comments {
   position: absolute;
   color: white;
-  text-shadow: 3px 3px 3px $darkgrey;
-  right: 50px;
+  text-shadow: 3px 3px 3px $shadow-grey;
+  right: 20px;
   margin-bottom: 0;
+  font-size: large;
 }
 
 .photo-result .likes {
@@ -15,23 +16,23 @@
 }
 
 .photo-result .comments {
-  bottom: 20px;
+  bottom: 15px;
 }
 
 .photo-result-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
 }
 
 @media (min-width: 100px) and (max-width: 768px) {
   .photo-result-cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 @media (min-width: 768px) {
   .photo-result-cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }
