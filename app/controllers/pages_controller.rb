@@ -10,6 +10,7 @@ class PagesController < ApplicationController
     @my_galleries = Gallery.where(user_id: params[:id])
     @events = Event.all
     @my_events = Event.where(user_id: params[:id])
+
   end
 
   def profile
@@ -48,13 +49,12 @@ class PagesController < ApplicationController
       if params[:query].present? && @results.blank?
         @message = "Sorry, no results found. Have a look at our recommendations for you!"
         @photo_results = Photo.all
-        # if user_signed_in?
-          @user_results = User.where(community_id: current_user.community_id)
-        # end
+        @user_results = User.where(community_id: current_user.community_id)
       end
     else
-      @message = "New on PhotoBuddies:"
+      @message = "New in your community:"
       @photo_results = Photo.last(20)
+      @user_results = User.where(community_id: current_user.community_id).last(4)
     end
   end
 

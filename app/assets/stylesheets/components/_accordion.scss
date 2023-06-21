@@ -1,0 +1,38 @@
+// $accordion-button-bg: $chocolate;
+// $accordion-bg: white;
+// $accordion-btn-active-bg: purple;
+// // --#{$prefix}accordion-transition: #{$accordion-transition};
+// $accordion-border-color: $chocolate;
+// --#{$prefix}accordion-border-width: #{$accordion-border-width};
+// --#{$prefix}accordion-border-radius: #{$accordion-border-radius};
+// --#{$prefix}accordion-inner-border-radius: #{$accordion-inner-border-radius};
+// --#{$prefix}accordion-btn-padding-x: #{$accordion-button-padding-x};
+// --#{$prefix}accordion-btn-padding-y: #{$accordion-button-padding-y};
+// --#{$prefix}accordion-btn-color: #{$accordion-button-color};
+// --#{$prefix}accordion-btn-bg: #{$accordion-button-bg};
+// --#{$prefix}accordion-btn-icon: #{escape-svg($accordion-button-icon)};
+// --#{$prefix}accordion-btn-icon-width: #{$accordion-icon-width};
+// --#{$prefix}accordion-btn-icon-transform: #{$accordion-icon-transform};
+// --#{$prefix}accordion-btn-icon-transition: #{$accordion-icon-transition};
+// --#{$prefix}accordion-btn-active-icon: #{escape-svg($accordion-button-active-icon)};
+// --#{$prefix}accordion-btn-focus-border-color: #{$accordion-button-focus-border-color};
+// --#{$prefix}accordion-btn-focus-box-shadow: #{$accordion-button-focus-box-shadow};
+// --#{$prefix}accordion-body-padding-x: #{$accordion-body-padding-x};
+// --#{$prefix}accordion-body-padding-y: #{$accordion-body-padding-y};
+// --#{$prefix}accordion-active-color: #{$accordion-button-active-color};
+// --#{$prefix}accordion-active-bg: #{$accordion-button-active-bg};
+
+.accordion {
+  --bs-accordion-active-bg: #D7C0AE;
+  --bs-accordion-active-color: white;
+  --bs-accordion-bg: white;
+  --bs-accordion-color: #D7C0AE;
+  --bs-accordion-border-radius: 5px;
+  --bs-accordion-transition: all, 0.7s;
+  // --bs-accordion-btn-icon: white;
+  // --bs-accordion-btn-active-icon:white;
+}
+
+.accordion-body {
+  background-color: white;
+}
