@@ -32,7 +32,7 @@ avatar3 = URI.open("https://images.unsplash.com/photo-1548142813-c348350df52b?ix
 avatar4 = URI.open("https://images.unsplash.com/photo-1580465446361-8aae5321522b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNtaWxlfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60")
 # banner_photo
 bannerphoto1 = URI.open("https://images.unsplash.com/photo-1546952396-57a6bb8895de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=388&q=80")
-bannerphoto2 = URI.open("https://images.unsplash.com/photo-1588568810409-3e0b4a872171?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80")
+bannerphoto2 = URI.open("https://images.unsplash.com/photo-1581265463006-f019c3419709?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXJ0JTIwcGhvdG9ncmFwaHl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60")
 bannerphoto3 = URI.open("https://images.unsplash.com/photo-1501898047706-55903296cd09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")
 bannerphoto4 = URI.open("https://images.unsplash.com/photo-1581268879726-e9066753b737?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")
 
@@ -69,14 +69,14 @@ avatar11 = URI.open("https://images.unsplash.com/photo-1504199367641-aba8151af40
 avatar12 = URI.open("https://images.unsplash.com/photo-1531123414780-f74242c2b052?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTExfHxzbWlsZXxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60")
 
 # copies of banners 1-4, can improve with more variety
-bannerphoto5 = URI.open("https://images.unsplash.com/photo-1546952396-57a6bb8895de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=388&q=80")
-bannerphoto6 = URI.open("https://images.unsplash.com/photo-1588568810409-3e0b4a872171?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80")
-bannerphoto7 = URI.open("https://images.unsplash.com/photo-1501898047706-55903296cd09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")
-bannerphoto8 = URI.open("https://images.unsplash.com/photo-1581268879726-e9066753b737?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")
-bannerphoto9 = URI.open("https://images.unsplash.com/photo-1546952396-57a6bb8895de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=388&q=80")
-bannerphoto10 = URI.open("https://images.unsplash.com/photo-1588568810409-3e0b4a872171?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80")
-bannerphoto11 = URI.open("https://images.unsplash.com/photo-1501898047706-55903296cd09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")
-bannerphoto12 = URI.open("https://images.unsplash.com/photo-1581268879726-e9066753b737?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")
+bannerphoto5 = URI.open("https://images.unsplash.com/photo-1567919915052-31feae132a38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")
+bannerphoto6 = URI.open("https://images.unsplash.com/photo-1608206250930-93071d3a02d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGFydCUyMHBob3RvfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60")
+bannerphoto7 = URI.open("https://images.unsplash.com/photo-1509281373149-e957c6296406?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fGFydCUyMHBob3RvfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60")
+bannerphoto8 = URI.open("https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzB8fGFydCUyMHBob3RvfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60")
+bannerphoto9 = URI.open("https://images.unsplash.com/photo-1650976295581-e4aaa0833d8d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHBob3RvZ3JhcGh5JTIwZnVubnl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60")
+bannerphoto10 = URI.open("https://images.unsplash.com/photo-1622466565619-abbf557817a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1079&q=80")
+bannerphoto11 = URI.open("https://images.unsplash.com/photo-1665066358237-c2004f814ee2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fGNpdHklMjBmb3RvfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60")
+bannerphoto12 = URI.open("https://images.unsplash.com/photo-1675358405238-b077dda6ef69?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")
 
 user5 = User.new(email: "maria@gmail.com", password: "123456", username: 'maria', community_id: berlin.id, description: "🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
 user5.photo.attach(io: avatar5, filename: "user5.jpg", content_type: "image/png")
@@ -103,7 +103,7 @@ user9.photo.attach(io: avatar9, filename: "user9.jpg", content_type: "image/png"
 user9.banner_photo.attach(io: bannerphoto9, filename: "bannerphoto9.jpg", content_type: "image/png")
 user9.save
 puts "."
-user10 = User.new(email: "sally@gmail.com", password: "123456", username: 'sally', community_id: berlin.id, description:"🌟 Join me on this photographic journey, and let's capture the extraordinary beauty of life together. 📷✨")
+user10 = User.new(email: "sally@gmail.com", password: "123456", username: 'sally', community_id: berlin.id, description:" I'm Sally, I love photography and meeting new people in Berlin. Let's shoot!")
 user10.photo.attach(io: avatar10, filename: "user10.jpg", content_type: "image/png")
 user10.banner_photo.attach(io: bannerphoto10, filename: "bannerphoto10.jpg", content_type: "image/png")
 user10.save

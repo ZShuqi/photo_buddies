@@ -4,12 +4,12 @@
     <%# <img src= "/assets/logo1" class="logo"> %>
 </div>
 
-<div class="cards mb-3" style="grid-gap: 25px; padding-bottom: 60px;">
+<div class="cards mb-3" style="grid-gap: 25px; padding-bottom: 60px; margin: 60px; margin-top: 20px;">
       <% @com_members.each do |member| %>
       <% if member.banner_photo.key  %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://source.unsplash.com/random/?sunset')"><%#= cl_image_path member.banner_photo.key %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path member.banner_photo.key %>')">
       <% else %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://streetberlin.net/wp-content/uploads/2019/01/berlin-photography-street-photography-Martin-U-Waltz.jpg)">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1581268879726-e9066753b737?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80)">
       <% end %>
           <%= link_to user_path(member) do %>
           <div class="card-trip-infos">
@@ -41,7 +41,7 @@
             <h2><%= event.title %></h2>
             <p> <%= event.description %></p>
 
-            <h2 class="card-trip-pricing"> Berlin</h2>
+            <h2 class="card-trip-pricing"></h2>
              <%= cl_image_tag event.user.photo.key, class: "card-trip-user avatar-bordered"%>
           </div>
         </div>
