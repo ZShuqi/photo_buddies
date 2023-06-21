@@ -2,7 +2,14 @@
 <% content_for :meta_description, "Photos, people, events and iconic places!" %>
 
 <div class= "banner"> <%= render "shared/banner" %> </div>
-<div class= "carousel"> <%= render "shared/carousel" %> </div>
+<h4 class="container" id="local_events"><strong>Popular in </strong>
+  <span class="community-name"><%= user_signed_in? ? current_user.community.name.capitalize : "here" %>:</span>
+</h4>
+
+<%# <%= @com_users.first %>
+
+
+<div class= "container carousel"> <%= render "shared/carousel" %> </div>
 <%# <div class= "card-trip"> <%= render "shared/tripcard", events: @events </div> %>
 
 <div class="container py-3 my-3">
