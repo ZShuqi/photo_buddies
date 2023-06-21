@@ -19,9 +19,6 @@ application.register("flatpickr", FlatpickrController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-import InsertCommentController from "./insert_comment_controller"
-application.register("insert-comment", InsertCommentController)
-
 import MapController from "./map_controller"
 application.register("map", MapController)
 
