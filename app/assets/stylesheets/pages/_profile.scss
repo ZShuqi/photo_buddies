@@ -29,9 +29,9 @@ object-fit: cover;
 }
 
 .up {
-  margin-left: 160px;
+  margin-left: 190px;
   position: absolute;
-  margin-top: 76px;
+  margin-top: 90px;
   color: lightgrey;
 }
 
@@ -134,4 +134,8 @@ grid-template-columns: 1fr 1fr;
   font-size: 60px;
   position: relative;
   margin-left: 220px;
+}
+
+.bring-forward{
+  z-index: 3;
 }

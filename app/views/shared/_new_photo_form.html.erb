@@ -5,6 +5,8 @@
     input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
     wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
     <%= f.input :keyword %>
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn btn-secondary cgn" %>
   <% end %>
+   <%= link_to "I'm done", profile_path, class: "btn mt-3" %>
+</div>
 </div>
