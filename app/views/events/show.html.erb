@@ -2,84 +2,66 @@
 <% content_for :meta_description, @event.description %>
 <%# <% content_for :meta_image, cl_image_path(@event.images.first.key) %>
 
+<%# d-flex justify-content-center %>
 <div class= "carousel slide m-3 d-flex justify-content-center"> <%= render "shared/event-carousel" %> </div>
 
-<div class= "container d-flex flex-column mb-5">
-  <h5 class="mb-3 p-4 fs-3 text-center"><strong><%= @event.title %></strong></h5>
-  <div class="container mb-5">
-    <p class="text-center mb-5"><%= @event.description %></p>
-    <div class="rounded d-flex justify-content-around" data-controller="disable-button">
-      <div class="mx-3">
-        <p class="ml-1"><i class="fa-solid fa-location-dot px-4"></i>Location<br>&emsp;&emsp;&thinsp;<%= @event.address %></p>
-        <p class="ml-1"><i class="fa-regular fa-clock px-4"></i>Date<br>&emsp;&emsp;&thinsp;<%= @event.date.to_time.strftime('%e %b %Y %H:%M') %></p>
-      </div>
+  <h5 class="mb-3 p-4 fs-3 text-center event-title"><strong><%= @event.title %></strong></h5>
+  <p class="text-center mb-5"><%= @event.description %></p>
 
-      <div>
-        <p>Event Organizer</p>
-        <%# <%= @event.user.username %>
-        <p><% @user = User.find(@event.user_id) %>
-          <%= @user.username.capitalize %>
-          <%= cl_image_tag @user.photo.key, height: 40, width: 40, radius: 20, crop: :fill %>
-          </p>
-        <p>Who is attending?</p>
-          <div data-disable-button-target="items">
-            <% @event.bookings.each do |book| %>
-              <%= render "booking", book: book %>
-              <%# <% participant = User.find(book.user_id) %>
-              <%# <%= participant.username.capitalize %>
-              <%# <%= cl_image_tag participant.photo.key, height: 40, width: 40, radius: 20, crop: :fill %>
-              <%# cloudinary note: need to convert to png to have a transparent background %>
+  <div class= "container mb-5 d-flex justify-content-around event-text">
+    <div class="container mb-5" data-controller="disable-button">
+      <div class="rounded d-flex justify-content-center">
+        <div class="mx-3 d-flex flex-column">
+          <p class="ml-1"><i class="fa-solid fa-location-dot px-4"></i>Location<br>&emsp;&emsp;&thinsp;<%= @event.address %></p>
+          <p class="ml-1"><i class="fa-regular fa-clock px-4"></i>Date<br>&emsp;&emsp;&thinsp;<%= @event.date.to_time.strftime('%e %b %Y %H:%M') %></p>
+
+          <p class="ml-1"><i class="fa-solid fa-user px-4"></i>Event Organizer</p>
+          <p>&emsp;&emsp;&thinsp;<% @user = User.find(@event.user_id) %>
+            <%= @user.username.capitalize %>
+            <%= cl_image_tag @user.photo.key, height: 40, width: 40, radius: 20, crop: :fill %>
+            </p>
+          <p class="ml-1"><i class="fa-solid fa-people-group px-4"></i>Who is attending?</p>
+            <div class = "m-3" data-disable-button-target="items">&emsp;&emsp;&thinsp;
+              <% @event.bookings.each do |book| %>
+                <%= render "booking", book: book %>
+              <% end %>
+            </div>
+          <div class="d-flex justify-content-center">
+            <% @flag = false %>
+            <% current_user.bookings.each do |booking| %>
+              <% if booking.event_id == @event.id %>
+                <% @flag = true %>
+              <% end %>
+            <% end %>
+
+            <% if current_user.id == @event.user_id || @flag %>
+              <%= button_tag 'Registered!', type: 'button', class: "disabled-btn" %>
+              <%= link_to "My registered events", bookings_path, class: "main-btn ml-2" %>
+            <% else %>
+              <%= render 'form', event: @event, booking:@booking %>
+
+              <a href="../bookings" class="main-btn ml-2 d-none" data-disable-button-target="link">My registered events</a>
+            <% end %>
+
+          </div>
+
+          <div class="d-flex justify-content-center mt-3">
+            <% if current_user.id == @event.user_id %>
+              <%= button_to "Cancel Event", event_path(@event), method: :delete, data: { confirm: "Are you sure you want to delete this event?" }, class: "main-btn" %>
+            <% end %>
+
+            <% if current_user.id == @event.user_id %>
+              <%= link_to "Edit Event", edit_event_path(@event), class: "main-btn ml-2" %>
             <% end %>
           </div>
         </div>
+      </div>
     </div>
-  </div>
 
-  <div class="d-flex justify-content-center">
-    <% @flag = false %>
-    <% current_user.bookings.each do |booking| %>
-      <% if booking.event_id == @event.id %>
-        <% @flag = true %>
-      <% end %>
-    <% end %>
-
-    <% if current_user.id == @event.user_id || @flag %>
-
-      <%= button_tag 'Registered!', type: 'button', class: "disabled-btn" %>
-      <%# <%= button_to "Registered!", event_bookings_path(@event), class: "disabled-btn" %>
-      <%= link_to "My registered events", bookings_path, class: "main-btn ml-2" %>
-    <% else %>
-      <%= simple_form_for([@event, @booking], data: {
-                          disable_button_target:"form",
-                          action: "submit->disable-button#send"
-                        }) do |f|%>
-        <%= f.button :submit, "Register!", class: "main-btn" %>
-      <% end %>
-      <%# <a href="./<%= @event.id >/bookings" class="main-btn ml-2" data-disable-button-target="link">See my bookings</a> %>
-      <a href="../bookings" class="main-btn ml-2 d-none" data-disable-button-target="link">My registered events</a>
-    <% end %>
-  </div>
-
-
-  <%# Need the following in profile page also  %>
-  <div class="d-flex justify-content-center mt-3">
-    <% if current_user.id == @event.user_id %>
-      <%= button_to "Cancel Event", event_path(@event), method: :delete, data: { confirm: "Are you sure you want to delete this event?" }, class: "main-btn" %>
-    <% else %>
-
-    <% end %>
-
-
-    <div class="d-flex justify-content-center px-1">
-      <% if current_user.id == @event.user_id %>
-        <%= link_to "Edit Event", edit_event_path(@event), class: "main-btn ml-2" %>
-      <% end %>
+    <div style="width: 50%; height: 600px;"
+      data-controller="map2"
+      data-map2-markers-value="<%= @markers.to_json %>"
+      data-map2-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-  </div>
-
-  <div style="width: 100%; height: 600px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
