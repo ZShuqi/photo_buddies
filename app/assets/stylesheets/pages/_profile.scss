@@ -29,9 +29,9 @@ object-fit: cover;
 }
 
 .up {
-  margin-left: 160px;
+  margin-left: 190px;
   position: absolute;
-  margin-top: 76px;
+  margin-top: 90px;
   color: lightgrey;
 }
 
@@ -61,4 +61,8 @@ object-fit: cover;
 .username {
   position: relative;
   margin-left: 190px;
+}
+
+.bring-forward{
+  z-index: 3;
 }

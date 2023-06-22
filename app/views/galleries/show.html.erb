@@ -1,24 +1,33 @@
-<div class= "container">
-  <h2><%= @gallery.name %></h2>
+<div class="container">
+  <div class="row">
+    <div class="col-6" style = "margin-top: 80px;">
+      <h2><%= @gallery.name %></h2>
 
-  <% if @gallery_photos.try(:any?) %>
-    <div class="new-gal-grid">
-      <div class="gal-carousel">
-        <div class="gal-carousel-inner slide caro-drop">
-          <%= render 'shared/gallery_carousel', my_pics: @gallery %>
+      <% if @gallery_photos.try(:any?) %>
+        <div class="new-gal-grid">
+          <div class="gal-carousel">
+            <div class="gal-carousel-inner slide caro-drop">
+              <%= render 'shared/gallery_carousel', my_pics: @gallery %>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <div class="new-gal-grid">
+          <div class="empty-gal-carousel">
+          <p>?</p>
+          </div>
+          <p>This gallery is empty. Add some photos to it!</p>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="col-6">
+      <div class="row">
+        <div class="col" style = "margin-left: 200px; margin-top: 150px;">
+          <p>Add another picture?</p>
+          <%= render 'shared/new_photo_form', gallery: @gallery, photo: @photo %>
         </div>
       </div>
-      <div>
-        <p>Add another picture?</p>
-        <%= render 'shared/new_photo_form', gallery: @gallery, photo: @photo %>
-      </div>
     </div>
-  <% else %>
-    <div class="new-gal-grid">
-      <div class="empty-gal-carousel">
-      </div>
-      <p>This gallery is empty. Add some photos to it!</p>
-      <%= render 'shared/new_photo_form', gallery: @gallery, photo: @photo %>
-    </div>
-  <% end %>
+  </div>
 </div>
