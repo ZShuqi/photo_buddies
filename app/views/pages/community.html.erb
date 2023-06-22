@@ -1,7 +1,8 @@
 <div class="main-container mx-5">
-<div class="banner_community">
-    <h2>Welcome to <span class="berlin"> <%= @community.name %></span>'s photo community!</h2>
-    <%# <img src= "/assets/logo1" class="logo"> %>
+  <div class="community-banner">
+    <%= image_tag "logo-all-white.png" %>
+    <h1 id="banner-title"><span class="community-name"><%= @community.name.capitalize %></span></h1>
+  </div>
 </div>
 
 <div class="cards mb-3" style="grid-gap: 10px; padding-bottom: 60px; margin: 50px; margin-top: 20px;">
@@ -11,7 +12,7 @@
       <% else %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1581268879726-e9066753b737?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80)">
       <% end %>
-          <%= link_to page_path(member) do %>
+          <%= link_to member_path(member) do %>
           <div class="card-trip-infos">
             <div class="d-flex flex-column align-items-center">
                 <%= cl_image_tag member.photo.key, height: 100, width: 100, crop: :fill, style: "border-radius: 50%; border: solid 4px;" %>
@@ -50,33 +51,9 @@
       </div>
     </div>
 
-
-<h4><%= @community.description %></h4>
-
 <h2 style="margin-left: 50px;"><%= @community.name %>'s best photo spots!</h2>
 <div class="hot-spot-part">
   <%= render 'shared/hot_spot_map' %>
 
   <%= render 'shared/new_hot_spot_form', hot_spot: @hot_spot %>
-</div>
-
-<div class="container">
-  <div class="com-elements">
-    <div id="desc-text">
-      <p><%= @community.description %></p>
-    </div>
-
-    <div id="polaroid">
-      <ul>
-        <% @com_members.each do |member| %>
-
-        <li><%= link_to page_path(member) do %><%= cl_image_tag member.photo.key, height: 100, width: 100, crop: :fill %><% end %>
-            <p><%= member.username.capitalize %></p></li>
-
-        <% end %>
-      </ul>
-      <div class="light"></div>
-    </div>
-  </div>
-</div>
 </div>

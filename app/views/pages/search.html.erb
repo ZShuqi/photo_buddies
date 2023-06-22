@@ -2,7 +2,7 @@
   <div class="search-banner">
     <div class="row justify-content-center">
       <%# <div class="search-banner-content"> %>
-        <div class="col-sm-8 my-3">
+        <div class="col-sm-8 my-3 mb-5">
           <%= form_with url: search_path, method: :get, class: "d-flex flex-column" do %>
             <%= text_field_tag :query,
                   params[:query],
@@ -23,7 +23,7 @@
               </div>
             </div>
 
-            <%= submit_tag "Discover", name: "Discover", class: "main-button" %>
+            <%= submit_tag "Discover", name: "Discover", class: "main-button", id: "search-button" %>
           <% end %>
         </div>
       <%# </div> %>
@@ -38,7 +38,7 @@
       <div class="accordion-item bg-white">
         <h2 class="accordion-header">
           <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            Results in Art ( <%= @photo_results.length %> )
+            Results in Art ( <%= @photo_results.try(:any?) ? @photo_results.length : 0 %> )
           </button>
         </h2>
         <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#searchAccordion">
@@ -59,7 +59,7 @@
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            Results in People ( <%= @user_results.length %> )
+            Results in People ( <%= @user_results.try(:any?) ? @user_results.length : 0 %> )
           </button>
         </h2>
         <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#searchAccordion">

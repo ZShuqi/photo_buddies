@@ -59,7 +59,8 @@
 
     <%= yield %>
 
-    <%= render "shared/footer_sec" %>
+    <%= render "shared/footer" %>
 
+    <%= turbo_frame_tag :modal, target: :_top %>
   </body>
 </html>

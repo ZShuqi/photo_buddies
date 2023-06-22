@@ -1,23 +1,16 @@
 .search-categories {
   display: flex;
   margin: 10px;
-  color: $grey-background;
+  margin-top: 15px;
+  color: black;
 }
 
 .search-form {
   background-color: $white;
-  // color: $chocolate;
-  border: 1px solid $grey-background;
+  border: 1px solid $shadow-grey;
   border-radius: 3px;
+  width: 50vw;
 }
-
-// .search-banner {
-  // background-image: url("https://images.unsplash.com/photo-1539651044670-315229da9d2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3RyZWV0fGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60");
-  // background-position: center;
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // height: 50vh;
-// }
 
 .search-banner-content {
   margin-top: auto;
@@ -26,4 +19,10 @@
 
 .search-banner h6 {
   padding-top: 7px;
+}
+
+#search-button {
+  position: absolute;
+  bottom: 4px;
+  right: 100px;
 }

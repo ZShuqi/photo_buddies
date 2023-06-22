@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_20_095541) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_21_234802) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -51,16 +51,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_20_095541) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
-  create_table "chatrooms", force: :cascade do |t|
-    t.string "name"
-    t.bigint "asker_id", null: false
-    t.bigint "receiver_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["asker_id"], name: "index_chatrooms_on_asker_id"
-    t.index ["receiver_id"], name: "index_chatrooms_on_receiver_id"
-  end
-
   create_table "comments", force: :cascade do |t|
     t.string "content"
     t.bigint "user_id", null: false
@@ -86,6 +76,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_20_095541) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
@@ -115,16 +107,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_20_095541) do
     t.datetime "updated_at", null: false
     t.index ["photo_id"], name: "index_likes_on_photo_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
-  end
-
-  create_table "messages", force: :cascade do |t|
-    t.string "content"
-    t.bigint "chatroom_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
@@ -166,8 +148,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_20_095541) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "events"
   add_foreign_key "bookings", "users"
-  add_foreign_key "chatrooms", "users", column: "asker_id"
-  add_foreign_key "chatrooms", "users", column: "receiver_id"
   add_foreign_key "comments", "photos"
   add_foreign_key "comments", "users"
   add_foreign_key "events", "users"
@@ -175,8 +155,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_20_095541) do
   add_foreign_key "hot_spots", "users"
   add_foreign_key "likes", "photos"
   add_foreign_key "likes", "users"
-  add_foreign_key "messages", "chatrooms"
-  add_foreign_key "messages", "users"
   add_foreign_key "photos", "galleries"
   add_foreign_key "users", "communities"
 end

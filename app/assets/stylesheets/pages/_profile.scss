@@ -37,8 +37,7 @@ object-fit: cover;
 
 .plus {
   color: lightgrey;
-  margin: 10px;
-  padding: 10px;
+  margin-left: 20px;
 }
 
 .bin {
@@ -121,4 +120,14 @@ grid-template-columns: 1fr 1fr;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.negative {
+  position:relative;
+  margin-top: -50px;
+}
+
+.username {
+  position: relative;
+  margin-left: 190px;
 }

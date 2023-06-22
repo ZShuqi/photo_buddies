@@ -2,6 +2,8 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 16px;
+  // display: flex;
+  // flex-direction: column;
 }
 
 .card-comment {
@@ -9,7 +11,7 @@
   height: 100px;
   width: 80%;
   background: white;
-  box-shadow: 0 0 3px $grey-background;
+  box-shadow: 0 0 3px $shadow-grey;
   display: flex;
   align-items: center;
   margin: 10px auto;
@@ -20,13 +22,13 @@
   font-size: 26px;
   font-weight: bolder;
   margin: 0;
-  color: $red-title;
+  color: $cool-green;
 }
 
 .card-comment p, .card-comment h3 {
   line-height: 1.4;
   margin-bottom: 0;
-  color: $darkgrey;
+  color: black;
 }
 
 .card-comment p {
@@ -44,11 +46,37 @@
   padding: 16px;
 }
 
-.user-avatar {
+.comment-user-avatar {
   margin-left: 10px;
 }
 
 .card-comment-infos-top {
   display: flex;
   // justify-content: space-between;
+}
+
+.comment-field {
+  font-size: 20px;
+  background-color: white;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  color: black;
+  box-shadow: 0 0 3px $shadow-grey;
+  width: 80%;
+}
+
+#new-comment-button {
+  border-radius: 0;
+  position: absolute;
+  bottom: 0px;
+  right: 72px;
+  font-size: 21px;
+}
+
+.comment-form {
+  position: relative;
 }

@@ -7,10 +7,11 @@
           <%= f.input :address %>
           <%= f.input :description %>
           <%= f.input :date, as: :string, input_html: { data: { flatpickr_target: "date" } } %>
-          <%= f.input :images, as: :file %>
+          <%= f.input :images, as: :file, input_html: { multiple: true }  %>
         </div>
         <div class="form-actions">
-          <%= f.submit %>
+          <%# <%= f.submit %>
+          <%= f.button :submit, "CREATE", class: "main-btn" %>
         </div>
         <% end %>
     </div>

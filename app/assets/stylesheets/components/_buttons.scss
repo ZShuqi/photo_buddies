@@ -1,31 +1,31 @@
 .main-button {
-  color: $grey-background;
-  background-color: $red-title;
+  color: white;
+  background-color: $cool-green;
   font-weight: 900;
   border: none;
   border-radius: 10px;
-  box-shadow: 1px 2px 3px $darkgrey;
+  box-shadow: 1px 2px 3px $shadow-grey;
   padding: 10px 15px;
   text-decoration: none;
 }
 
 .main-button:hover {
-  color: $red-title;
-  background-color: $grey-background;
+  color: $cool-green;
+  background-color: white;
   transition: all 0.3s;
   text-decoration: none;
 }
 
 
 .main-button-home:hover {
-  color: $red-title;
+  color: $cool-green;
   background-color: $grey-background;
   transition: all 0.3s;
   text-decoration: none;
 }
 
 .main-button-home1:hover {
-  color: $red-title;
+  color: $cool-green;
   background-color: $grey-background;
   transition: all 0.3s;
   text-decoration: none;
@@ -33,14 +33,14 @@
 
 .main-button:active {
   box-shadow: none;
-  color: $red-title;
-  background-color: $red-title;
+  color: $cool-green;
+  background-color: $cool-green;
   text-decoration: none;
 }
 
 .main-btn {
-  color: $grey-background;
-  background-color: $red-title;
+  color: white;
+  background-color: $cool-green;
   font-weight: 900;
   text-decoration: none;
   border: none;
@@ -52,8 +52,8 @@
 }
 
 .disabled-btn {
-  color: $red-title;
-  background-color: $grey-background;
+  color: $cool-green;
+  background-color: white;
   font-weight: 900;
   text-decoration: none;
   border: none;
@@ -67,8 +67,8 @@
 }
 
 .main-btn:hover {
-  color: $red-title;
-  background-color: $grey-background;
+  color: $cool-green;
+  background-color: white;
   transition: all 0.3s;
   font-weight: 900;
   border: none;
@@ -83,20 +83,20 @@
 
 .back-button a {
   text-decoration: none;
-  color: $chocolate;
+  color: black;
   font-weight: bolder;
   text-align: center;
   margin: 15px;
 }
 
 .back-button a:hover {
-  color: $red-title;
+  color: $cool-green;
 }
 
 .main-button2 {
 margin-right: 11%;
 border-radius: 10%;
-background-color: seagreen;
+background-color: $cool-green;
 }
 
 #add-event-btn {
@@ -105,13 +105,13 @@ background-color: seagreen;
 
 .like-btn {
   background-color: white;
-  color: $red-title;
+  color: $cool-green;
   border: none;
 }
 
 .main-button-home {
-  color: $grey-background;
-  background-color: $red-title;
+  color: white;
+  background-color: $cool-green;
   font-weight: 900;
   border: none;
   border-radius: 10px;
@@ -125,8 +125,8 @@ background-color: seagreen;
 }
 
 .main-button-home1 {
-  color: $grey-background;
-  background-color: $red-title;
+  color: white;
+  background-color: $cool-green;
   font-weight: 900;
   border: none;
   border-radius: 10px;

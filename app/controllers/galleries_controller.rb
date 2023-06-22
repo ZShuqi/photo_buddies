@@ -1,10 +1,9 @@
 class GalleriesController < ApplicationController
   def show
-    @user = User.find(params[:user_id])
+
     @gallery = Gallery.find(params[:id])
     @gallery_photos = Photo.where(gallery_id: @gallery.id)
     authorize @gallery
-    authorize @user
     @photo = Photo.new
   end
 
@@ -18,7 +17,7 @@ class GalleriesController < ApplicationController
     @gallery.user = current_user
     authorize @gallery
     if @gallery.save
-      redirect_to user_gallery_path(current_user, @gallery), notice: "Gallery created successfully."
+      redirect_to gallery_path(@gallery), notice: "Gallery created successfully."
     else
       render :new, status: :unprocessable_entity
     end
