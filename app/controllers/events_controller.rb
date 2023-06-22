@@ -1,12 +1,25 @@
 class EventsController < ApplicationController
   def index
     @events = policy_scope(Event)
+
+    # @markers = @events.geocoded.map do |event|
+    #   {
+    #     lat: event.latitude,
+    #     lng: event.longitude
+    #   }
+    # end
   end
 
   def show
     set_event
     @booking = Booking.new
     authorize @event
+
+    @markers = [
+      {
+        lat: @event.latitude,
+        lng: @event.longitude
+      }]
   end
 
   def new

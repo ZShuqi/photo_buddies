@@ -75,11 +75,11 @@
                     <%# cloudinary note: need to convert to png to have a transparent background %>
                   <% end %>
                 </p>
-                <%# <% if event.user_id == current_user.id %>
+                <%# if event.user_id == current_user.id %>
                   <%# <p><i class="fa-solid fa-face-smile-wink"></i> My event</p> %>
-                <%# <% else %>
-                  <%# <p>Book now <i class="fa-solid fa-chevron-right"></i></p> %>
-                <%# <% end %>
+                <%# else %>
+                  <%# <p>Book now<i class="fa-solid fa-chevron-right"></i></p> %>
+                <%# end %>
               </div>
             </div>
           </div>
@@ -88,33 +88,41 @@
     </div>
   </div>
 
-  <div class="container p-3 mb-3">
+  <div class="container py-3 mt-5">
     <h4><strong>My joined events</strong></h4>
-
-    <div class="mb-5">
-
     <% if @bookings.any?%>
-      <% @bookings.each do |booking| %>
-        <div class="card m-4 p-4">
-          <h5 class="card-title"><%= booking.event.title %></h5>
-          <div class="d-flex justify-content-left">
-            <p><i class="fa-regular fa-file-lines"></i> <%= booking.event.description %></p>
-            &emsp;<p><i class="fa-solid fa-location-dot"></i> <%= booking.event.address %></p>
-            &emsp;<p><i class="fa-regular fa-clock"></i> <%= booking.event.date.to_time.strftime('%e %b %Y %H:%M') %></p>
-            &emsp;<p>Organizer: <%= User.find(booking.event.user_id).username %></p>
-            &emsp;<p></p>
-            <%# <%= button_to "Cancel", booking, method: :delete %>
-            <%= link_to "Cancel",
-              booking_path(booking),
-              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-              class: "main-btn"
-            %>
-            </p>
+      <div class="cards-body" style="width:1200px; margin-inline: auto">
+        <% @bookings.each do |booking| %>
+          <% event = booking.event %>
+          <div class="card-trip" style="margin:40px;">
+            <%= link_to event_path(event) do %>
+              <% if event.images.try(:any?) %>
+                <%= cl_image_tag event.images.first.key %>
+              <% else %>
+                <%= cl_image_tag Photo.first.photo.key %>
+              <% end %>
+            <% end %>
+
+            <div class="card-trip-infos-cancel">
+              <h2><%= event.title %></h2>
+              <p> <%= event.description %></p>
+
+              <div class="event-organizer">
+                <%= link_to member_path(event.user) do %>
+                  <%= cl_image_tag event.user.photo.key, class: "card-trip-user avatar-bordered"%>
+                <% end %>
+                <p class="card-trip-pricing">By <%= event.user.username.capitalize %></p>
+              </div>
+
+              <%= link_to "Cancel",
+                profile_path,
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                class: "main-button"
+              %>
+            </div>
           </div>
-        </div>
-      <% end %>
-    <% else %>
-      <li class="list-unstyled m-3 p-4 fs-3 text-center"><h2> You have no bookings  <i class="fa-solid fa-face-sad-cry"></i></h2>
+        <% end %>
+      </div>
     <% end %>
   </div>
 
