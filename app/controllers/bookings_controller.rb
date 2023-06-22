@@ -34,7 +34,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     authorize @booking
     @booking.destroy
-    redirect_to bookings_path, status: :see_other
+    redirect_to profile_path, status: :see_other
   end
 
   private
