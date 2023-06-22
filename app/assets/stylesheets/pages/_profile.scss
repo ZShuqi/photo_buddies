@@ -49,7 +49,38 @@ object-fit: cover;
 
 .edit-gal {
     position: absolute;
-    font-size: 1.8 rem;
-    margin-left: 790px;
-    color: lightgrey;
+    font-size: 1.7rem;
+    color: #5F876A;
+    //ightgrey;
+}
+
+hr.solid {
+  border-top: 3px solid #5F876A;
+  margin-right: 50px;
+  margin-left: 50px;
+  opacity: o.60;
+}
+
+#events_profile {
+  font-size: 40px;
+}
+
+#gallerie {
+font-size: 40px;
+}
+.ecommerce-gallery {
+width: 50%;
+}
+
+.lightbox {
+width: 60%;
+}
+
+.fa-solid fa-plus plus {
+  width: 0%;
+}
+
+.row_gallery {
+  width: 50%;
+  display: flex;
 }
