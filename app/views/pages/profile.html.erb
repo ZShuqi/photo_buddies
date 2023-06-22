@@ -16,7 +16,7 @@
     </div>
   </div>
   <br>
-<div class='row cen'>
+<div class='add-gallery-icon'>
     <h4 id="gallerie"><strong>My photo galleries</strong></h4>
     <%= link_to new_user_gallery_path(@user) do %>
     <i class="fa-solid fa-plus plus"></i>
@@ -25,38 +25,26 @@
 
 <div class="new-gallery">
   <% @my_galleries.each do |g| %>
-    <div class="row py-3 shadow-5 w-50">
+    <div class="row py-3 shadow-5 w-50"  data-controller='photoswipe'>
       <div class="col-12 mb-1">
-        <div class="card-category-gallery" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path g.photos.first.photo.key, class: "w-100"%>')">
-        </div>
+      <a href= "<%= cl_image_path g.photos.first.photo.key%>" data-pswp-src= "<%= cl_image_path g.photos.first.photo.key%>" data-pswp-srcset= "<%= cl_image_path g.photos.first.photo.key%>" data-pswp-width="1000"
+        data-pswp-height="1000" target= "_blank">
+        <section  class="card-category-gallery" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path g.photos.first.photo.key, class: "w-100"%>')">
+        </section>
+      </a>
       </div>
-      <% g.photos.first(4).each do |pic| %>
-        <div class="col-3 mt-1">
-          <div class="card-category-gallery card-category-gallery-small" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path pic.photo.key, class: "w-100"%>')">
-          </div>
+      <% g.photos.last(3).each do |pic| %>
+        <div class="col-4 mt-1">
+        <a href= "<%= cl_image_path pic.photo.key%>" data-pswp-src= "<%= cl_image_path pic.photo.key%>" data-pswp-srcset= "<%= cl_image_path pic.photo.key%>" data-pswp-width="1000"
+        data-pswp-height="1000" target= "_blank">
+          <section class="card-category-gallery card-category-gallery-small" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path pic.photo.key, class: "w-100"%>')">
+          </section>
+          </a>
         </div>
       <% end %>
     </div>
   <% end %>
 </div>
-
-
-
-
-   <% @my_galleries.each do |g| %>
-      <h5 class='below'><%= g.name %></h5>
-      <%= link_to user_gallery_path(@user, g), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn bin', title: 'Delete Gallery' do %>
-        <i class="fa-sharp fa-solid fa-trash"></i>
-      <% end %>
-
-      <div class="carousel slide m-3 d-flex justify-content-center caro-drop">
-        <%= render 'shared/gallery_carousel', my_pics: g %>
-        <%= link_to edit_user_gallery_path(@user, g), class: 'btn edit-gal ' do %>
-        <i class="fa-solid fa-pen"></i>
-      <% end %>
-      </div>
-    <% end %>
-  </div>
 
 
 <hr class="solid">
