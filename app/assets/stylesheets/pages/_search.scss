@@ -1,6 +1,7 @@
 .search-categories {
   display: flex;
   margin: 10px;
+  margin-top: 15px;
   color: black;
 }
 
@@ -8,6 +9,7 @@
   background-color: $white;
   border: 1px solid $shadow-grey;
   border-radius: 3px;
+  width: 50vw;
 }
 
 .search-banner-content {
@@ -17,4 +19,10 @@
 
 .search-banner h6 {
   padding-top: 7px;
+}
+
+#search-button {
+  position: absolute;
+  bottom: 4px;
+  right: 100px;
 }

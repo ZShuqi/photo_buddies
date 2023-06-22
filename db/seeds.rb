@@ -922,9 +922,10 @@ users.each { |user| user_ids << user.id }
 photos = Photo.all
 
 photos.each do |photo|
-  n = rand(4..12)
-  n.times do
-    Like.create!(user_id: user_ids.sample, photo_id: photo.id)
+  user_pick = user_ids.sample(rand(4..12))
+  user_pick.each do |picked|
+    like = Like.create!(user_id: picked, photo_id: photo.id)
+    puts "user #{like.user_id} - photo #{like.photo_id}"
   end
 end
 
