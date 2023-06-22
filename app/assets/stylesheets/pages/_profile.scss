@@ -84,3 +84,35 @@ width: 60%;
   width: 50%;
   display: flex;
 }
+
+#carousel {
+ width:50%;
+grid-template-columns: 1fr 1fr;
+}
+// .carousel slide m-3 d-flex justify-content-center caro-drop {
+//   width:50%;
+//   grid-template-columns: 1fr 1fr;
+// }
+.card-category-gallery {
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 0px;
+}
+
+.card-category-gallery-small {
+  height: 120px;
+}
+
+.new-gallery {
+  display: flex;
+  gap: 60px;
+}

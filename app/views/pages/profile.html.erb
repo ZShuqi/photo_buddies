@@ -23,6 +23,26 @@
     <% end %>
 </div>
 
+<div class="new-gallery">
+  <% @my_galleries.each do |g| %>
+    <div class="row py-3 shadow-5 w-50">
+      <div class="col-12 mb-1">
+        <div class="card-category-gallery" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path g.photos.first.photo.key, class: "w-100"%>')">
+        </div>
+      </div>
+      <% g.photos.first(4).each do |pic| %>
+        <div class="col-3 mt-1">
+          <div class="card-category-gallery card-category-gallery-small" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path pic.photo.key, class: "w-100"%>')">
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+
+
+
    <% @my_galleries.each do |g| %>
       <h5 class='below'><%= g.name %></h5>
       <%= link_to user_gallery_path(@user, g), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn bin', title: 'Delete Gallery' do %>
@@ -42,11 +62,11 @@
 <hr class="solid">
   <div class="container p-3 mb-3">
     <h4 id="events_profile">Events you created</h4>
-
+        <%= link_to new_event_path, class: 'btn edit-gal', id: "add-event-btn" do %>
+                <i class="fa-solid fa-plus"></i>create new event
+        <% end %>
 
 <div class="cards-body" style="width:1200px; margin-inline: auto">
-      <%= link_to new_event_path, class: 'btn edit-gal', id: "add-event-btn" do %>
-        <i class="fa-solid fa-plus"></i>create new event
       <% @my_events.reverse.each do |event| %>
         <%#= link_to event_path(event), class: "nav-link" do %>
       <div class="card-trip" style="margin:40px;">
@@ -67,7 +87,6 @@
 
           </div>
         </div>
-        <% end %>
         <% end %>
       </div>
 </div>
