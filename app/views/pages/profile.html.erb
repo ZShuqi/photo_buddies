@@ -94,10 +94,12 @@
       <% end %>
 
     <%= render 'shared/new_event_card', events: @my_events %>
+  </div>
 
 
 
 <div class="container py-3 mt-5 booked-events">
   <h4><strong>My Joined Events</strong></h4>
   <%= render 'shared/new_event_card_with_cancel', events: @booked_events %>
+</div>
 </div>
