@@ -10,73 +10,57 @@
        <p> <%= @user.description %> </p>
     </div>
   </div>
-  <div class = 'row cen mt-5'>
-      <h5 class = ' mb-5'><strong><%= @user.username%>'s gallery</strong></h5>
-      <% @my_galleries.each do |g| %>
-      <h5 class='below'><%= g.name %></h5>
-      <%= link_to gallery_photo_path(g, g) do %>
-      <div class="carousel slide m-3 d-flex justify-content-center caro-drop">
-        <%= render 'shared/gallery_carousel', my_pics: g %>
+
+
+<div class='add-gallery-icon'>
+    <h4 id="gallerie"><strong><%= @user.username.capitalize %>'s Photo Galleries</strong></h4>
+</div>
+
+<div class="new-gallery">
+  <% @my_galleries.each do |g| %>
+    <div class="row py-3 shadow-5 w-50"  data-controller='photoswipe'>
+      <div class="col-12 mb-1">
+      <a href= "<%= cl_image_path g.photos.first.photo.key%>" data-pswp-src= "<%= cl_image_path g.photos.first.photo.key%>" data-pswp-srcset= "<%= cl_image_path g.photos.first.photo.key%>" data-pswp-width="1000"
+        data-pswp-height="1000" target= "_blank">
+        <section  class="card-category-gallery" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path g.photos.first.photo.key, class: "w-100"%>')">
+        </section>
+      </a>
       </div>
-      <% end %>
-    <% end %>
-    </div>
-  </div>
-  <div class="container cen p-3 mb-3">
-    <h5><strong><%= @user.username%>'s Events</strong></h5>
-    <div class="grid">
-      <% @my_events.reverse.each do |event| %>
-        <%= link_to event_path(event), class: "nav-link" do %>
-          <div class="card">
-            <img src="https://source.unsplash.com/random/?event" alt="random pic">
-            <div class="card-body">
-              <h5 class="card-title"><%= event.title %></h5>
-              <div class="d-flex flex-column">
-                <p><i class="fa-regular fa-clock"></i> <%= event.date.to_time.strftime('%e %b %Y %H:%M') %></p>
-                <p><i class="fa-solid fa-location-dot"></i> <%= event.address %></p>
-                <p><i class="fa-regular fa-file-lines"></i> <%= event.description %></p>
-                <p>By: <% @user = User.find(event.user_id) %>
-                  <%= @user.username.capitalize %>
-                  <%= cl_image_tag @user.photo.key, height: 40, width: 40, radius: 20, crop: :fill %>
-                </p>
-                <p>With:
-                  <% event.bookings.each do |book| %>
-                    <% participant = User.find(book.user_id) %>
-                    <%= participant.username.capitalize %>
-                    <%= cl_image_tag participant.photo.key, height: 40, width: 40, radius: 20, crop: :fill %>
-                    <%# cloudinary note: need to convert to png to have a transparent background %>
-                  <% end %>
-                </p>
-                <%# <% if event.user_id == current_user.id %>
-                  <%# <p><i class="fa-solid fa-face-smile-wink"></i> My event</p> %>
-                <%# <% else %>
-                  <%# <p>Book now <i class="fa-solid fa-chevron-right"></i></p> %>
-                <%# <% end %>
-              </div>
-            </div>
-          </div>
-        <% end %>
+      <% g.photos.last(3).each do |pic| %>
+        <div class="col-4 mt-1">
+        <a href= "<%= cl_image_path pic.photo.key%>" data-pswp-src= "<%= cl_image_path pic.photo.key%>" data-pswp-srcset= "<%= cl_image_path pic.photo.key%>" data-pswp-width="1000"
+        data-pswp-height="1000" target= "_blank">
+          <section class="card-category-gallery card-category-gallery-small" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path pic.photo.key, class: "w-100"%>')">
+          </section>
+          </a>
+        </div>
       <% end %>
     </div>
-  </div>
-</div>
+  <% end %>
 </div>
 
-<%# following to display only pictures from the user %>
-<%# <% @my_galleries.each do |g| %>
-  <%# <% my_pics = g.photo_ids %>
-    <%# <% my_pics.each do |pic| %>
-    <%# <% p = Photo.find(pic) %>
-    <%# <%= cl_image_tag p.photo.key, height: 300, width: 400, crop: :fill %>
-    <%# <% end %>
-<%# <% end %>
 
-<%# following to display only pictures from the user as galleries %>
-<%# for now only one is moving because the carousel pages id are the same. to change, follow: %>
-<%# https://stackoverflow.com/questions/10521257/is-it-possible-to-have-multiple-twitter-bootstrap-carousels-on-one-page %>
-<%# <% @my_galleries.each do |g| %>
-  <%# <% my_pics = g.photo_ids %>
-  <%# <div class= "carousel slide m-3 d-flex justify-content-center">
-   <%= render 'shared/gallery_carousel', my_pics: my_pics %>
-  <%# </div> %>
-<%# <% end %>
+  <% @my_galleries.each do |g| %>
+    <div>
+      <p class='below mt-5'>
+      <%= g.name %>
+      <% @first_photo = Photo.where(gallery_id: g.id).first %>
+      <%= link_to gallery_photo_path(g, @first_photo) do %>
+        <i class="fa-regular fa-eye"></i>
+      <% end %>
+      </p>
+    </div>
+  <% end %>
+
+
+<hr class="solid">
+  <div class="container p-3 mb-3">
+    <h4 id="events_profile"><strong><%= @user.username.capitalize %>'s Events</strong></h4>
+    <%= render 'shared/new_event_card', events: @my_events %>
+<%#
+
+
+<div class="container py-3 mt-5 booked-events">
+  <h4><strong>My Joined Events</strong></h4>
+  <%= render 'shared/new_event_card_with_cancel', events: @booked_events %>
+<%# </div> %>

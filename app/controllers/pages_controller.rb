@@ -27,6 +27,10 @@ class PagesController < ApplicationController
     @my_events = Event.where(user_id: current_user.id)
     @gallery = Gallery.new
     @bookings = Booking.where(user_id: current_user)
+    @booked_events = []
+    @bookings.each do |book|
+      @booked_events << book.event
+    end
   end
 
   def search
@@ -92,3 +96,60 @@ class PagesController < ApplicationController
     end
   end
 end
+
+
+
+
+
+
+# <%# <div class = 'row cen mt-5'>
+# <h5 class = ' mb-5'><strong><%= @user.username%>'s gallery</strong></h5>
+# <% @my_galleries.each do |g| %>
+# <h5 class='below'><%= g.name %></h5>
+# <%= link_to gallery_photo_path(g, g) do %>
+# <div class="carousel slide m-3 d-flex justify-content-center caro-drop">
+#   <%= render 'shared/gallery_carousel', my_pics: g %>
+# </div>
+# <% end %>
+# <% end %>
+# </div>
+# </div>
+# <div class="container cen p-3 mb-3">
+# <h5><strong><%= @user.username%>'s Events</strong></h5>
+# <div class="grid">
+# <% @my_events.reverse.each do |event| %>
+#   <%= link_to event_path(event), class: "nav-link" do %>
+#     <div class="card">
+#       <img src="https://source.unsplash.com/random/?event" alt="random pic">
+#       <div class="card-body">
+#         <h5 class="card-title"><%= event.title %></h5>
+#         <div class="d-flex flex-column">
+#           <p><i class="fa-regular fa-clock"></i> <%= event.date.to_time.strftime('%e %b %Y %H:%M') %></p>
+#           <p><i class="fa-solid fa-location-dot"></i> <%= event.address %></p>
+#           <p><i class="fa-regular fa-file-lines"></i> <%= event.description %></p>
+#           <p>By: <% @user = User.find(event.user_id) %>
+#             <%= @user.username.capitalize %>
+#             <%= cl_image_tag @user.photo.key, height: 40, width: 40, radius: 20, crop: :fill %>
+#           </p>
+#           <p>With:
+#             <% event.bookings.each do |book| %>
+#               <% participant = User.find(book.user_id) %>
+#               <%= participant.username.capitalize %>
+#               <%= cl_image_tag participant.photo.key, height: 40, width: 40, radius: 20, crop: :fill %>
+#               <%# cloudinary note: need to convert to png to have a transparent background %>
+#             <% end %>
+#           </p>
+#           <%# <% if event.user_id == current_user.id %>
+#             <%# <p><i class="fa-solid fa-face-smile-wink"></i> My event</p> %>
+#           <%# <% else %>
+#             <%# <p>Book now <i class="fa-solid fa-chevron-right"></i></p> %>
+#           <%# <% end %>
+#         </div>
+#       </div>
+#     </div>
+#   <% end %>
+# <% end %>
+# </div>
+# </div>
+# </div>
+# </div>

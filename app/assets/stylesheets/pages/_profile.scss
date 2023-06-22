@@ -135,3 +135,22 @@ grid-template-columns: 1fr 1fr;
 .bring-forward{
   z-index: 3;
 }
+
+
+.cards-body {
+  position: relative;
+}
+
+.booked-delete-btn {
+  position: absolute;
+  top: 35px;
+  left: 35px;
+
+  i {
+    color: white;
+  }
+
+  i:hover {
+    color: $cool-green;
+  }
+}
