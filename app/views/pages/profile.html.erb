@@ -67,6 +67,24 @@
   <% end %>
 </div>
 
+<% @my_galleries.each do |g| %>
+    <div>
+      <p class='below mt-5'>
+      <%= g.name %>
+      <%= link_to edit_user_gallery_path(@user, g), data: {turbo_frame: :modal} do %>
+          <i class="fa-solid fa-pen"></i>
+        <% end %>
+      <% @first_photo = Photo.where(gallery_id: g.id).first %>
+      <%= link_to gallery_photo_path(g, @first_photo) do %>
+        <i class="fa-regular fa-eye"></i>
+      <% end %>
+      <%= link_to user_gallery_path(@user, g), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn bin', title: 'Delete Gallery' do %>
+        <i class="fa-sharp fa-solid fa-trash"></i>
+      <% end %>
+      </p>
+    </div>
+  <% end %>
+
 
 <hr class="solid">
   <div class="container p-3 mb-3">
