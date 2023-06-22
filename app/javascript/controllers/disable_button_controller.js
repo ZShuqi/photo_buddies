@@ -2,7 +2,8 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="disable-button"
 export default class extends Controller {
-  static targets = ["items", "form", "register", "link"]
+  // static targets = ["items", "form", "register", "link"]
+  static targets = ["items", "form", "register"]
 
   connect() {
     console.log("Hello world")
@@ -29,6 +30,6 @@ export default class extends Controller {
       this.formTarget.innerText = "Registered!"
       this.formTarget.setAttribute("disabled", "")
       this.formTarget.classList.add("disabled-btn")
-      this.linkTarget.classList.remove("d-none")
+      // this.linkTarget.classList.remove("d-none")
   }
 }
