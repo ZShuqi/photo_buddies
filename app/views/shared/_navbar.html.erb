@@ -13,6 +13,7 @@
            <%# <h2>Home</h2> %>
         <% end %>
       </div>
+
       <div class="navbar-tab"
           data-action="click->navbar-active-tab#activateSearch"
           data-navbar-active-tab-target="search">
@@ -20,13 +21,15 @@
           <h2><i class="fa-solid fa-magnifying-glass"></i>   Discover</h2>
         <% end %>
       </div>
+
       <div class="navbar-tab"
           data-action="click->navbar-active-tab#activateCommunity"
           data-navbar-active-tab-target="community">
         <%= link_to community_path, class: "navbar-brand" do %>
-          <h2><i class="fa-solid fa-users"></i>   Community</h2>
+          <h2><i class="fa-solid fa-users"></i> Community</h2>
         <% end %>
       </div>
+
       <div class="navbar-tab"
           data-action="click->navbar-active-tab#activateProfile"
           data-navbar-active-tab-target="profile">

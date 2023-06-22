@@ -21,15 +21,19 @@ class PagesController < ApplicationController
   end
 
   def profile
-    @user = current_user
-    @my_galleries = Gallery.where(user_id: current_user.id)
-    @events = Event.all
-    @my_events = Event.where(user_id: current_user.id)
-    @gallery = Gallery.new
-    @bookings = Booking.where(user_id: current_user)
-    @booked_events = []
-    @bookings.each do |book|
-      @booked_events << book.event
+    if user_signed_in?
+      @user = current_user
+      @my_galleries = Gallery.where(user_id: current_user.id)
+      @events = Event.all
+      @my_events = Event.where(user_id: current_user.id)
+      @gallery = Gallery.new
+      @bookings = Booking.where(user_id: current_user)
+      @booked_events = []
+      @bookings.each do |book|
+        @booked_events << book.event
+      end
+    else
+      redirect_to new_user_session_path
     end
   end
 
@@ -92,7 +96,7 @@ class PagesController < ApplicationController
       @hot_spot = HotSpot.new
       authorize @hot_spot
     else
-      redirect_to "/404"
+      redirect_to new_user_session_path
     end
   end
 end
