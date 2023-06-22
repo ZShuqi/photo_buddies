@@ -28,11 +28,18 @@ object-fit: cover;
   border-radius: 7px;
 }
 
+.fa-eye::before {
+  color: green;
+}
+.fa-solid {
+  font-size: 25px;
+  color: green;
+}
 .up {
-  margin-left: 190px;
+  margin-left: 220px;
   position: absolute;
-  margin-top: 90px;
-  color: lightgrey;
+  margin-top: 110px;
+  color: green;
 }
 
 .plus {
