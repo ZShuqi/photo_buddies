@@ -1,0 +1,6 @@
+<%= simple_form_for([@event, @booking], data: {
+                          disable_button_target:"form",
+                          action: "submit->disable-button#send"
+                        }) do |f|%>
+        <%= f.button :submit, "Register!", class: "main-btn" %>
+      <% end %>
