@@ -15,7 +15,7 @@
 
     </div>
   </div>
-  <br>
+  <hr class="solid">
 <div class='add-gallery-icon'>
     <h4 id="gallerie"><strong>My photo galleries</strong></h4>
     <%= link_to new_user_gallery_path(@user), data: {turbo_frame: :modal} do %>
@@ -43,6 +43,7 @@
       <% end %>
       </p>
     </div>
+    <div class="row py-3 shadow-5 w-50"  data-controller='photoswipe' style="border-style: outset; border-radius: 18px;">
       <div class="col-12 mb-1">
       <a href= "<%= cl_image_path g.photos.first.photo.key%>" data-pswp-src= "<%= cl_image_path g.photos.first.photo.key%>" data-pswp-srcset= "<%= cl_image_path g.photos.first.photo.key%>" data-pswp-width="1000"
         data-pswp-height="1000" target= "_blank">

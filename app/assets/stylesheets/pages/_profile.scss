@@ -69,6 +69,8 @@ hr.solid {
 
 #events_profile {
   font-size: 40px;
+  color: black;
+  font-weight: bold;
 }
 
 #gallerie {
@@ -102,7 +104,7 @@ grid-template-columns: 1fr 1fr;
 .card-category-gallery {
   background-size: cover;
   background-position: center;
-  height: 250px;
+  height: 420px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,11 +113,11 @@ grid-template-columns: 1fr 1fr;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 0px;
+  border-radius: 7px;
 }
 
 .card-category-gallery-small {
-  height: 120px;
+  height: 135px;
 }
 
 .new-gallery {
@@ -127,6 +129,7 @@ grid-template-columns: 1fr 1fr;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 30px;
 }
 
 .negative {
@@ -135,8 +138,9 @@ grid-template-columns: 1fr 1fr;
 }
 
 .username {
+  font-size: 60px;
   position: relative;
-  margin-left: 190px;
+  margin-left: 220px;
 }
 
 .bring-forward{
