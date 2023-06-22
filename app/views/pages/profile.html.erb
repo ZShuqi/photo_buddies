@@ -25,66 +25,35 @@
 
 <div class="new-gallery">
   <% @my_galleries.each do |g| %>
-    <div class="row py-3 shadow-5 w-50"  data-controller='photoswipe'>
+    <div class="row py-3 shadow-5 w-50">
       <div class="col-12 mb-1">
-      <a href= "<%= cl_image_path g.photos.first.photo.key%>" data-pswp-src= "<%= cl_image_path g.photos.first.photo.key%>" data-pswp-srcset= "<%= cl_image_path g.photos.first.photo.key%>" data-pswp-width="1000"
-        data-pswp-height="1000" target= "_blank">
-        <div>
-        </div>
-
-        <section  class="card-category-gallery" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path g.photos.first.photo.key, class: "w-100"%>')">
-        <div id="gallery_title" style="color:white; text-decoration:none;"><%= g.name %></div>
-        <div id="gallery_title">
+      <div id="gallery_title" style="text-decoration:none;"><%= g.name %>
           <%= link_to edit_user_gallery_path(@user, g), data: {turbo_frame: :modal} do %>
             <i class="fa-solid fa-pen"></i>
           <% end %>
-        </div>
-        <div id="gallery_title">
-          <% @first_photo = Photo.where(gallery_id: g.id).first %>
-          <%= link_to gallery_photo_path(g, @first_photo) do %>
-            <i class="fa-regular fa-eye"></i>
-          <% end %>
-        </div>
-        <div id="gallery_title">
           <%= link_to user_gallery_path(@user, g), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn', title: 'Delete Gallery' do %>
             <i class="fa-sharp fa-solid fa-trash"></i>
           <% end %>
         </div>
 
+      <%= link_to gallery_photo_path(g, g.photos.first) do %>
+        <section  class="card-category-gallery" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path g.photos.first.photo.key, class: "w-100"%>')">
         </section>
-      </a>
+      <% end %>
+
       </div>
       <% g.photos.last(3).each do |pic| %>
         <div class="col-4 mt-1">
-        <a href= "<%= cl_image_path pic.photo.key%>" data-pswp-src= "<%= cl_image_path pic.photo.key%>" data-pswp-srcset= "<%= cl_image_path pic.photo.key%>" data-pswp-width="1000"
-        data-pswp-height="1000" target= "_blank">
+        <%= link_to gallery_photo_path(g, pic) do %>
           <section class="card-category-gallery card-category-gallery-small" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path pic.photo.key, class: "w-100"%>')">
           </section>
-          </a>
+        <% end %>
+
         </div>
       <% end %>
     </div>
   <% end %>
 </div>
-
-<% @my_galleries.each do |g| %>
-    <div>
-      <p class='below mt-5'>
-      <%= g.name %>
-      <%= link_to edit_user_gallery_path(@user, g), data: {turbo_frame: :modal} do %>
-          <i class="fa-solid fa-pen"></i>
-        <% end %>
-      <% @first_photo = Photo.where(gallery_id: g.id).first %>
-      <%= link_to gallery_photo_path(g, @first_photo) do %>
-        <i class="fa-regular fa-eye"></i>
-      <% end %>
-      <%= link_to user_gallery_path(@user, g), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn', title: 'Delete Gallery' do %>
-        <i class="fa-sharp fa-solid fa-trash"></i>
-      <% end %>
-      </p>
-    </div>
-  <% end %>
-
 
 <hr class="solid">
   <div class="container p-3 mb-3">
@@ -92,9 +61,7 @@
       <%= link_to new_event_path, class: 'btn edit-gal', id: "add-event-btn" do %>
               <i class="fa-solid fa-plus"></i>create new event
       <% end %>
-
     <%= render 'shared/new_event_card', events: @my_events %>
-
 
 
 <div class="container py-3 mt-5 booked-events">
