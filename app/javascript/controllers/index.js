@@ -27,3 +27,6 @@ application.register("map", MapController)
 
 import NavbarActiveTabController from "./navbar_active_tab_controller"
 application.register("navbar-active-tab", NavbarActiveTabController)
+
+import PhotoswipeController from "./photoswipe_controller"
+application.register("photoswipe", PhotoswipeController)

@@ -5,7 +5,7 @@
   </div>
 </div>
 
-<div class="cards mb-3" style="grid-gap: 25px; padding-bottom: 60px; margin: 60px; margin-top: 20px;">
+<div class="cards mb-3" style="grid-gap: 10px; padding-bottom: 60px; margin: 50px; margin-top: 20px;">
       <% @com_members.each do |member| %>
       <% if member.banner_photo.key  %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path member.banner_photo.key %>')">

@@ -48,9 +48,78 @@ object-fit: cover;
 
 .edit-gal {
     position: absolute;
-    margin-top: 200px;
-    margin-left: 790px;
-    color: lightgrey;
+    font-size: 1.7rem;
+    color: #5F876A;
+    //ightgrey;
+}
+
+hr.solid {
+  border-top: 3px solid #5F876A;
+  margin-right: 50px;
+  margin-left: 50px;
+  opacity: o.60;
+}
+
+#events_profile {
+  font-size: 40px;
+}
+
+#gallerie {
+font-size: 40px;
+}
+.ecommerce-gallery {
+width: 50%;
+}
+
+.lightbox {
+width: 60%;
+}
+
+.fa-solid fa-plus plus {
+  width: 0%;
+}
+
+.row_gallery {
+  width: 50%;
+  display: flex;
+}
+
+#carousel {
+ width:50%;
+grid-template-columns: 1fr 1fr;
+}
+// .carousel slide m-3 d-flex justify-content-center caro-drop {
+//   width:50%;
+//   grid-template-columns: 1fr 1fr;
+// }
+.card-category-gallery {
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 0px;
+}
+
+.card-category-gallery-small {
+  height: 120px;
+}
+
+.new-gallery {
+  display: flex;
+  gap: 60px;
+}
+
+.add-gallery-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .negative {
