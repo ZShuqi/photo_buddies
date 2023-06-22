@@ -78,7 +78,7 @@
       <%= link_to gallery_photo_path(g, @first_photo) do %>
         <i class="fa-regular fa-eye"></i>
       <% end %>
-      <%= link_to user_gallery_path(@user, g), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn bin', title: 'Delete Gallery' do %>
+      <%= link_to user_gallery_path(@user, g), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn', title: 'Delete Gallery' do %>
         <i class="fa-sharp fa-solid fa-trash"></i>
       <% end %>
       </p>
