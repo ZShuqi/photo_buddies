@@ -23,31 +23,7 @@
 
 <div class="container py-3 mt-5">
   <h4 id="local_events"><strong>Happening Lately:</strong></h4>
-  <div class="cards-body" style="width:1200px; margin-inline: auto">
-    <% @events.shuffle.each do |event| %>
-      <div class="card-trip" style="margin:40px;">
-        <%= link_to event_path(event) do %>
-          <% if event.images.try(:any?) %>
-            <%= cl_image_tag event.images.first.key %>
-          <% else %>
-            <%= cl_image_tag Photo.first.photo.key %>
-          <% end %>
-        <% end %>
-
-        <div class="card-trip-infos">
-          <h2><%= event.title %></h2>
-          <p> <%= event.description %></p>
-
-          <div class="event-organizer">
-            <%= link_to member_path(event.user) do %>
-              <%= cl_image_tag event.user.photo.key, class: "card-trip-user avatar-bordered"%>
-            <% end %>
-            <p class="card-trip-pricing">By <%= event.user.username.capitalize %></p>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
+  <%= render 'shared/new_event_card', events: @events %>
 </div>
 
 
