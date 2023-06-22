@@ -1,11 +1,10 @@
-<div class="card-user">
-
-    <div class="user-avatar"><%= cl_image_tag user.photo.key, height: 80, width: 80, radius: 40, crop: :fill %></div>
-    <div class="card-user-infos">
-      <h2><%= user.username.capitalize %></h2>
-      <p><%= user.description %></p>
-    </div>
-  <%= link_to "/pages/#{user.id}" do %>
-    <i class="fa-solid fa-chevron-right"></i>
-  <% end %>
-</div>
+<%= link_to "/pages/#{user.id}", class: "card-user" do %>
+  <div class="user-avatar">
+    <%= cl_image_tag user.photo.key, height: 80, width: 80, radius: 40, crop: :fill %>
+  </div>
+  <div class="card-user-infos">
+    <h2><%= user.username.capitalize %></h2>
+    <p><%= user.description %></p>
+  </div>
+  <i class="fa-solid fa-chevron-right"></i>
+<% end %>

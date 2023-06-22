@@ -1,21 +1,14 @@
-
-
-<div id="photo-display-page-black">
-  <div class="photo-display-top">
-    <div id="back-to-profile-white">
-      <%= link_to "/pages/#{@gallery_user.id}" do %>
-      <%= cl_image_tag @gallery_user.photo.key, height: 40, width: 40, radius: 20, crop: :fill %> <%= @gallery_user.username.capitalize %>
-      <% end %>
-    </div>
-
-    <div class="photo-address">
-      <p><i class="fa-solid fa-location-dot px-4"></i><%= @photo.address %></p>
-    </div>
-  </div>
-
-  <div class="photo-box">
-    <div class="photo-inline">
-      <%= cl_image_tag @photo.photo.key, width: 800, crop: :fill %>
+<div class="row">
+  <div class="col-12 col-md-6 p-4">
+  <div class="photo-display">
+    <%= cl_image_tag @photo.photo.key, width: 800, crop: :fill, class: 'w-100' %>
+    <% if current_user != @gallery_user %>
+      <div id="back-to-profile-white">
+        <%= link_to "/pages/#{@gallery_user.id}" do %>
+        <%= cl_image_tag @gallery_user.photo.key, height: 40, width: 40, radius: 20, crop: :fill %> <%= @gallery_user.username.capitalize %>
+        <% end %>
+      </div>
+    <% else %>
       <div class="photo-destroy">
         <% if policy(@photo).destroy? %>
           <%= link_to gallery_photo_path(@gallery, @photo), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn bin', title: 'Delete Photo' do %>
@@ -23,30 +16,77 @@
           <% end %>
         <% end %>
       </div>
-    </div>
+    <% end %>
+    <p class="photo-address"><i class="fa-solid fa-location-dot px-4"></i><%= @photo.address %></p>
+  </div>
 
-    <div class="photo-comments">
-      <%= turbo_frame_tag dom_id(@photo, :comments) do %>
-        <% coms = @photo.comments %>
-        <% if coms.try(:any?) %>
-          <% coms.each do |com| %>
-            <div class="comment-cards">
-              <% commentor = User.find(com.user_id) %>
-              <%= render "shared/comment_card", commentor: commentor, com: com %>
-            </div>
+  <div class="photo-navigation">
+    <% if @photo_ids_array.length == 1 %>
+      <p class="photo-gallery-info">This is the only photo.</p>
+    <% else %>
+      <p class="photo-gallery-info">See more in this gallery:
+        <% if @photo == @gallery_photos.last %>
+          <%= link_to gallery_photo_path(@gallery.id, @previous_photo_id) do %>
+            <i class="fa-solid fa-chevron-left"></i>
+          <% end %>
+        <% elsif @photo == @gallery_photos.first %>
+          <%= link_to gallery_photo_path(@gallery.id, @next_photo_id) do %>
+            <i class="fa-solid fa-chevron-right"></i>
+          <% end %>
+        <% else %>
+          <%= link_to gallery_photo_path(@gallery.id, @previous_photo_id) do %>
+            <i class="fa-solid fa-chevron-left"></i>
+          <% end %>
+          <%= link_to gallery_photo_path(@gallery.id, @next_photo_id) do %>
+            <i class="fa-solid fa-chevron-right"></i>
           <% end %>
         <% end %>
-        <div class="comment-form">
-          <%= simple_form_for([@photo, @comment],
-                              data: {
-                                action: "submit->insert-comment#send"
-                              }) do |f| %>
-            <%= f.input :content, as: :string, label: "Comment" %>
-            <%= f.button :submit, "Send", class: "main-btn" %>
+      </p>
+    <% end %>
+  </div>
+
+  </div>
+  <div class="col-12 col-md-6 p-4">
+    <div class="photo-likes">
+      <p><%= @likes.length %>
+        <% if @like_status %>
+            <i class="fa-solid fa-heart", id="liked-heart-green"></i>
+        <% else %>
+          <%= simple_form_for [@gallery, @photo, @like] do |f| %>
+            <button type="submit" class="like-btn">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          <% end %>
+        <% end %>
+
+        <% @likes.each do |like| %>
+          <%= cl_image_tag like.user.photo.key, height: 40, width: 40, radius: 20, crop: :fill %>
+        <% end %>
+
+      </p>
+    </div>
+
+    <%= turbo_frame_tag dom_id(@photo, :comments) do %>
+      <% coms = @photo.comments %>
+      <% if coms.try(:any?) %>
+        <div class="comment-cards">
+          <% coms.each do |com| %>
+            <% commentor = User.find(com.user_id) %>
+            <%= render "shared/comment_card", commentor: commentor, com: com %>
           <% end %>
         </div>
       <% end %>
-    </div>
+      <div class="comment-form">
+        <%= simple_form_for([@photo, @comment],
+                            data: {
+                              action: "submit->insert-comment#send"
+                            }) do |f| %>
+            <%= f.input :content, as: :string, label: false, placeholder: "Type your comment here", input_html: { class: "comment-field"} %>
+            <%= button_tag type: 'submit', class: "main-button", id: "new-comment-button" do %>
+              <i class="fa fa-paper-plane-o"></i>
+            <% end %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
-
 </div>

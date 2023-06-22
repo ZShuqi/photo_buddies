@@ -14,20 +14,17 @@
           <p><strong><%= pho.gallery.user.username.capitalize %></strong></p>
         <% end %>
       </div>
-      <%= cl_image_tag pho.photo.key, height: 312, width: 312, crop: :fill %>
+      <%= link_to gallery_photo_path(pho.gallery_id, pho) do %>
+        <%= cl_image_tag pho.photo.key, height: 312, width: 312, crop: :fill %>
+      <% end %>
     </div>
   <% end %>
 </div>
-
-<%# <div class= "container carousel"> <%= render "shared/carousel" %>
- <%# </div> %>
-<%# <div class= "card-trip"> <%= render "shared/tripcard", events: @events </div> %>
 
 <div class="container py-3 mt-5">
   <h4 id="local_events"><strong>Happening Lately:</strong></h4>
   <div class="cards-body" style="width:1200px; margin-inline: auto">
     <% @events.shuffle.each do |event| %>
-    <%# <%= link_to event_path(event) do %>
       <div class="card-trip" style="margin:40px;">
         <%= link_to event_path(event) do %>
           <% if event.images.try(:any?) %>
@@ -50,7 +47,6 @@
         </div>
       </div>
     <% end %>
-    <%# <% end %>
   </div>
 </div>
 
