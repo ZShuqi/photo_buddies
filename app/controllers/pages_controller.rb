@@ -67,27 +67,28 @@ class PagesController < ApplicationController
       @photo_results = Photo.last(20)
       @user_results = User.where(community_id: current_user.community_id).last(4)
     end
-    # params.delete(:query)
-    # params.delete(:users)
-    # params.delete(:photos)
   end
 
 
   def community
-    @community = Community.find(current_user.community_id)
-    @com_members = User.where(community_id: @community)
-    @com_events = Event.where(user_id: @com_members)
+    if user_signed_in?
+      @community = Community.find(current_user.community_id)
+      @com_members = User.where(community_id: @community)
+      @com_events = Event.where(user_id: @com_members)
 
-    @com_hot_spots = HotSpot.where(user_id: @com_members)
-    @markers = @com_hot_spots.geocoded.map do |hot_spot|
-      {
-        lat: hot_spot.latitude,
-        lng: hot_spot.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {hot_spot: hot_spot}),
-        marker_html: render_to_string(partial: "marker")
-      }
+      @com_hot_spots = HotSpot.where(user_id: @com_members)
+      @markers = @com_hot_spots.geocoded.map do |hot_spot|
+        {
+          lat: hot_spot.latitude,
+          lng: hot_spot.longitude,
+          info_window_html: render_to_string(partial: "info_window", locals: {hot_spot: hot_spot}),
+          marker_html: render_to_string(partial: "marker")
+        }
+      end
+      @hot_spot = HotSpot.new
+      authorize @hot_spot
+    else
+      redirect_to "/404"
     end
-    @hot_spot = HotSpot.new
-    authorize @hot_spot
   end
 end
