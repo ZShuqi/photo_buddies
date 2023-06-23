@@ -5,6 +5,7 @@
   </div>
 </div>
 
+<h4 class="container py-3 mt-5"><strong>Community Members:</strong></h4>
 <div class="cards mb-3" style="grid-gap: 10px; padding-bottom: 60px; margin: 50px; margin-top: 20px;">
       <% @com_members.each do |member| %>
       <% if member.banner_photo.key  %>
@@ -24,14 +25,21 @@
               <% end %>
 </div>
 
+  <hr class="mx-5 solid">
 
- <%# <h3 id="local_events"><strong>Photo events in </strong> <span class="berlin2"> Berlin </span> </h3> %>
+<h4 class="container py-3 mt-5"><strong>Community Events:</strong></h4>
 
 <%= render 'shared/new_event_card', events: @com_events %>
 
-<h2 style="margin-left: 50px;"><%= @community.name %>'s best photo spots!</h2>
-<div class="hot-spot-part">
-  <%= render 'shared/hot_spot_map' %>
+  <hr class="solid">
 
-  <%= render 'shared/new_hot_spot_form', hot_spot: @hot_spot %>
+<h4 class="container py-3 mt-5"><strong>Community Photo Spots:</strong></h4>
+
+<div class="row">
+  <div class="col-12 col-md-6 p-5">
+    <%= render 'shared/hot_spot_map' %>
+  </div>
+  <div class="col-12 col-md-6 p-5">
+    <%= render 'shared/new_hot_spot_form', hot_spot: @hot_spot %>
+  </div>
 </div>

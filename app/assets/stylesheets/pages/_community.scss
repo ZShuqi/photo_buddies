@@ -1,153 +1,52 @@
-.hot-spot-part {
-  display: flex;
-}
+// .hot-spot-part {
+//   display: flex;
+// }
 
 #new-hot-spot-form {
   padding: 5%;
-}
 
-
-
-#polaroid body {
-  background:url('https://images.pexels.com/photos/172277/pexels-photo-172277.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-  background-size:cover;
-  background-repeat:repeat;
-  color:#000;
-}
-
-#polaroid ul{
-  position:absolute;
-  margin:0;
-  padding:0;
-}
-
-#polaroid li{
-  text-align:center;
-  display:inline-block;
-  list-style:none;
-  position:relative;
-  border:solid 12px #fff;
-  background:#fff;
-  box-shadow:0 0 15px 0px #555;
-  transition:all 1s ease;
-  -o-transition:all 1s ease;
-  -moz-transition:all 1s ease;
-  -webkit-transition:all 1s ease;
-  top:50px;
-}
-
-
-#polaroid li:hover{
-  top:0px;
-  opacity:0.5;
-}
-
-#polaroid li:nth-child(1){
-    transform:rotate(10deg);
-}
-
-#polaroid li:nth-child(2){
-    transform:rotate(0deg);
-}
-
-#polaroid li:nth-child(3){
-    transform:rotate(-10deg);
-}
-
-#polaroid li:nth-child(4){
-    transform:rotate(20deg);
-}
-
-#polaroid li:nth-child(5){
-  transform:rotate(0deg);
-}
-
-#polaroid li:nth-child(6){
-  transform:rotate(-10deg);
-}
-
-#polaroid li:nth-child(7){
-  transform:rotate(20deg);
-}
-
-#polaroid li:nth-child(8){
-  transform:rotate(0deg);
-}
-
-#polaroid li:nth-child(9){
-  transform:rotate(10deg);
-}
-
-#polaroid li:nth-child(10){
-  transform:rotate(0deg);
-}
-
-#polaroid li:nth-child(11){
-  transform:rotate(-10deg);
-}
-
-#polaroid li:nth-child(12){
-  transform:rotate(20deg);
-}
-
-#polaroid li:nth-child(13){
-  transform:rotate(10deg);
-}
-
-#polaroid p {
-  margin: 5px 0 0 0;
-  font-family: $polaroid-handwritten;
-  // font not working
-  font-size:20px;
-}
-
-#polaroid .light{
-  border-radius:50%;
-  position:absolute;
-  left:0;
-  right:0;
-  width:700px;
-  height:700px;
-  background:#fff;
-  filter:blur(100px);
-  opacity:0.3;
-  pointer-events:none;
-}
-
-#polaroid {
-  width: 100%;
-  position: relative;
-  margin-top: 5%;
-  // margin-left: 30%;
-  // margin-right: 0;
-}
-
-
-#desc-text {
-	width: 100%;
-	overflow:hidden;
-	background-color:#FFF;
-	color:#222;
-	font-family:Courier, monospace;
-	font-weight:normal;
-	font-size:20px;
-	resize:none;
-	line-height:40px;
-	padding-left:100px;
-	padding-right:100px;
-	padding-top:45px;
-	padding-bottom:34px;
-	background-image:url(https://static.tumblr.com/maopbtg/E9Bmgtoht/lines.png), url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
-	background-repeat:repeat-y, repeat;
-	box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04);
-	border-top:1px solid #FFF;
-	border-bottom:1px solid #FFF;
-  margin-left: 5%;
-  margin-top: 50px;
+  h5 {
+    font-size: 1em;
+    font-weight: 900;
+  }
 }
 
 .com-elements {
   display: grid;
   grid-template-columns: 1fr 1fr;
   // grid-gap: 16px;
+}
+
+
+
+
+.hot-spot-input-field {
+  font-size: 20px;
+  background-color: white;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  color: black;
+  box-shadow: 0 0 3px $shadow-grey;
+  width: 80%;
+}
+
+
+.hot-spot-label-field {
+  font-size: 20px;
+  background-color: white;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  // display: flex;
+  // justify-content: center;
+  height: 50px;
+  color: black;
+}
+
+.hot-spot-btn {
+  font-size: 25px;
 }

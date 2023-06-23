@@ -48,13 +48,13 @@
   </div>
   <div class="col-12 col-md-6 p-5">
     <div class="photo-likes">
-      <p><%= @likes.length %>
+      <p>
         <% if @like_status %>
-          <i class="fa-solid fa-heart", id="liked-heart-green"></i>
+          <%= @likes.length %><i class="fa-solid fa-heart", id="liked-heart-green"></i>
         <% else %>
           <%= simple_form_for [@gallery, @photo, @like] do |f| %>
             <button type="submit" class="like-btn">
-              <i class="fa-regular fa-heart"></i>
+              <%= @likes.length %><i class="fa-regular fa-heart"></i>
             </button>
           <% end %>
         <% end %>

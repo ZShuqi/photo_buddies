@@ -18,7 +18,8 @@ class EventsController < ApplicationController
     @markers = [
       {
         lat: @event.latitude,
-        lng: @event.longitude
+        lng: @event.longitude,
+        marker_html: render_to_string(partial: "marker")
       }]
   end
 
