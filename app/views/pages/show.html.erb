@@ -1,6 +1,6 @@
 <div class='container'>
   <div class = 'row'>
-    <div class="card-product" style="background-image: url(<%= @user.banner_photo.attached? ? url_for(@user.banner_photo) : 'https://source.unsplash.com/random/?sunset' %>)">
+    <div class="card-product" style= "height: 200px; background-image: url(<%= @user.banner_photo.attached? ? url_for(@user.banner_photo) : 'https://source.unsplash.com/random/?sunset' %>)">
      <%= cl_image_tag @user.photo.key %>
     </div>
   </div>
@@ -57,6 +57,8 @@
   <div class="container p-3 mb-3">
     <h4 id="events_profile"><strong><%= @user.username.capitalize %>'s Events</strong></h4>
     <%= render 'shared/new_event_card', events: @my_events %>
+  </div>
+</div>
 <%#
 
 
