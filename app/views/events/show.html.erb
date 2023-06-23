@@ -38,7 +38,7 @@
 
               <% if current_user.id == @event.user_id || @flag %>
                 <%= button_tag 'Registered!', type: 'button', class: "disabled-btn" %>
-                <%= link_to "My registered events", bookings_path, class: "main-btn ml-2" %>
+                <%# <%= link_to "My registered events", bookings_path, class: "main-btn ml-2" %>
               <% else %>
                 <%= render 'form', event: @event, booking:@booking %>
 
