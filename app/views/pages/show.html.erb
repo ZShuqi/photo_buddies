@@ -1,7 +1,11 @@
 <div class='container'>
 
   <div class = 'row'>
+<<<<<<< HEAD
     <div id="other-user-avatar" class="card-product" style="background-image: url(<%= @user.banner_photo.attached? ? url_for(@user.banner_photo) : 'https://source.unsplash.com/random/?sunset' %>)">
+=======
+    <div class="card-product" style= "height: 200px; background-image: url(<%= @user.banner_photo.attached? ? url_for(@user.banner_photo) : 'https://source.unsplash.com/random/?sunset' %>)">
+>>>>>>> master
      <%= cl_image_tag @user.photo.key %>
     </div>
   </div>
