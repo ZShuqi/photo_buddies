@@ -54,13 +54,15 @@
 
   <body class="pb-5">
     <%= render "shared/navbar" %>
+    <%= yield %>
 
     <%= render "shared/flashes" %>
 
-    <%= yield %>
+
 
     <%= render "shared/footer" %>
 
     <%= turbo_frame_tag :modal, target: :_top %>
+
   </body>
 </html>

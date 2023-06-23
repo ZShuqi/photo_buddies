@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
 }
+
 .carousel-item img {
 width: 700px;
 height: 500px;
@@ -31,10 +32,12 @@ object-fit: cover;
 .fa-eye::before {
   color: $cool-green;
 }
+
 .fa-solid {
   font-size: 25px;
   color: $cool-green;
 }
+
 .up {
   margin-left: 220px;
   position: absolute;
@@ -61,7 +64,7 @@ object-fit: cover;
 }
 
 hr.solid {
-  border-top: 3px solid #5F876A;
+  border-top: 3px solid $cool-green;
   margin-right: 50px;
   margin-left: 50px;
   opacity: o.60;
@@ -71,13 +74,24 @@ hr.solid {
   font-size: 40px;
   color: black;
   font-weight: bold;
+  margin: 15px 0;
+
+  .fa-solid {
+    font-size: 36px;
+  }
 }
 
 #gallerie {
-font-size: 40px;
+  font-size: 40px;
+  margin-bottom: 15px;
+
+  .fa-solid {
+    font-size: 36px;
+  }
 }
+
 .ecommerce-gallery {
-width: 50%;
+  width: 50%;
 }
 
 .lightbox {
@@ -97,10 +111,7 @@ width: 60%;
  width:50%;
 grid-template-columns: 1fr 1fr;
 }
-// .carousel slide m-3 d-flex justify-content-center caro-drop {
-//   width:50%;
-//   grid-template-columns: 1fr 1fr;
-// }
+
 .card-category-gallery {
   background-size: cover;
   background-position: center;
@@ -113,7 +124,6 @@ grid-template-columns: 1fr 1fr;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 7px;
 }
 
 .card-category-gallery-small {
@@ -129,7 +139,8 @@ grid-template-columns: 1fr 1fr;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .negative {
@@ -138,7 +149,7 @@ grid-template-columns: 1fr 1fr;
 }
 
 .username {
-  font-size: 60px;
+  font-size: 54px;
   position: relative;
   margin-left: 220px;
 }
@@ -155,13 +166,54 @@ grid-template-columns: 1fr 1fr;
 .booked-delete-btn {
   position: absolute;
   top: 35px;
-  left: 35px;
+  left: -155px;
 
   i {
-    color: white;
+    color: black;
   }
 
   i:hover {
     color: $cool-green;
+  }
+}
+
+.edit-gear {
+  position: absolute;
+  top: 130px;
+  left: -198px;
+
+  i {
+    font-size: 50px;
+    color: black;
+    transition: all, 0.3s;
+  }
+
+  i:hover {
+    color: $cool-green;
+  }
+
+  .up {
+    position: absolute;
+  }
+
+}
+
+#own-profile-avatar.card-product {
+  position: relative;
+
+  img {
+    position: absolute;
+    top: -30px;
+    left: 10px;
+  }
+}
+
+#other-user-avatar.card-product {
+  position: relative;
+
+  img {
+    position: absolute;
+    top: -110px;
+    left: 10px;
   }
 }

@@ -1,7 +1,20 @@
 .mapboxgl-ctrl-geocoder {
-  max-width: none;
-  width: 100%;
-  border: 1px solid $shadow-grey;
-  box-shadow: none;
-  background-color: transparent;
+  // // max-width: none;
+  // width: 80%;
+  // border: 1px solid $shadow-grey;
+  // box-shadow: none;
+  // background-color: transparent;
+
+
+  font-size: 20px;
+  background-color: white;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  color: black;
+  box-shadow: 0 0 3px $shadow-grey;
+  width: 80%;
 }

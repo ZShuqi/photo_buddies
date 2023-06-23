@@ -1,6 +1,11 @@
 <div class='container'>
+
   <div class = 'row'>
+<<<<<<< HEAD
+    <div id="other-user-avatar" class="card-product" style="background-image: url(<%= @user.banner_photo.attached? ? url_for(@user.banner_photo) : 'https://source.unsplash.com/random/?sunset' %>)">
+=======
     <div class="card-product" style= "height: 200px; background-image: url(<%= @user.banner_photo.attached? ? url_for(@user.banner_photo) : 'https://source.unsplash.com/random/?sunset' %>)">
+>>>>>>> master
      <%= cl_image_tag @user.photo.key %>
     </div>
   </div>
@@ -11,58 +16,43 @@
     </div>
   </div>
 
+  <hr class="solid">
 
-<div class='add-gallery-icon'>
+  <div class='add-gallery-icon'>
     <h4 id="gallerie"><strong><%= @user.username.capitalize %>'s Photo Galleries</strong></h4>
-</div>
+  </div>
 
-<div class="new-gallery">
-  <% @my_galleries.each do |g| %>
-    <div class="row py-3 shadow-5 w-50"  data-controller='photoswipe'>
-      <div class="col-12 mb-1">
-      <a href= "<%= cl_image_path g.photos.first.photo.key%>" data-pswp-src= "<%= cl_image_path g.photos.first.photo.key%>" data-pswp-srcset= "<%= cl_image_path g.photos.first.photo.key%>" data-pswp-width="1000"
-        data-pswp-height="1000" target= "_blank">
-        <section  class="card-category-gallery" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path g.photos.first.photo.key, class: "w-100"%>')">
-        </section>
-      </a>
-      </div>
-      <% g.photos.last(3).each do |pic| %>
-        <div class="col-4 mt-1">
-        <a href= "<%= cl_image_path pic.photo.key%>" data-pswp-src= "<%= cl_image_path pic.photo.key%>" data-pswp-srcset= "<%= cl_image_path pic.photo.key%>" data-pswp-width="1000"
-        data-pswp-height="1000" target= "_blank">
-          <section class="card-category-gallery card-category-gallery-small" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path pic.photo.key, class: "w-100"%>')">
-          </section>
-          </a>
+  <div class="new-gallery">
+    <% @my_galleries.each do |g| %>
+      <div class="row py-3 shadow-5 w-50">
+        <div class="col-12 mb-1", style="position: relative;">
+          <div id="gallery_title", style="position: absolute; top: -52px; right: 20px;">
+            <%= g.name %>
+          </div>
+
+          <%= link_to gallery_photo_path(g, g.photos.first) do %>
+            <section  class="card-category-gallery" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path g.photos.first.photo.key, class: "w-100"%>')">
+            </section>
+          <% end %>
+
         </div>
-      <% end %>
-    </div>
-  <% end %>
-</div>
 
+        <% g.photos.last(3).each do |pic| %>
+          <div class="col-4 mt-1">
+            <%= link_to gallery_photo_path(g, pic) do %>
+              <section class="card-category-gallery card-category-gallery-small" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path pic.photo.key, class: "w-100"%>')">
+              </section>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 
-  <% @my_galleries.each do |g| %>
-    <div>
-      <p class='below mt-5'>
-      <%= g.name %>
-      <% @first_photo = Photo.where(gallery_id: g.id).first %>
-      <%= link_to gallery_photo_path(g, @first_photo) do %>
-        <i class="fa-regular fa-eye"></i>
-      <% end %>
-      </p>
-    </div>
-  <% end %>
+  <hr class="solid">
 
-
-<hr class="solid">
-  <div class="container p-3 mb-3">
+  <div class="mb-3 pt-2">
     <h4 id="events_profile"><strong><%= @user.username.capitalize %>'s Events</strong></h4>
     <%= render 'shared/new_event_card', events: @my_events %>
   </div>
 </div>
-<%#
-
-
-<div class="container py-3 mt-5 booked-events">
-  <h4><strong>My Joined Events</strong></h4>
-  <%= render 'shared/new_event_card_with_cancel', events: @booked_events %>
-<%# </div> %>

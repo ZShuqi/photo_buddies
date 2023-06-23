@@ -1,6 +1,11 @@
-<% if hot_spot.photo.try(:any?) %>
-  <%= cl_image_tag hot_spot.photo.key, height: 100, width: 100, crop: :fill %>
-<% end %>
-<p><%= hot_spot.comment %></p>
-<p><%= hot_spot.address %></p>
-<p>By: <%= hot_spot.user.username.capitalize %> <%= cl_image_tag hot_spot.user.photo.key, height: 20, width: 20, radius: 10, crop: :fill %></p>
+<div class="info-win">
+  <% if hot_spot.photo.attached? %>
+    <%= cl_image_tag hot_spot.photo.key, height: 100, width: 200, crop: :fill %>
+  <% end %>
+  <div class="info-hot-spot">
+    <p id="info-win-address"><i class="fa-solid fa-location-dot"></i> <%= hot_spot.address %></p>
+    <p id="info-win-user"><%= cl_image_tag hot_spot.user.photo.key, height: 40, width: 40, radius: 20, crop: :fill %> <strong><%= hot_spot.user.username.capitalize %></strong></p>
+    <p><em>"<%= hot_spot.comment %>"</em></p>
+
+  </div>
+</div>
