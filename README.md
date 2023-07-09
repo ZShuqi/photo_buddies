@@ -1,5 +1,3 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
-
 # Photo Buddies
 
 Photobuddies is a website to tackle the pain points of amateur photographers’ difficulty finding buddies to practice photography skills. 
@@ -47,3 +45,5 @@ Like and comment our favourite photos
 ![4 profile](/app/assets/demo/4_profile.jpg)
 
 ![5 search](/app/assets/demo/5_search.jpg)
+
+Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
